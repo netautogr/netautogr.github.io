@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ansible on Network Automation GR</title>
+    <link>https://netautogr.github.io/tags/ansible/</link>
+    <description>Recent content in ansible on Network Automation GR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Nov 2020 14:25:30 +0200</lastBuildDate>
+    
+	<atom:link href="https://netautogr.github.io/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ansible</title>
+      <link>https://netautogr.github.io/posts/2020/11/ansible/</link>
+      <pubDate>Mon, 16 Nov 2020 14:25:30 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2020/11/ansible/</guid>
+      <description>Η Ansible είναι ένα εργαλείο για configuration management στην λογική των Chef, Puppet και Salt. Ο βασικός λόγος της δημιουργίας της ήταν η ανάγκη για ένα agent-less automation framework και αυτό ήταν που οδήγησε στην υιοθέτησή της από μεγάλη μερίδα μηχανικών δικτύου που ήθελαν να αυτοματοποιήσουν τις εργασίες τους χωρίς όμως να έχουν την δυνατότητα εγκατάστασης agents στον εξοπλισμό τους. Παρακάτω γίνεται μια απόπειρα αποδελτίωσης των θετικών και των αρνητικών του εργαλείου ούτως ώστε η καθεμία να αποφασίσει μόνη της αν αξίζει να ασχοληθεί.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,44 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Network Automation GR</title>
+        <link>https://netautogr.github.io/posts/</link>
+        <description>Recent content in Posts on Network Automation GR</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 16 Nov 2020 14:25:30 +0200</lastBuildDate>
+        <atom:link href="https://netautogr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Ansible</title>
+            <link>https://netautogr.github.io/posts/2020/11/ansible/</link>
+            <pubDate>Mon, 16 Nov 2020 14:25:30 +0200</pubDate>
+            
+            <guid>https://netautogr.github.io/posts/2020/11/ansible/</guid>
+            <description>Η Ansible είναι ένα εργαλείο για configuration management στην λογική των Chef, Puppet και Salt. Ο βασικός λόγος της δημιουργίας της ήταν η ανάγκη για ένα agent-less automation framework και αυτό ήταν που οδήγησε στην υιοθέτησή της από μεγάλη μερίδα μηχανικών δικτύου που ήθελαν να αυτοματοποιήσουν τις εργασίες τους χωρίς όμως να έχουν την δυνατότητα εγκατάστασης agents στον εξοπλισμό τους. Παρακάτω γίνεται μια απόπειρα αποδελτίωσης των θετικών και των αρνητικών του εργαλείου ούτως ώστε η καθεμία να αποφασίσει μόνη της αν αξίζει να ασχοληθεί.</description>
+            <content type="html"><![CDATA[<p>Η Ansible είναι ένα εργαλείο για configuration management στην λογική των Chef, Puppet και Salt. Ο βασικός λόγος της δημιουργίας της ήταν η ανάγκη για ένα agent-less automation framework και αυτό ήταν που οδήγησε στην υιοθέτησή της από μεγάλη μερίδα μηχανικών δικτύου που ήθελαν να αυτοματοποιήσουν τις εργασίες τους χωρίς όμως να έχουν την δυνατότητα εγκατάστασης agents στον εξοπλισμό τους.
+Παρακάτω γίνεται μια απόπειρα αποδελτίωσης των θετικών και των αρνητικών του εργαλείου ούτως ώστε η καθεμία να αποφασίσει μόνη της αν αξίζει να ασχοληθεί.
+TL;DR, η Ansible είναι μια καλή επιλογή για σχετικά αρχάριους στον χώρο του αυτοματισμού δικτύων με σχετικά ήπια καμπύλη εκμάθησης. Είναι επαρκής για απλές επαναλαμβανόμενες δουλειές αλλά αργή και ανίκανη να φέρει εις πέρας πολύπλοκα tasks.</p>
+<h2 id="θετικά">Θετικά:</h2>
+<ul>
+<li><strong>Agentless</strong>: δεν απαιτείται εγκατάσταση agent στον εξοπλισμό - η σύνδεση σε δικτυακά μηχανήματα συνήθως γίνεται μέσω SSH.</li>
+<li><strong>Παραλληλισμός</strong>: το ίδιο task μπορεί να τρέχει παράλληλα σε πολλαπλά hosts.</li>
+<li><strong>Inventory &amp; variable inheritance</strong>: ο μηχανισμός με τον οποίο η Ansible ομαδοποιεί hosts και μοιράζεται μεταβλητές μεταξύ τους είναι πολύ ισχυρός και επεκτάσιμος. Αυτό την κάνει καλή επιλογή για πολύπλοκα περιβάλλοντα με πολλαπλά sites, prod/dev/test segments, κτλ.</li>
+<li>Ecosystem: υπάρχει μεγάλος πλούτος από libraries (modules, roles, collections στην «διάλεκτο» της Ansible) που κάνουν εύκολη την δουλειά του administrator.</li>
+</ul>
+<h2 id="ούτε-κρύο-ούτε-ζέστη">Ούτε κρύο, ούτε ζέστη:</h2>
+<ul>
+<li><strong>DSL</strong>: Η Ansible «μιλάει» μια δική της γλώσσα (Domain Specific Language) που πατάει πάνω στην YAML. Από την μία, αυτό την κάνει αρκετά πιο απλή στην κατανόηση από τους ανθρώπους που δεν έχουν έκθεση σε αρχές προγραμματισμού. Από την άλλη, αυτό την κάνει αρκετά πιο περιοριστική για τους ανθρώπους που σκαμπάζουν. Επιπλέον, ένα κοινό επιχείρημα κατά των διαφόρων DSLs (Ansible, Terraform, etc) είναι πως, αντί να μαθαίνεις να γράφεις μια proper γλώσσα προγραμματισμού, μαθαίνει μια proprietary γλώσσα με de-facto περιορισμένο scope. Έκαστος εφ’ ω ετάχθη…</li>
+<li><strong>Break-out to Python</strong>: Στο σημείο που ζορίζει το πράγμα και η Ansible δεν μπορεί να κάνει τα μαγκαϊβεριλίκια που θέλεις, κάνεις break-out σε Python. Τα θετικά/αρνητικά του συγκεκριμένου fact είναι άσκηση για το σπίτι…</li>
+<li><strong>Delivery mechanism</strong>: Το GUI add-on (AWX) είναι ένας good-enough μηχανισμός για delivery.</li>
+</ul>
+<h2 id="αρνητικά-της-ansible">Αρνητικά της Ansible:</h2>
+<ul>
+<li><strong>SLOWWW</strong>: Είναι αργή! Ακόμη και αν φτάσεις στο σημείο να κάνεις τα πιο advanced κόλπα (forks, strategies, async) η Ansible παραμένει πολύ αργή!</li>
+<li><strong>No event-driven mechanism</strong>: Δεν έχει μηχανισμό για event-driven automation.</li>
+<li><strong>Complex tasks</strong>: Είναι απαράδεκτη για complex tasks με πολύ περιορισμένες δυνατότητες για loops, conditionals και παρόμοια structures.</li>
+</ul>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
