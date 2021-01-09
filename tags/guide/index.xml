@@ -6,10 +6,19 @@
     <description>Recent content in guide on Network Automation GR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Nov 2020 14:25:30 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jan 2021 23:02:40 +0200</lastBuildDate>
     
 	<atom:link href="https://netautogr.github.io/tags/guide/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to Get Started With Network Automation</title>
+      <link>https://netautogr.github.io/posts/2021/01/how-to-get-started-with-network-automation/</link>
+      <pubDate>Thu, 07 Jan 2021 23:02:40 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/01/how-to-get-started-with-network-automation/</guid>
+      <description>Εισαγωγή Λένε πως το πιο δύσκολο πράγμα στην πτήση είναι η απογείωση.. Στην ενασχόληση με το network automation, αυτο ισχύει σίγουρα. Αν ψάξει κανείς στο internet θα βρει αρκετό περιεχόμενο που έχει σκοπό να αναδείξει κίνητρα, οφέλη, μια νέα φιλοσοφία. Οπωσδήποτε πρέπει κανείς να ανοίξει το μυαλό του σε νέο τρόπο σκέψης, εργασίας και συνεργασίας με αρκετά νέα εργαλεία και τεχνογνωσία. Αλλά το βασικό πρόβλημα δεν είναι η φιλοσοφία. Εντάξει, παίζει σημαντικό ρόλο.</description>
+    </item>
     
     <item>
       <title>Ansible</title>

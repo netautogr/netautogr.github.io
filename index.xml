@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>How to Get Started With Network Automation</title>
+      <link>https://netautogr.github.io/posts/2021/01/how-to-get-started-with-network-automation/</link>
+      <pubDate>Thu, 07 Jan 2021 23:02:40 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/01/how-to-get-started-with-network-automation/</guid>
+      <description>Εισαγωγή Λένε πως το πιο δύσκολο πράγμα στην πτήση είναι η απογείωση.. Στην ενασχόληση με το network automation, αυτο ισχύει σίγουρα. Αν ψάξει κανείς στο internet θα βρει αρκετό περιεχόμενο που έχει σκοπό να αναδείξει κίνητρα, οφέλη, μια νέα φιλοσοφία. Οπωσδήποτε πρέπει κανείς να ανοίξει το μυαλό του σε νέο τρόπο σκέψης, εργασίας και συνεργασίας με αρκετά νέα εργαλεία και τεχνογνωσία. Αλλά το βασικό πρόβλημα δεν είναι η φιλοσοφία. Εντάξει, παίζει σημαντικό ρόλο.</description>
+    </item>
+    
+    <item>
       <title>EEM monitor interface stats</title>
       <link>https://netautogr.github.io/posts/2020/11/eem-monitor-interface-stats/</link>
       <pubDate>Thu, 26 Nov 2020 01:28:49 +0200</pubDate>
