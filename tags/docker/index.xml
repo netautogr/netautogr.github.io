@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Network Automation GR</title>
+    <link>https://netautogr.github.io/tags/docker/</link>
+    <description>Recent content in docker on Network Automation GR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Feb 2021 09:45:49 +0200</lastBuildDate>
+    
+	<atom:link href="https://netautogr.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction to Docker</title>
+      <link>https://netautogr.github.io/posts/2021/02/introduction-to-docker/</link>
+      <pubDate>Fri, 12 Feb 2021 09:45:49 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/02/introduction-to-docker/</guid>
+      <description>Εισαγωγή To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφοαρμόγές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization.</description>
+    </item>
+    
+  </channel>
+</rss>
