@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://netautogr.github.io/tags/guide/</loc>
-    <lastmod>2021-01-07T23:02:40+02:00</lastmod>
+    <loc>https://netautogr.github.io/tags/docker/</loc>
+    <lastmod>2021-02-12T09:45:49+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://netautogr.github.io/posts/2021/01/how-to-get-started-with-network-automation/</loc>
-    <lastmod>2021-01-07T23:02:40+02:00</lastmod>
+    <loc>https://netautogr.github.io/tags/guide/</loc>
+    <lastmod>2021-02-12T09:45:49+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://netautogr.github.io/tags/intro/</loc>
-    <lastmod>2021-01-07T23:02:40+02:00</lastmod>
+    <lastmod>2021-02-12T09:45:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://netautogr.github.io/posts/2021/02/introduction-to-docker/</loc>
+    <lastmod>2021-02-12T09:45:49+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://netautogr.github.io/posts/</loc>
-    <lastmod>2021-01-07T23:02:40+02:00</lastmod>
+    <lastmod>2021-02-12T09:45:49+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://netautogr.github.io/tags/</loc>
+    <lastmod>2021-02-12T09:45:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://netautogr.github.io/posts/2021/01/how-to-get-started-with-network-automation/</loc>
     <lastmod>2021-01-07T23:02:40+02:00</lastmod>
   </url>
   
