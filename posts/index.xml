@@ -21,8 +21,8 @@
 <p><strong>Ξεκινήστε πρώτα από εδώ:</strong></p>
 <ul>
 <li><a href="https://docs.docker.com/">https://docs.docker.com/</a></li>
-<li><a href="https://youtu.be/iqqDU2crIEQ">https://youtu.be/iqqDU2crIEQ</a> - How to get started with Docker</li>
-<li><a href="https://youtu.be/QeQ2MH5f_BE">https://youtu.be/QeQ2MH5f_BE</a> - Simplify things with docker-compose</li>
+<li><a href="https://youtu.be/iqqDU2crIEQ">https://youtu.be/iqqDU2crIEQ</a> How to get started with Docker</li>
+<li><a href="https://youtu.be/QeQ2MH5f_BE">https://youtu.be/QeQ2MH5f_BE</a> Simplify things with docker-compose</li>
 </ul>
 <p>Και δείτε κι αυτά:</p>
 <ul>
@@ -31,7 +31,7 @@
 <li><a href="https://www.redhat.com/en/topics/containers/whats-a-linux-container">https://www.redhat.com/en/topics/containers/whats-a-linux-container</a></li>
 <li><a href="https://opensource.com/article/19/10/namespaces-and-containers-linux">https://opensource.com/article/19/10/namespaces-and-containers-linux</a></li>
 <li><a href="https://www.simplilearn.com/tutorials/docker-tutorial/what-is-docker-container">https://www.simplilearn.com/tutorials/docker-tutorial/what-is-docker-container</a></li>
-<li><a href="https://github.com/wsargent/docker-cheat-sheet">https://github.com/wsargent/docker-cheat-sheet</a> - Αυτό μπαίνει και στο τέλος..</li>
+<li><a href="https://github.com/wsargent/docker-cheat-sheet">https://github.com/wsargent/docker-cheat-sheet</a> Αυτό μπαίνει και στο τέλος..</li>
 </ul>
 <h2 id="συστατικά">Συστατικά</h2>
 <p>Μπορεί κανείς να πάρει μια ιδέα από το παρακάτω post:</p>
@@ -51,7 +51,7 @@
 <p><a href="https://docs.docker.com/engine/">https://docs.docker.com/engine/</a></p>
 <h3 id="docker-images">Docker images</h3>
 <p>Βασικά πακέτα πάνω στα οποία μπορεί κανείς να βασιστεί και να φτιάξει containers ή πιο σύνθετα images. Είναι δυνατό να φτιαχτούν πολύπλοκα σύνολα λογισμικού με αντίστοιχα πολύπλοκο τρόπο. Επίσης μπορεί ένα image να φτιαχτεί με layers. Ο τρόπος που φτιάχνεται ένα image από στοιχειώδη συστατικά μπορεί να προδιαγραφεί απόλυτα με την χρήση των dockerfiles. Η διαδικασία της κατασκευής του image ονομάζεται build. Η δυνατότητα ορισμού των προδιαγραφών του build για ένα image δίνει τη δυνατότητα της χρήσης των containers ως Infrastructure as Code (περιγράφω απλώς πως θέλω να είναι το image και αυτό χτίζεται κατά τις προδιαγραφές μου αυτόματα).
-Έχει σημασία η προσοχή στις διαδικασίες που ορίζονται στα dockerfile καθώς κάθε εντολή καταλήγει στο να προσθέσει ένα ακόμα layer στο image. Τα layers από τη στιγμή που θα προστεθούν είναι immutable. Γι αυτό και πολλές φορές οι εντολές σε κάθε βήμα ενός Dockerfile καταλήγουν να είναι αρκετά πολύπλοκες, καθώς δεν μπορεί κανείς να διαγράψει στην πράξη σε ένα επόμενο layer αρχεία που προστέθηκαν σε προηγούμενο layer. Επειδή τα images αποθηκεύονται σε κεντρικά σημεία - ** Docker registry ** - και γίνονται download από εκεί, το μέγεθος των images έχει σημασία για την αποδοτικότητα της υποδομής.</p>
+Έχει σημασία η προσοχή στις διαδικασίες που ορίζονται στα dockerfile καθώς κάθε εντολή καταλήγει στο να προσθέσει ένα ακόμα layer στο image. Τα layers από τη στιγμή που θα προστεθούν είναι immutable. Γι αυτό και πολλές φορές οι εντολές σε κάθε βήμα ενός Dockerfile καταλήγουν να είναι αρκετά πολύπλοκες, καθώς δεν μπορεί κανείς να διαγράψει στην πράξη σε ένα επόμενο layer αρχεία που προστέθηκαν σε προηγούμενο layer. Επειδή τα images αποθηκεύονται σε κεντρικά σημεία - <strong>Docker registry</strong> - και γίνονται download από εκεί, το μέγεθος των images έχει σημασία για την αποδοτικότητα της υποδομής.</p>
 <p><a href="https://circleci.com/blog/tips-for-optimizing-docker-builds/">https://circleci.com/blog/tips-for-optimizing-docker-builds/</a></p>
 <h2 id="docker-hub">Docker Hub</h2>
 <p>Η κεντρική αποθήκη της Docker για τα images. Είναι ο δημόσιος &ldquo;κάταλογος&rdquo; - Registry για τα images και μπορεί ο καθένας να δημοσιεύσει τα δικά του, είτε εταιρείες/ιδρύματα είτε ιδιώτες. Μπορεί φυσικά κανείς να διαθέτει και private registry που φιλοξενείται στη δική του ιδιωτική υποδομή.</p>
@@ -65,12 +65,12 @@
 Μπορούν να θεωρηθούν, όταν οι εφαρμογές που υλοποιούν διαχωρίζονται απόλυτα ως προς τα services σε ξεχωριστά containers, ότι αποτελούν βασικό συστατικό του <strong>Microservices Architecture</strong>, ειδικά με το συνδυασμό με εργαλεία orchestration, όπου μπορεί κανείς να χρησιμοποιήσει υποδομές <strong>CI/CD</strong> για να ενημερώνει τον κώδικα των εφαρμογών, να χτίζει τα κατάλληλα images, να σηκώνει τα containers, να κάνει τις δοκιμές κλπ δημιουργώντας πλήρεις κύκλους ανάπτυξης και λειτουργίας λογισμικού και υπηρεσιών.
 Το <strong>orchestration</strong> γενικά μπορεί να διευκολύνει αρκετά τη χρήση των containers σε κάθε σενάριο.
 Εδώ και κάποια χρόνια η χρήση των containers εξετάζεται και σε περιπτώσεις <strong>edge computing</strong> στο δίκτυο, καθώς πολλές πλατφόρμες networking υποστηρίζουν containers όπως π.χ. τα Cisco Catalyst 9K και όχι μόνο..
-<a href="https://blogs.cisco.com/developer/minecraft-on-catalyst-switch">https://blogs.cisco.com/developer/minecraft-on-catalyst-switch</a> - Can You Play Minecraft on a Cisco Switch? Flo Pachinger</p>
+<a href="https://blogs.cisco.com/developer/minecraft-on-catalyst-switch">https://blogs.cisco.com/developer/minecraft-on-catalyst-switch</a> Can You Play Minecraft on a Cisco Switch? Flo Pachinger</p>
 <h2 id="docker-compose">Docker-compose</h2>
 <p>Προδιαγραφές καταγεγραμμένες σε αρχεία ρυθμίσεων, μπορούν να χρησιμοποιηθούν απο κατάλληλα εργαλεία για να επιτευχθεί η αυτοματοποίηση της δημιουργίας images και containers. Ένα τέτοιο εργαλείο για την πλατφόρμα Docker με απλή λειτουργία, κυρίως για λόγους test &amp; development (χωρίς να αποκλείεται περιορισμένη χρήση σε production) είναι το docker-compose.</p>
 <ul>
-<li><a href="https://docs.docker.com/compose/">https://docs.docker.com/compose/</a> - Πλήρες documentation της πλατφόρμας</li>
-<li><a href="https://docs.docker.com/compose/production/">https://docs.docker.com/compose/production/</a> - Πως να προσαρμόσετε το docker-compose για χρήση στην παραγωγή.</li>
+<li><a href="https://docs.docker.com/compose/">https://docs.docker.com/compose/</a> Πλήρες documentation της πλατφόρμας</li>
+<li><a href="https://docs.docker.com/compose/production/">https://docs.docker.com/compose/production/</a> Πως να προσαρμόσετε το docker-compose για χρήση στην παραγωγή.</li>
 </ul>
 <p>Στο docker-compose χρησιμοποιούνται αρχεια yaml για τον ορισμό services τα οποία χτίζονται με containers αλλά και για τον ορισμό της επικοινωνίας αυτών των services μεταξύ τους και με τον εξωτερικό κόσμο. Το docker-compose σαν λογισμικό βασίζεται σε ένα αριθμό από εντολών και είναι αντίστοιχο με το docker client runtime σε σχέση με το τί μπορεί να εκτελεστεί για να επηρεάσουμε τη λειτουργία των services βασισμένα στα docker containers ή να κάνουμε συγκεκιμένους ελέγχους. Η χρήση της πλατφόρμας Docker απλοποιείται εξαιρετικά με τη χρήση του docker-compose.
 Βασικό μειονέκτημα του docker-compose είναι η έλλειψη υποστήριξης scale out δηλαδή να μπορεί κανείς να προσθέτει/αφαιρεί nodes οριζόντια για όποιο service χρειάζεται ώστε να ανταποκρίνεται στο φόρτο και τις ανάγκες για τις συγκεκριμένες εφαρμογές.
@@ -84,20 +84,20 @@
 <h2 id="εγκατάσταση">Εγκατάσταση</h2>
 <p>Παρατίθενται δύο δημοφιλή post για</p>
 <ul>
-<li>πως να εγκατασταθεί το docker σε πλατφόρμα Ubuntu, μαζί με παραδείγματα για τη χρήση και δημοφιλείς εντολές για τον docker client - <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04</a></li>
-<li>πως να εγκατασταθεί το docker-compose σε πλατφόρμα Ubuntu, μαζί με παραδείγματα για τη χρήση και δημοφιλείς εντολές - <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04</a></li>
+<li>πως να εγκατασταθεί το docker σε πλατφόρμα Ubuntu, μαζί με παραδείγματα για τη χρήση και δημοφιλείς εντολές για τον docker client <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04</a></li>
+<li>πως να εγκατασταθεί το docker-compose σε πλατφόρμα Ubuntu, μαζί με παραδείγματα για τη χρήση και δημοφιλείς εντολές <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04</a></li>
 </ul>
 <h2 id="networking">Networking</h2>
 <p>Παρατίθενται links που εξηγούν πως επικοινωνούν τα containers και πως αυτό μπορεί να ορισθεί μέσω του docker client ή του docker-compose.</p>
 <ul>
 <li><a href="https://ostechnix.com/explaining-docker-networking-concepts/">https://ostechnix.com/explaining-docker-networking-concepts/</a></li>
-<li><a href="https://docs.docker.com/compose/networking/">https://docs.docker.com/compose/networking/</a> - Networking in Compose</li>
-<li><a href="https://youtu.be/z-ITjDQT7DU">https://youtu.be/z-ITjDQT7DU</a> - Linux Bridges, IP Tables, and CNI Plug-Ins - A Container Networking Deepdive</li>
+<li><a href="https://docs.docker.com/compose/networking/">https://docs.docker.com/compose/networking/</a> Networking in Compose</li>
+<li><a href="https://youtu.be/z-ITjDQT7DU">https://youtu.be/z-ITjDQT7DU</a> Linux Bridges, IP Tables, and CNI Plug-Ins, A Container Networking Deepdive</li>
 </ul>
 <p>Μερικές πολύ καλές παρουσιάσεις από Cisco Live On Demand Library (χρειάζεστε λογαριασμό):</p>
 <ul>
-<li><a href="https://www.ciscolive.com/global/on-demand-library.html?search=container%20networking#/session/1500302064183001RdRv">https://www.ciscolive.com/global/on-demand-library.html?search=container%20networking#/session/1500302064183001RdRv</a> - Demystifying Container Networking - Matthew Johnson (Εξαιρετικός απλά).</li>
-<li><a href="https://www.ciscolive.com/global/on-demand-library.html?search=container%20networking#/session/1564346298969001mFaH">https://www.ciscolive.com/global/on-demand-library.html?search=container%20networking#/session/1564346298969001mFaH</a> - Container Netwokring Deep Dive, Ivan Kovacevic (Ψυχραιμία εδώ, θα πάθετε πλάκα, αλλά καλύ υπομονή, μας τρέλανε ο τύπος, ήμουν μέσα.. Βαρκελώνη 2020)</li>
+<li><a href="https://www.ciscolive.com/global/on-demand-library.html?search=container%20networking#/session/1500302064183001RdRv">https://www.ciscolive.com/global/on-demand-library.html?search=container%20networking#/session/1500302064183001RdRv</a> Demystifying Container Networking, Matthew Johnson (Εξαιρετικός απλά).</li>
+<li><a href="https://www.ciscolive.com/global/on-demand-library.html?search=container%20networking#/session/1564346298969001mFaH">https://www.ciscolive.com/global/on-demand-library.html?search=container%20networking#/session/1564346298969001mFaH</a> Container Netwokring Deep Dive, Ivan Kovacevic (Ψυχραιμία εδώ, θα πάθετε πλάκα, αλλά καλύ υπομονή, μας τρέλανε ο τύπος, ήμουν μέσα.. Βαρκελώνη 2020)</li>
 </ul>
 <h2 id="logging">Logging</h2>
 <p>Η παρατήρηση των logs είναι εξίσου σημαντική στην πλατφόρμα docker &amp; docker-compose όσο και στο linux. Αν δεν βλέπεις logs χάνεις τουλάχιστον το 50% της εικόνας</p>
@@ -112,7 +112,7 @@
 <h2 id="άλλα-χρήσιμα-links----διάβασμα">Άλλα Χρήσιμα links -  Διάβασμα</h2>
 <p>Διαβάστε οπωσδήποτε τη σειρά των posts από Julio Gomes και Rodie Hassan. Η πρώτη έχει απίστευτο ταξίδι στον κόσμο του Devops. Η δεύτερη εκτείνεται σε μια σειρά από άρθρα εξειδικευμένα κατά αντικείμενο. Παρατίθενται χωριστά.</p>
 <ul>
-<li><a href="https://12factor.net/">https://12factor.net/</a> - The Twelve Factor App Methodology - Βασικό διάβασμα για να καταλάβει κανείς τί ενέπνευσε αυτή την τεχνολογία.</li>
+<li><a href="https://12factor.net/">https://12factor.net/</a> The Twelve Factor App Methodology, Βασικό διάβασμα για να καταλάβει κανείς τί ενέπνευσε αυτή την τεχνολογία.</li>
 </ul>
 <p>Η Σειρά του Julio Gomez - Programmability Lead in Cisco EMEAR (εκπληκτικός τύπος)</p>
 <ul>
@@ -139,7 +139,7 @@
 <p>Blog Posts &amp; Youtube Videos:</p>
 <ul>
 <li><a href="https://www.linkedin.com/pulse/introduction-containers-docker-kubernetes-derek-winchester">https://www.linkedin.com/pulse/introduction-containers-docker-kubernetes-derek-winchester</a></li>
-<li><a href="https://www.youtube.com/watch?v=2uweFMQCWEs&amp;ab_channel=edureka%21">https://www.youtube.com/watch?v=2uweFMQCWEs&amp;ab_channel=edureka%21</a> - Dockerfile Tutorial Video - Edureka</li>
+<li><a href="https://www.youtube.com/watch?v=2uweFMQCWEs&amp;ab_channel=edureka%21">https://www.youtube.com/watch?v=2uweFMQCWEs&amp;ab_channel=edureka%21</a> - Dockerfile Tutorial Video, Edureka</li>
 <li><a href="https://phoenixnap.com/kb/how-to-ssh-into-docker-container">https://phoenixnap.com/kb/how-to-ssh-into-docker-container</a></li>
 <li><a href="https://css-tricks.com/a-gentle-introduction-to-using-a-docker-container-as-a-dev-environment/">https://css-tricks.com/a-gentle-introduction-to-using-a-docker-container-as-a-dev-environment/</a></li>
 <li><a href="https://www.coursera.org/lecture/sdn/docker-and-containerization-oyA43">https://www.coursera.org/lecture/sdn/docker-and-containerization-oyA43</a></li>
@@ -147,7 +147,7 @@
 <li><a href="https://dev.to/kojikanao/15-docker-commands-for-beginners-4m4d">https://dev.to/kojikanao/15-docker-commands-for-beginners-4m4d</a></li>
 <li><a href="https://www.javacodegeeks.com/2018/07/docker-tutorial-containers.html">https://www.javacodegeeks.com/2018/07/docker-tutorial-containers.html</a></li>
 <li><a href="https://dev.to/kbk0125/docker-containers-explained-by-renting-office-space-p0o">https://dev.to/kbk0125/docker-containers-explained-by-renting-office-space-p0o</a></li>
-<li><a href="https://pythonspeed.com/docker/">https://pythonspeed.com/docker/</a> - Production-ready Docker packaging for Python developers</li>
+<li><a href="https://pythonspeed.com/docker/">https://pythonspeed.com/docker/</a> Production-ready Docker packaging for Python developers</li>
 <li><a href="https://www.freecodecamp.org/news/the-docker-handbook/">https://www.freecodecamp.org/news/the-docker-handbook/</a></li>
 <li><a href="https://docker.events.cube365.net/docker/dockercon">https://docker.events.cube365.net/docker/dockercon</a></li>
 <li><a href="https://sreeninet.wordpress.com/2017/11/02/docker-networking-tip-troubleshooting/amp/">https://sreeninet.wordpress.com/2017/11/02/docker-networking-tip-troubleshooting/amp/</a></li>
