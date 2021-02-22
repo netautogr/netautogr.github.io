@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Εισαγωγή To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφοαρμόγές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization." />
+<meta name="description" content="Εισαγωγή To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφαρμογές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization." />
 <meta name="keywords" content=", docker, guide, intro" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -42,10 +42,10 @@
 
 
 <meta itemprop="name" content="Introduction to Docker">
-<meta itemprop="description" content="Εισαγωγή To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφοαρμόγές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization.">
+<meta itemprop="description" content="Εισαγωγή To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφαρμογές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization.">
 <meta itemprop="datePublished" content="2021-02-12T09:45:49&#43;02:00" />
 <meta itemprop="dateModified" content="2021-02-12T09:45:49&#43;02:00" />
-<meta itemprop="wordCount" content="1568">
+<meta itemprop="wordCount" content="1592">
 <meta itemprop="image" content="https://netautogr.github.io"/>
 
 
@@ -55,12 +55,12 @@
 <meta name="twitter:image" content="https://netautogr.github.io"/>
 
 <meta name="twitter:title" content="Introduction to Docker"/>
-<meta name="twitter:description" content="Εισαγωγή To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφοαρμόγές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization."/>
+<meta name="twitter:description" content="Εισαγωγή To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφαρμογές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization."/>
 
 
 
     <meta property="og:title" content="Introduction to Docker" />
-<meta property="og:description" content="Εισαγωγή To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφοαρμόγές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization." />
+<meta property="og:description" content="Εισαγωγή To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφαρμογές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://netautogr.github.io/posts/2021/02/introduction-to-docker/" />
 <meta property="og:image" content="https://netautogr.github.io"/>
@@ -153,13 +153,14 @@
 
       <div class="post-content">
         <h2 id="εισαγωγή">Εισαγωγή</h2>
-<p>To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφοαρμόγές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization. Κατά τον ίδιο τρόπο λοιπόν που τα Virtual Machines λειτουργούν απομονωμένα και μοιράζονται το ίδιο φυσικό hardware, έτσι και τα containers λειτουργούν απομονωμένα και μοιράζονται το ίδιο λειτουργικό σύστημα με απόλυτη απομόνωση σε επίπεδο λειτουργικού και processes.</p>
+<p>To Docker είναι μια αρχιτεκτονική για containers. Άλλη αντίστοιχη αρχιτεκτονική είναι το OCI (Open Container Initiative). Τα containers ενσωματώνουν όλα τα κομμάτια που χρειάζεται μια εφαρμογή για να λειτουργήσει ξεχωριστά από τις υπόλοιπες σε ένα ενιαίο πακέτο, το οποίο απομονώνεται από τις υπόλοιπες εφαρμογές και λειτουργικό σύστημα με τρόπους που βασίζονται στη χρήση linux namespaces και έχουν τις απαρχές τους στο chroot jail. Θα μπορούσε κανείς να πει ότι τα containers υλοποιούν operating system virtualization κατά αντίστοιχο τρόπο που τα Virtual Machines υλοποιούν hardware virtualization. Κατά τον ίδιο τρόπο λοιπόν που τα Virtual Machines λειτουργούν απομονωμένα και μοιράζονται το ίδιο φυσικό hardware, έτσι και τα containers λειτουργούν απομονωμένα και μοιράζονται το ίδιο λειτουργικό σύστημα με απόλυτη απομόνωση σε επίπεδο λειτουργικού και processes.</p>
 <p><img src="https://www.redhat.com/cms/managed-files/virtualization-vs-containers.png" alt="os-virtualization" title="OS Virtualization"></p>
 <p><strong>Ξεκινήστε πρώτα από εδώ:</strong></p>
 <ul>
 <li><a href="https://docs.docker.com/">https://docs.docker.com/</a></li>
 <li><a href="https://youtu.be/iqqDU2crIEQ">https://youtu.be/iqqDU2crIEQ</a> How to get started with Docker</li>
 <li><a href="https://youtu.be/QeQ2MH5f_BE">https://youtu.be/QeQ2MH5f_BE</a> Simplify things with docker-compose</li>
+<li><a href="https://youtu.be/3c-iBn73dDE">https://youtu.be/3c-iBn73dDE</a> Docker Tutorial for Beginners [FULL COURSE in 3 Hours]</li>
 </ul>
 <p>Και δείτε κι αυτά:</p>
 <ul>
@@ -214,7 +215,8 @@
 Για τέτοιες περιπτώσεις είναι απαραίτητες διαφορετικά εργαλεία όπως το docker swarm ή το Kubernetes</p>
 <h3 id="kubernetes">Kubernetes</h3>
 <p>Το απόλυτο εργαλείο για υποστήριξη microservices architecture και scalable υποδομών εφαρμογών σε περιβάλλοντα cloud. Βασικό του συστατικό είναι το pod το οποίο μπορεί να περιλαμβάνει ένα ή περισσότερα services. Η προσθήκη ή αφαίρεση pods είναι ο τρόπος που μια τέτοια υποδομή αντιμετωπίζει την αύξηση/μείωση του load για τις εφαρμογές που χτίζονται πάνω στα containers. Πρόσφατα ανακοινώθηκε ότι το Kubernetes δεν θα υποστηρίζει πλέον docker containers αλλά η ακριβής ερμηνεία αυτής της ανακοίνωσης αφήνεται σε πιο ειδικούς από μένα (&ldquo;ναι μεν αλλά&hellip;&quot;)
-Στο παρακάτω post εξηγούνται οι διαφορές Docker &amp; Kuburnetes με παραδείγματα:</p>
+<a href="https://youtu.be/3c-iBn73dDE">https://youtu.be/3c-iBn73dDE</a> - Kubernetes is dropping Docker support - What does it mean for YOU?</p>
+<p>Στο παρακάτω post εξηγούνται οι διαφορές Docker &amp; Kuburnetes με παραδείγματα:</p>
 <p><a href="https://www.freecodecamp.org/news/kubernetes-vs-docker-whats-the-difference-explained-with-examples/">https://www.freecodecamp.org/news/kubernetes-vs-docker-whats-the-difference-explained-with-examples/</a></p>
 <p>Κι αυτό λίγο πιο παλιό :</p>
 <p><a href="https://containerjournal.com/topics/container-ecosystems/kubernetes-vs-docker-a-primer/amp/">https://containerjournal.com/topics/container-ecosystems/kubernetes-vs-docker-a-primer/amp/</a></p>
@@ -318,7 +320,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1568 Words
+        1592 Words
       </p>
 
       <p>
