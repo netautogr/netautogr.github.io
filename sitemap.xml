@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://netautogr.github.io/posts/2021/05/introduction-to-git/</loc>
+    <lastmod>2021-05-17T23:02:37+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://netautogr.github.io/posts/</loc>
+    <lastmod>2021-05-17T23:02:37+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://netautogr.github.io/tags/</loc>
+    <lastmod>2021-05-17T23:02:37+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://netautogr.github.io/tags/untagged/</loc>
+    <lastmod>2021-05-17T23:02:37+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://netautogr.github.io/tags/docker/</loc>
     <lastmod>2021-02-12T09:45:49+02:00</lastmod>
   </url>
@@ -19,16 +39,6 @@
   
   <url>
     <loc>https://netautogr.github.io/posts/2021/02/introduction-to-docker/</loc>
-    <lastmod>2021-02-12T09:45:49+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://netautogr.github.io/posts/</loc>
-    <lastmod>2021-02-12T09:45:49+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://netautogr.github.io/tags/</loc>
     <lastmod>2021-02-12T09:45:49+02:00</lastmod>
   </url>
   

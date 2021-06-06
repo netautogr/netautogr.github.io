@@ -5,8 +5,411 @@
         <description>Recent content in Posts on Network Automation GR</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 12 Feb 2021 09:45:49 +0200</lastBuildDate>
+        <lastBuildDate>Mon, 17 May 2021 23:02:37 +0300</lastBuildDate>
         <atom:link href="https://netautogr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Introduction to git</title>
+            <link>https://netautogr.github.io/posts/2021/05/introduction-to-git/</link>
+            <pubDate>Mon, 17 May 2021 23:02:37 +0300</pubDate>
+            
+            <guid>https://netautogr.github.io/posts/2021/05/introduction-to-git/</guid>
+            <description>Γενικά - Version Control Systems Τί είναι ένα VCS Ένα Version Control System (VCS) είναι ένα σύστημα που καταγράφει τις αλλαγές που πραγματοποιούνται σε κάποιο αρχείο ή σε ένα σύνολο από αρχεία στην διάρκεια του χρόνου. Επίσης μπορεί να πραγματοποιήσει ανάκληση προηγούμενων εκδόσεων του αρχείου αν αυτό απαιτηθεί. Ένα VCS σου επιτρέπει να επαναφέρεις κάποια αρχεία σε μια προηγούμενη κατάσταση, ένα ολόκληρο project σε μια προηγούμενη κατάσταση, να βλέπεις τις αλλαγές από προηγούμενες εκδόσεις, ποιος έκανε την τελευταία αλλαγή και ίσως προκάλεσε κάποια δυσλειτουργία και πολλά άλλα.</description>
+            <content type="html"><![CDATA[<h1 id="γενικά---version-control-systems">Γενικά - Version Control Systems</h1>
+<h2 id="τί-είναι-ένα-vcs">Τί είναι ένα VCS</h2>
+<p>Ένα Version Control System (VCS) είναι ένα σύστημα που καταγράφει τις αλλαγές που πραγματοποιούνται σε κάποιο αρχείο ή σε ένα σύνολο από αρχεία στην διάρκεια του χρόνου. Επίσης μπορεί να πραγματοποιήσει ανάκληση προηγούμενων εκδόσεων του αρχείου αν αυτό απαιτηθεί. Ένα VCS σου επιτρέπει να επαναφέρεις κάποια αρχεία σε μια προηγούμενη κατάσταση, ένα ολόκληρο project σε μια προηγούμενη κατάσταση, να βλέπεις τις αλλαγές από προηγούμενες εκδόσεις, ποιος έκανε την τελευταία αλλαγή και ίσως προκάλεσε κάποια δυσλειτουργία και πολλά άλλα. Γνωστά version control systems που έχουν γνωρίσει ευρεία χρήση στο παρελθόν είναι τα Subversion, CVS, κ.α.</p>
+<h2 id="local-version-control-systems">Local Version Control Systems</h2>
+<p>Πολλοί επιλέγουν σαν μια μέθοδο Version Control την αντιγραφή των αρχείων που θέλουν να παρακολουθήσουν σε ένα διαφορετικό φάκελο ή φακέλους (ίσως με κάποιο timestamp) στην διάρκεια του χρόνου. Αυτή η πρακτική συνηθίζεται γιατί είναι απλή αλλά είναι και επιρρεπείς σε λάθη καθώς είναι εύκολο να ξεχάσεις σε ποιο φάκελο είσαι και κατά λάθος να γράψεις στα λάθος αρχεία η να αντιγράψεις αρχεία που δεν έπρεπε. Για την αντιμετώπιση τέτοιων θεμάτων αναπτύχθηκαν τα τοπικά VCS που περιλαμβάνουν μια απλή βάση δεδομένων που καταγράφει όλες τις αλλαγές στα αρχεία που απαιτείται.
+Centralized Version Control Systems</p>
+<p>Ένα ζήτημα που δεν μπορούσαν να αντιμετωπίσουν τα local VCS ήταν η ανάγκη των προγραμματιστών να συνεργαστούν για ένα project από διαφορετικά συστήματα. Έτσι αναπτύχθηκαν τα κεντρικοποιημένα VCS. Τέτοια συστήματα (όπως το CVS και το Subversion) περιλαμβάνουν ένα κεντρικό server που περιέχει όλα τα αρχεία που παρακολουθούνται καθώς και ένα αριθμό από clients που κατεβάζουν αρχεία  από τον κεντρικό server για να τα επεξεργαστούν. Για πολλά χρόνια αυτή ήταν η standard μέθοδος που χρησιμοποιούσαν οι προγραμματιστές για version control.</p>
+<h2 id="centralized-version-control-systems">Centralized Version Control Systems</h2>
+<p>Ένα ζήτημα που δεν μπορούσαν να αντιμετωπίσουν τα local VCS ήταν η ανάγκη των προγραμματιστών να συνεργαστούν για ένα project από διαφορετικά συστήματα. Έτσι αναπτύχθηκαν τα κεντρικοποιημένα VCS. Τέτοια συστήματα (όπως το CVS και το Subversion) περιλαμβάνουν ένα κεντρικό server που περιέχει όλα τα αρχεία που παρακολουθούνται καθώς και ένα αριθμό από clients που κατεβάζουν αρχεία  από τον κεντρικό server για να τα επεξεργαστούν. Για πολλά χρόνια αυτή ήταν η standard μέθοδος που χρησιμοποιούσαν οι προγραμματιστές για version control.
+<!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<p>Αυτή η μέθοδος είχε πολλά πλεονεκτήματα σε σχέση με τα local VCS. Για παράδειγμα όλοι ξέρουν τι αλλαγές έχει κάνει ο καθένας σε κάποιο project. Επίσης οι administrators έχουν πλήρη έλεγχο στο τι μπορεί να κάνει κάποιος και γενικά είναι πολύ πιο απλό να διαχειρίζεσαι ένα κεντρικοποιημένο VCS από το να έχει ο καθένας ένα τοπικό σύστημα στον υπολογιστή του. Παρόλα αυτά ένα τέτοιο σύστημα έχει και πολλά μειονεκτήματα. Το πιο σημαντικό είναι ότι βασίζεται σε ένα κεντρικό server που αποτελεί single point of failure. Αν για κάποιο λόγο αυτός ο server δεν είναι λειτουργικός για κάποιο διάστημα τότε για όσο διαρκεί το πρόβλημα δεν μπορούν να πραγματοποιηθούν αλλαγές από την ομάδα. Επίσης αν ο σκληρός δίσκος του server παρουσιάσει κάποια δυσλειτουργία τότε κινδυνεύει να χαθεί ολόκληρο το ιστορικό του project και όλες οι εκδόσεις που έχουν καταγραφεί.</p>
+<h2 id="distributed-version-control-systems">Distributed Version Control Systems</h2>
+<p>Τα μειονεκτήματα των Centralized VCS ήρθαν να καλύψουν τα Distributed VCS. Σε τέτοια συστήματα DVCS (όπως το Git) οι clients δεν κατεβάζουν μόνο την τελευταία έκδοση των αρχείων που θέλουν να επεξεργαστούν αλλά κατεβάζουν ολόκληρο το repository με το πλήρες ιστορικό του. Έτσι οποιοσδήποτε client μπορεί να επαναφέρει πλήρως ένα repository σε περίπτωση που οποιοσδήποτε server εμφανίσει κάποια δυσλειτουργία.
+<!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<h1 id="εισαγωγή-στο-git">Εισαγωγή στο GIT</h1>
+<h2 id="τι-είναι-το-git">Τι είναι το GIT</h2>
+<p>Η κύρια διαφορά του GIT από τα υπόλοιπα VCS είναι ο τρόπος που διαχειρίζεται τα δεδομένα. Τα περισσότερα συστήματα VCS αποθηκεύουν την πληροφορία σαν ένα σύνολο από αρχεία και για κάθε αρχείο αποθηκεύουν τις αλλαγές που γίνονται στην διάρκεια του χρόνου. Αντιθέτως το Git διαχειρίζεται την πληροφορία σαν ένα σύνολο από snapshots (commits) των αρχείων που παρακολουθούνται. Κάθε φορά που πρέπει να καταγράφουν αλλαγές σε κάποια αρχεία το Git παίρνει ένα snapshot από το σύνολο των αρχείων και αποθηκεύει μια αναφορά σε αυτό το snapshot. Επίσης όλες οι λειτουργίες του Git μπορούν να πραγματοποιηθούν στον τοπικό υπολογιστή καθώς έχει το πλήρες repository με το αντίστοιχο ιστορικό. Το GIT για οποιαδήποτε αλλαγή αποθηκεύει παράγει πρώτα ένα checksum με τον μηχανισμό SHA-1 hash και αυτό χρησιμοποιείται σαν αναφορά για αυτή την αλλαγή. Αυτό προσφέρει ακεραιότητα δεδομένων καθώς το Git διασφαλίζει ότι δεν μπορούν να αλλάξουν τα περιεχόμενα οποιουδήποτε αρχείου χωρίς αυτό να γίνει αντιληπτό.
+To Git έχει γνωρίσει μεγάλη επιτυχία και έχει γίνει το de-facto standard για distributed source control και ένα βασικό εργαλείο που πρέπει να μάθει κάποιος προκειμένουν να αρχίσει το ταξίδι του στον κόσμο του DevOps.</p>
+<p>Συνιστούμε να επισκεφθείτε τα παρακάτω sites:</p>
+<ul>
+<li><a href="https://git-scm.com/">https://git-scm.com/</a> - Git Website &amp; Documentation</li>
+<li><a href="https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/">https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/</a> - Γρήγορη εισαγωγή χωρίς να μπαίνει κανείς σε ιδιαίτερο βάθος, από τη γνωστή πλατφόρμα για μάθηση coding.</li>
+</ul>
+<h2 id="πλατφόρμες-για-git-repositories">Πλατφόρμες για Git Repositories</h2>
+<p>To ίδιο το Git υπάρχει σε εκδόσεις για διάφορα λειτουργικά συστήματα ενώ συνοδεύεται και με εργαλεία όπως το Git Bash, Git Desktop, κλπ.
+Υπάρχουν όμως και πλατφόρμες που βασίζονται στο Git και δίνουν υπηρεσίες Online Repository, είτε στο Internet, είτε σε Enterprise Επίπεδο.
+Οι πιο γνωστές είναι το <a href="https://www.github.com">Github</a> και το <a href="https://www.gitlab.com">Gitlab</a>. Ειδικά το Gitlab μπορεί κάποιος να το εγκαταστήσει τοπικά και σε δωρεάν έκδοση, σε γνωστά λειτουργικά συστήματα, σε Docker/Kunernetes, ακόμα και σε ένα RaspberryPi! <a href="https://about.gitlab.com/install/">https://about.gitlab.com/install/</a></p>
+<h1 id="git-basics">GIT Basics</h1>
+<h2 id="οι-3-καταστάσεις-του-git">Οι 3 καταστάσεις του Git</h2>
+<p>Οι 3 κύριες καταστάσεις αρχείων στο Git είναι :</p>
+<ul>
+<li><strong>Modified</strong>: Έχει γίνει αλλαγή σε κάποιο αρχείο αλλά δεν έχει γίνει commit στην βάση δεδομένων του Git.</li>
+<li><strong>Staged</strong>: Έχει επιλεγεί κάποιο αρχείο από την τρέχουσα έκδοση έτσι ώστε στο επόμενο commit να αποθηκευτούν οι αλλαγές του στην επόμενη έκδοση που θα δημιουργηθεί.</li>
+<li><strong>Committed</strong>: Τα δεδομένα έχουν αποθηκευτεί σωστά στην τοπική βάση δεδομένων του Git.</li>
+</ul>
+<p>Τα 3 μέρη ενός Git project είναι :</p>
+<ul>
+<li><strong>Working Directory</strong></li>
+<li><strong>Staging Area</strong></li>
+<li><strong>Git Repository</strong>
+<!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></li>
+</ul>
+<h3 id="working-directory">Working Directory</h3>
+<p>Είναι ένα checkout μιας έκδοσης του project. Τα αρχεία του working directory ανακτώνται από την βάση δεδομένων που βρίσκεται στο git directory έτσι ώστε να μπορούν να χρησιμοποιηθούν και να τροποποιηθούν.</p>
+<h3 id="staging-area">Staging Area</h3>
+<p>Περιέχεται στο Git directory και αποθηκεύει την πληροφορία σχετικά με το τι θα πρέπει να καταχωρηθεί στο επόμενο commit.</p>
+<h3 id="git-repository-local">Git Repository (Local)</h3>
+<p>Σε αυτό το directory το Git αποθηκεύει όλα τα metadata και την βάση δεδομένων των αλλαγών για το project. Είναι το πιο σημαντικό μέρος του Git και είναι αυτό που αντιγράφεται όταν γίνεται clone ένα απομακρυσμένο repository.</p>
+<h3 id="git-workflow-local">Git workflow (Local)</h3>
+<p>Το βασικό Git workflow ακολουθεί τα παρακάτω βήματα :</p>
+<ol>
+<li>Γίνονται αλλαγές στο working directory.</li>
+<li>Επιλέγονται τα αρχεία που θα γίνουν add στο staging area έτσι ώστε να γίνουν μέρος των αλλαγών που θα αποθηκευτούν στο επόμενο commit.</li>
+<li>Πραγματοποιείται commit. Σε αυτό το βήμα όλα τα αρχεία που βρίσκονται στο staging area αποθηκεύονται σε ένα snapshot που καταχωρείται στο git directory.</li>
+</ol>
+<h3 id="remote-repository">Remote Repository</h3>
+<p>Αναφέραμε φυσικά για Distributed Version Control Systems, μιλήσαμε για πλατφόρμες για συνεργασια μέσω git, και κλωνοποίηση απομακρυσμένων (remote) repositories.
+Στο git υποστηρίζεται ως location και το <strong>remote repository</strong>, ή όπως αλλιώς αναφέρεται &ldquo;<strong>upstream repository</strong>&quot;.
+Ένα remote repository μπορεί να αποτελεί το σημείο που συγκλίνουν όλες οι προσπάθειες των developers που συμμετέχουν σε ένα code project, οι οποίοι συνεργάζονται ασύγχρονα. Προφανώς η οργάνωση του remote repository γίνεται με παρόμοιο τρόπο αλλά προϋποθέτει πολλά ακόμα βήματα για να μπορεί να γίνει σωστά η ασύγχρονη αυτή συνεργασία, να ελεχθεί αν κάποιος έχει δικαίωμα ή όχι να συγχρονιστεί με τον κώδικα στο remote repository, ή και να παρέχει ενημερώσεις, και πολλά άλλα.
+Περισσότερα γι αυτό θα θίξουμε στους τομείς που θα αναφέρουμε για:</p>
+<ul>
+<li>Git Config</li>
+<li>Git Pull</li>
+<li>Git Push</li>
+<li>Git Branching</li>
+</ul>
+<h2 id="δημιουργία-git-repository---git-init">Δημιουργία Git Repository - git init</h2>
+<p>Οι πιο συνηθισμένοι τρόποι για την δημιουργία ενός Git Repository είναι :</p>
+<ul>
+<li>Μπορεί να μετατραπεί ένας φάκελος του τοπικού υπολογιστή (που δεν υπόκειται σε κάποιο version control) σε ένα Git Repository. Αυτό μπορεί να γίνει με τις παρακάτω εντολές :</li>
+</ul>
+<p>Σε Windows:</p>
+<pre><code class="language-DOS" data-lang="DOS">$ cd C:/Users/user/my_project
+$ git init
+</code></pre><p>ή σε Linux:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">mkdir my_project
+cd myproject
+git init .
+</code></pre></div><p>Έτσι δημιουργείται ένας φάκελος .git μέσα στον φάκελο του project όπου περιέχει όλα τα απαραίτητα αρχεία του repository (και όχι μόνο όπως θα δούθμε παρακάτω..)</p>
+<h2 id="αντιγραφή-ενός-git-repository---git-clone">Αντιγραφή ενός Git Repository - git clone</h2>
+<ul>
+<li>Μπορεί να αντιγραφεί ή &ldquo;κλωνοποιηθεί&rdquo; (clone) όπως λέμε, ένα υπάρχον Git Repository από ένα απομακρυσμένο υπολογιστή/server. Αυτό μπορεί να γίνει με την εντολή git clone <!-- raw HTML omitted -->. Για παράδειγμα αν θες να κάνει clone το netprog_basics repository από το CiscoDevNet στο github τότε η εντολή είναι :</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git clone https://github.com/CiscoDevNet/netprog_basics.git
+</code></pre></div><p>Αυτή η εντολή θα δημιουργήσει ένα φάκελο netprog_basics που θα περιέχει ένα φάκελο .git ο οποίος περιλαμβάνει το πλήρες repository του project με το ιστορικό του. Επίσης θα γίνει check out η τελευταία έκδοση των αρχείων έτσι ώστε να είναι έτοιμα να επεξεργαστούν. Στην περίπτωση αυτή το cloned repository κρατάει τη σύνδεση του με το απομακρυσμένο directory, με το οποίο μπορεί να συγχρονιστεί εκ νέου, εφόσον χρειαστεί να ενημερωθούν τα αρχεία στις τρέχουσες εκδόσεις τους.</p>
+<h2 id="καταγραφή-αλλαγών-στο-repository">Καταγραφή αλλαγών στο Repository</h2>
+<p>Κάθε αρχείο στο repository Μπορεί να είναι σε μια από τις καταστάσεις <strong>tracked</strong> ή <strong>untracked</strong>. Tracked είναι τα αρχεία που αποτέλεσαν μέρος του τελευταίου snapshot και μπορεί να είναι <strong>unmodified</strong>, <strong>modified</strong> ή <strong>staged</strong>. Με λίγα λόγια τα αρχεία σε κατάσταση tracked είναι τα αρχεία που παρακολουθεί το Git. Untracked είναι όλα τα υπόλοιπα αρχεία στον φάκελο που δεν παρακολουθούνται.</p>
+<h3 id="git-status">Git status</h3>
+<p>Η κύρια εντολή που χρησιμοποιείται για την παρακολούθηση της κατάστασης των αρχείων είναι <strong>git status</strong> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git status
+On branch master
+Your branch is up-to-date with <span style="color:#e6db74">&#39;origin/master&#39;</span>.
+nothing to commit, working tree clean
+</code></pre></div><p>Αυτό σημαίνει ότι το working directory είναι clean δηλαδή δεν υπάρχει αλλαγή σε κάποιο από τα αρχεία που είναι σε κατάσταση tracked. Τώρα έστω ότι προσθέτουμε ένα απλό αρχείο README στο working directory και εκτελούμε ξανά την εντολή <strong>git status</strong> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ echo <span style="color:#e6db74">&#39;My Project&#39;</span> &gt; README
+$ git status
+On branch master
+Your branch is up-to-date with <span style="color:#e6db74">&#39;origin/master&#39;</span>.
+Untracked files:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add &lt;file&gt;...&#34;</span> to include in what will be committed<span style="color:#f92672">)</span>
+
+    README
+
+nothing added to commit but untracked files present <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add&#34;</span> to track<span style="color:#f92672">)</span>
+</code></pre></div><h3 id="git-add">Git Add</h3>
+<p>Βλέπουμε ότι το αρχείο που προστέθηκε είναι στην κατάσταση untracked οπότε το Git δεν παρακολουθεί τις αλλαγές του. Ουσιαστικά πρόκειται για ένα αρχείο που δεν ήταν μέρος του τελευταίου snapshot (commit). Αν θέλουμε τώρα να αλλάξουμε την κατάσταση του αρχείου σε tracked  έτσι ώστε να παρακολουθείται από το Git θα πρέπει να εκτελέσουμε την εντολή <strong>git add</strong> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git add README
+If you run your status command again, you can see that your README file is now tracked and staged to be committed:
+
+$ git status
+On branch master
+Your branch is up-to-date with <span style="color:#e6db74">&#39;origin/master&#39;</span>.
+Changes to be committed:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git restore --staged &lt;file&gt;...&#34;</span> to unstage<span style="color:#f92672">)</span>
+
+    new file:   README
+</code></pre></div><p>Πλέον θεωρούμε ότι το αρχείο είναι staged καθώς είναι κάτω από το “Changes to be committed”.  Έστω ότι τροποποιούμε τώρα ένα ήδη υπάρχον tracked αρχείο CONTRIBUTING.md και εκτελούμε πάλι την εντολή <strong>git status</strong> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git status
+On branch master
+Your branch is up-to-date with <span style="color:#e6db74">&#39;origin/master&#39;</span>.
+Changes to be committed:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git reset HEAD &lt;file&gt;...&#34;</span> to unstage<span style="color:#f92672">)</span>
+
+    new file:   README
+
+Changes not staged <span style="color:#66d9ef">for</span> commit:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add &lt;file&gt;...&#34;</span> to update what will be committed<span style="color:#f92672">)</span>
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git checkout -- &lt;file&gt;...&#34;</span> to discard changes in working directory<span style="color:#f92672">)</span>
+
+    modified:   CONTRIBUTING.md
+</code></pre></div><p>To αρχείο CONTRIBUTING.md είναι κάτω από το “Changes not staged for commit” που σημαίνει ότι έχουν γίνει αλλαγές στο αρχείο αλλά δεν είναι staged. Για να γίνει staged θα πρέπει να γίνει και αυτό <strong>git add</strong> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git add CONTRIBUTING.md
+$ git status
+On branch master
+Your branch is up-to-date with <span style="color:#e6db74">&#39;origin/master&#39;</span>.
+Changes to be committed:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git reset HEAD &lt;file&gt;...&#34;</span> to unstage<span style="color:#f92672">)</span>
+
+    new file:   README
+    modified:   CONTRIBUTING.md
+</code></pre></div><p>Τώρα και τα δύο αρχείο είναι staged και θα αποτελέσουν μέρος του snapshot που θα δημιουργηθεί στο επόμενο commit. Έστω ότι σε αυτό το σημείο γίνεται μια ακόμα τροποποίηση στο αρχείο CONTRIBUTING.md πριν εκτελεστεί το commit :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git status
+On branch master
+Your branch is up-to-date with <span style="color:#e6db74">&#39;origin/master&#39;</span>.
+Changes to be committed:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git reset HEAD &lt;file&gt;...&#34;</span> to unstage<span style="color:#f92672">)</span>
+
+    new file:   README
+    modified:   CONTRIBUTING.md
+
+Changes not staged <span style="color:#66d9ef">for</span> commit:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add &lt;file&gt;...&#34;</span> to update what will be committed<span style="color:#f92672">)</span>
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git checkout -- &lt;file&gt;...&#34;</span> to discard changes in working directory<span style="color:#f92672">)</span>
+
+    modified:   CONTRIBUTING.md
+</code></pre></div><p>Παρατηρούμε ότι το αρχείο CONTRIBUTING.md είναι ταυτόχρονα και staged και unstaged. Αυτό γίνεται γιατί το Git κάνει stage ένα αρχείο στην κατάσταση ακριβώς που βρισκόταν όταν εκτελέστηκε το git add. Οπότε αφού έγιναν και πάλι αλλαγές στο αρχείο για να γίνει staged στην νέα του μορφή θα πρέπει να εκτελεστεί και πάλι η εντολή git add έτσι ώστε στο επόμενο commit να αποθηκευτεί η πιο updated έκδοση του αρχείου :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git add CONTRIBUTING.md
+$ git status
+On branch master
+Your branch is up-to-date with <span style="color:#e6db74">&#39;origin/master&#39;</span>.
+Changes to be committed:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git reset HEAD &lt;file&gt;...&#34;</span> to unstage<span style="color:#f92672">)</span>
+
+    new file:   README
+    modified:   CONTRIBUTING.md
+</code></pre></div><h2 id="ομαδική-προσθήκη-αρχείων-στο-working-directory">Ομαδική προσθήκη αρχείων στο working directory</h2>
+<p>Είδαμε πως προσθέτουμε ένα - ένα αρχείο στο working directory, ώστε στη συνέχεια να γίνει staged και στη συνέχεια να δημιουργηθεί ένα snapshot με το <strong>git commit</strong>.</p>
+<p>Αν όμως δουλεύουμε με περισσότερα αρχεία και θέλουμε να τα προσθέσουμε όλα στο working directory; Τότε μπορούμε να χρησιμοποιήσουμε την εντολή git add με διαφορετικά ορίσματα, πχ.</p>
+<ul>
+<li>git add . (προσθέτει όλα τα αρχεία στο τρέχον directory, αν κάποια έχουν ήδη προστεθεί, προστίθενται αυτά που λείπουν)</li>
+<li>git add * (το ίδιο με το προηγούμενο)</li>
+<li>git add *.py (μόνο τα αρχεία που έχουν extension &lsquo;.py&rsquo;)</li>
+</ul>
+<h2 id="git-commit">Git commit</h2>
+<p>Αφού έχει ολοκληρωθεί η δημιουργία του staging area το επόμενο βήμα είναι να γίνουν commit οι αλλαγές. Οποιοδήποτε αρχείο έχει τροποποιηθεί ή έχει δημιουργηθεί και δεν έχει προστεθεί με git add δεν θα αποτελέσει μέρος του επόμενου commit.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git commit
+</code></pre></div><p>Συνήθως κατά το git commit μας ζητείται να ορίσουμε ένα σύντομο μήνυμα που συνοδεύει το συγκεκριμένο commit.
+Για να οριστεί κατευθείαν το μήνυμα παράλληλα με το commit, μπορούμε να χρησιμοποιήσουμε την ίδια εντολή με μια μικρή παραλλαγή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git commit -am <span style="color:#e6db74">&#34;Commit Message&#34;</span>
+</code></pre></div><p>Παρακάτω φαίνεται ο κύκλος ζωής της κατάστασης των αρχείων στο Git:
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="git-log">Git Log</h2>
+<p>Βασικό πλεονέκτημα όπως είπαμε των Source Control systems είναι η δυνατότητα να διαχωρίσουμε την πορεία ενός coding project σε διαφορετικά snapshots στο χρόνο και να μπορούμε, αν χρειαστεί, να μετακινηθούμε προς τα πίσω σε συγκεκριμένα σημεία στο &ldquo;παρελθόν&rdquo;.
+Η παρακολούθηση της πορείας των διαδοχικών commits αλλά γενικά και των συμβάντων κατά τη χρήση του git, προκύπτει με τη χρήση της εντολής git log:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git log
+ή 
+git log --oneline <span style="color:#f92672">(</span>πολύ διαδεδομένο για να δείχνει κάθε commit σε μόνο μια γραμμή ώστε να φαίνεται συνοπτικά όλο το commit history<span style="color:#f92672">)</span>
+</code></pre></div><p>Ειδικά η δεύτερη σύνθεση της εντολής δίνει μια λίστα όπου σε κάθε γραμμή φαίνεται αριστερά ένα hash value για το συγκεκριμένο commit, και το μήνυμα με το οποίο έχει αποθηκευτεί το commit (αυτό που ορίσαμε με το option -am). To hash value είναι ιδιαίτερα σημαντικό για ενέργειες που αφορούν την επιστροφή σε προηγούμενα σημεία του git history.</p>
+<p>Π.χ. αν τρέξουμε το command στο repository όπου γράφουμε το παρόν, παίρνουμε το παρακάτω:</p>
+<pre><code class="language-git" data-lang="git">1771f5a (HEAD -&gt; master) more changes
+b123574 changing..
+2ff0bc8 first blocks to introduction to Git
+b941b52 Test commit
+d4e87c3 updated intro to docker
+f844640 added intro to docker
+</code></pre><p>Βλέπουμε ότι υπάρχει κι άλλη πληροφορία εδώ.. π.χ. τί είναι το HEAD -&gt; master) ; Μην βιάζεστε, περισσότερα γι αυτό παρακάτω.</p>
+<p>Παραπομπές για git log:</p>
+<ul>
+<li><a href="https://www.thegeekstuff.com/2014/04/git-log/">https://www.thegeekstuff.com/2014/04/git-log/</a></li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History">https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History</a></li>
+<li><a href="https://git-scm.com/docs/git-log">https://git-scm.com/docs/git-log</a> (documentation για το git log)</li>
+</ul>
+<h2 id="git-head">Git Head</h2>
+<p>To Head είναι ο pointer που δείχνει που βρισκόμαστε στο git history αυτή τη στιγμή. H &ldquo;χειραγώγηση&rdquo; του HEAD ώστε να δείχνει στο σημείο που θέλουμε είναι πολύ βασικό εργαλείο τόσο για την μετακίνηση στο Git History όσο και μεταξύ Git Branches.
+Περισσότερα στις περιγραφές των :</p>
+<ul>
+<li>Git Checkout</li>
+<li>Git Reset</li>
+<li>Get Revert</li>
+</ul>
+<h1 id="αναίρεση-αλλαγών">Αναίρεση αλλαγών</h1>
+<h2 id="αναίρεση-unstaged-αλλαγών">Αναίρεση unstaged αλλαγών.</h2>
+<p>Aς πούμε ότι κάνετε μια αλλαγή και θέλετε να την αναιρέσετε. Αν είχατε προηγουμένως κάνει commit και τρέξετε το git status, θα πάρετε μια απάντηση για το ότι υπάρχουν modified αρχεία, π.χ.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$git status
+On branch master
+Your branch is ahead of <span style="color:#e6db74">&#39;origin/master&#39;</span> by <span style="color:#ae81ff">4</span> commits.
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git push&#34;</span> to publish your local commits<span style="color:#f92672">)</span>
+
+Changes not staged <span style="color:#66d9ef">for</span> commit:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add &lt;file&gt;...&#34;</span> to update what will be committed<span style="color:#f92672">)</span>
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git restore &lt;file&gt;...&#34;</span> to discard changes in working directory<span style="color:#f92672">)</span>
+        modified:   content/posts/introduction_to_git.md
+
+no changes added to commit <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add&#34;</span> and/or <span style="color:#e6db74">&#34;git commit -a&#34;</span><span style="color:#f92672">)</span>
+</code></pre></div><p>Σας αναφέρει ξεκάθαρα &ldquo;Changes not staged for commit&rdquo;.
+Αν θέλετε να γυρίσετε στην προηγούμενη έκδοση ή θα πρέπει να ακολουθήσετε τις οδηγίες για το git restore, ή μπορείτε να τρέξετε την εντολή git checkout με όρισμα το αρχείο που είναι modified, π.χ.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$git checkout content/posts/introduction_to_git.md
+Updated <span style="color:#ae81ff">1</span> path from the index
+</code></pre></div><p>Το αποτέλεσμα είναι να αναιρεθούν οι αλλαγές και το αρχείο αυτό να επιστρέψει στη μορφή που είχε στο τελευταίο commit. Αν τρέξετε και πάλι git status, θα δείτε ότι το τοπικό working tree είναι καθαρό.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git status
+On branch master
+Your branch is ahead of <span style="color:#e6db74">&#39;origin/master&#39;</span> by <span style="color:#ae81ff">4</span> commits.
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git push&#34;</span> to publish your local commits<span style="color:#f92672">)</span>
+
+nothing to commit, working tree clean
+</code></pre></div><p>(Προφανώς όταν το έκανα αυτό έχασα τις αλλαγές και ευτυχώς τις είχα αποθηκεύσει αλλού ώστε να τις αποκαταστήσω, γιατί όσο αφορά το git, είχαν αναιρεθεί!)
+Το git checkout έχει και άλλες χρήσεις, αλλά προς το παρόν ας μείνουμε εντός θέματος στην αναίρεση αλλαγών.</p>
+<h2 id="αναίρεση-staging">Αναίρεση staging</h2>
+<p>Έστω ότι προχωρήσατε παρακάτω. Κάνατε stage τς αλλαγές με git add αλλά το μετανιώσατε. Θέλετε να γυρίσετε προς τα πίσω, δηλαδή να κρατήσετε προς το παρόν τις αλλαγές, αλλά να μην είναι πλέον staged. Ή θα χρησιμοποιήσετε την εντολή που σας προτείνει το git, την git restore &ndash;staged με όρισμα το αρχείο που έγινε stage, ή θα χρησιμοποιήσετε την εντολή git reset. Π.χ.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git status
+On branch master
+Your branch is ahead of <span style="color:#e6db74">&#39;origin/master&#39;</span> by <span style="color:#ae81ff">4</span> commits.
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git push&#34;</span> to publish your local commits<span style="color:#f92672">)</span>
+
+Changes to be committed:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git restore --staged &lt;file&gt;...&#34;</span> to unstage<span style="color:#f92672">)</span>
+        modified:   content/posts/introduction_to_git.md
+
+$ git reset content/posts/introduction_to_git.md
+Unstaged changes after reset:
+M       content/posts/introduction_to_git.md
+$ git status
+On branch master
+Your branch is ahead of <span style="color:#e6db74">&#39;origin/master&#39;</span> by <span style="color:#ae81ff">4</span> commits.
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git push&#34;</span> to publish your local commits<span style="color:#f92672">)</span>
+
+Changes not staged <span style="color:#66d9ef">for</span> commit:
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add &lt;file&gt;...&#34;</span> to update what will be committed<span style="color:#f92672">)</span>
+  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git restore &lt;file&gt;...&#34;</span> to discard changes in working directory<span style="color:#f92672">)</span>
+        modified:   content/posts/introduction_to_git.md
+
+no changes added to commit <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add&#34;</span> and/or <span style="color:#e6db74">&#34;git commit -a&#34;</span><span style="color:#f92672">)</span>
+</code></pre></div><p>Το αρχείο δεν είναι πλέον staged αρά παραμένει modified.</p>
+<h2 id="αναίρεση-commit">Αναίρεση commit</h2>
+<p>Όταν έχει γίνει το commit μπορούμε να γυρίσουμε πίοω ή κατά ένα commit ή για περισσότερα. Οι αλλαγές αναιρούνται σειριακά. Αν γυρίσουμε πίσω τρία commits, τότε ότι έχει γίνει ενδιάμεσα δεν θα υπάρχει πια. Υπάρχουν δύο τρόποι να το πετύχουμε αυτό. Είτε ορίζοντας τον αριθμό των commits που θέλουμε να πάμε πίσω είτε ορίζοντας το hash του commit που θέλουμε να πάμε. Δηλαδή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git log --all --decorate --oneline
+530cfac <span style="color:#f92672">(</span>HEAD -&gt; master<span style="color:#f92672">)</span> writing git reset
+03b1d5e <span style="color:#f92672">(</span>origin/master, origin/HEAD<span style="color:#f92672">)</span> working on git reset
+cb6ede2 Working on git reset
+a2e1f4b working on commit
+6a66aa2 working on git reset
+5448ed2 ready to share with the team
+1e62faa git log, head, remote repo
+1771f5a more changes
+b123574 changing..
+7d77268 Merge branch <span style="color:#e6db74">&#39;master&#39;</span> of https://github.com/netautogr/hugo adding content <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;Introduction to Git&#39;</span>
+2ff0bc8 first blocks to introduction to Git
+</code></pre></div><p>Προτού προχωρήσουμε είναι σημαντικό να καταλάβουμε τα τρία options που έχουμε για το git reset: soft, mixed και hard. Κάθε μια από τις παρακάτω εντολές μπορούν να χρησιμοποιηθούν και για μεμονωμένα αρχεία.</p>
+<h3 id="git-reset-head---soft">git reset HEAD~ &ndash;soft</h3>
+<p>Ο HEAD πάει πίσω στο αμέσως προηγούμενο commit και τα τωρινά περιεχόμενα του φακέλου (ότι διαφέρει) εμφανίζονται ως unstaged.</p>
+<h3 id="git-reset-head---mixed">git reset HEAD~ &ndash;mixed</h3>
+<p>Ο HEAD πάει πίσω στο αμέσως προηγούμενο commit και τα τωρινά περιεχόμενα του φακέλου (ότι διαφέρει) εμφανίζονται ως staged. Είναι και η προεπιλογή οπότε η εντολή git reset HEAD~ έχει ακριβώς το ίδιο αποτέλεσμα (χωρίς option)</p>
+<h3 id="git-reset-head---hard">git reset HEAD~ &ndash;hard</h3>
+<p>Ο HEAD πάει πίσω στο αμέσως προηγούμενο commit και τα τωρινά περιεχόμενα του φακέλου (ότι διαφέρει) διαγράφονται.</p>
+<h3 id="git-reset-headnumber">git reset HEAD~<!-- raw HTML omitted --></h3>
+<p>Ο HEAD πάει πίσω όσα commit ορίσουμε με το νουμερο. Προφανώς μπορεί να συνδυαστεί με τα options που αναφέραμε νωρίτερα.</p>
+<h3 id="git-reset-head">git reset HEAD</h3>
+<p>Γυρνάμε στο HEAD το ίδιο</p>
+<h3 id="git-reset-hash-file">git reset <!-- raw HTML omitted --> <!-- raw HTML omitted --></h3>
+<p>Σημαίνει &ldquo;τράβα το αρχείο <!-- raw HTML omitted --> από το commit με hash <!-- raw HTML omitted -->&rdquo; (αντί να το τραβήξουμε από το commit που δείχνει ο ΗEAD).</p>
+<h2 id="git-revert">Git Revert</h2>
+<p>Όπως αναφέραμε όταν κάνουμε <code>git reset --hard</code>, τα περιεχόμενα που είχαμε διαγράφονται οριστικά. Το git reset έχει γενικά και τη συνέπεια ότι το ενδιάμεσο git history που είχε καταγραφεί με τις αλλαγές που θέλουμε να αναιρέσουμε, διαγράφεται επίσης!</p>
+<p><strong>Τί γίνεται αν θέλουμε να &ldquo;επιστρέψουμε στο παρελθόν&rdquo; στο στυλ που το έκαναν οι εκδικητές στο &ldquo;Endgame&rdquo;?</strong> Δηλαδή όπως λέει κι ο HULK, όταν επιστρέφεις στο παρελθόν <em><strong>&ldquo;your past is now your future&rdquo;</strong></em>!
+Θέλουμε δηλαδή να φαίνεται η πορεία που είχαμε μέχρις εδώ, ότι αναιρέσαμε μια συγκεκριμένη αλλαγή, και μετά συνεχίσαμε από εκεί.
+Για το σκοπό αυτό μπορούμε να χρησιμοποιήσουμε την εντολή</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git revert 
+</code></pre></div><p>Η σύνταξη είναι η ίδια. Μας επιτρέπει να κάνουμε ένα <em>&ldquo;selective undo&rdquo;</em> για συγκεκριμένο commit διατηρώντας το history μέχρι τώρα. To revert που κάναμε σημειώνεται μπροστά στο git history. Προφανώς ανάλογα με το τί προέκυψε από το revert ενδεχομένως να φτάσουμε στο ίδιο σημείο που περιγράφουμε παρακάτω, με &ldquo;ασύμβατες αλλαγές&rdquo;. Ας μην προτρέχουμε όμως. Συνεχίστε να διαβάζετε ;)</p>
+<h1 id="branching--merging">Branching &amp; Merging</h1>
+<p>Η ιδέα πίσω από το branching είναι αυτή της παράλληλης ανάπτυξης νέων features ή παραλλαγών του βασικού κώδικα. Γενικά το git έχει ως σκοπό την οργανωμένη και ασύγχρονη ανάπτυξη κώδικα από πολλαπλές συνεργαζόμενες πλευρές. Όμως δεν είναι ανάγκη να εργάζονται όλοι πάνω σε μία και μοναδική έκδοση του κώδικα που μπορεί να είναι και ο παραγωγικός κώδικας. Μπορούν τα νέα features να αναπτύσσονται σε εκδόσεις του κώδικα οι οποίες &ldquo;διακλαδίζονται&rdquo; (<em>branch</em>) από τη βασική και όταν είναι έτοιμα, ο κώδικας τους &ldquo;συγχωνεύεται&rdquo; (<em>merge</em>) ξανά με τη βασική.</p>
+<p>Άλλη περίπτωση που το branching είναι πολύ χρήσιμο είναι η περίπτωση του κώδικα δοκιμώμ (<em>test branch</em>). Στην περίπτωση αυτή μπορεί στο test branch αυτό να αναπτύσσεται ο κώδικας ο οποίος προκύπτει από τη βασική έκδοση (<em>main/master branch</em> - ναι γιατί έχουμε να λάβουμε υπόψη και την political correctness, τρομάρα μας), ο οποίος τακτικά όταν ολοκληρώνεται ένας κύκλος δοκιμών γίνεται merge πίσω στο βασικό κλάδο.</p>
+<h2 id="branching">Branching</h2>
+<p>Η δημιουργία ενός branch από το βασικό και η αλλαγή πάνω σε αυτό τον κλάδο μπορεί να γίνει με δύο τρόπους:</p>
+<ul>
+<li>Πρώτα δημιουργία του κλάδου και μετά αλλαγή σε αυτών σε δύο βήματα:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git branch &lt;branch-name&gt;
+git checkout &lt;brach-name&gt;
+</code></pre></div><ul>
+<li>Δημιουργία του κλάδου και αλλαγή σε αυτόν σε ένα βήμα:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git checkout -b &lt;branch-name&gt;
+</code></pre></div><p>Μπορούμε να γυρίσουμε πίσω στον βασικό κλάδο με</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git checkout master
+</code></pre></div><p>Κάθε φορά που αλλάζουμε κλάδο, τα περιεχόμενα του working directory αλλάζουν για να αντικατατοπτρίσουν την εικόνα του συγκεκριμένου κλάδου.</p>
+<h2 id="merging">Merging</h2>
+<p>Όταν τελειώσουμε την επεξεργασία του διαχωροσμένου κλάδου έρχεται η στιγμή που πρέπει να συγχωνευτεί με τον κύριο κλάδο. Αυτό γίνεται με χρήση της εντολής merge. Για να κάνουμε merge πρέπει να βρισκόμαστε στον κλάδο με τον οποίο θέλουμε να συγχωνευτεί ο διαχωρισμένος. Για να συγχωνεύσουμε τον κλάδο test-feature1 στον master πρέπει πρώτα να επιστρέψουμε στο master και μετά να εκδώσουμε την εντολή merge:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git checkout master
+git merge test-feature1
+</code></pre></div><p>Τα αποτελέσματα της εντολής merge εξαρτώνται από το τί έχει συμβεί στο μεταξύ από όταν είχε δημιουργηθεί ο κλάδος test-feature1 και τι πορεία είχε στο μεταξύ ο κύριος κλάδος. Τρία είναι τα βασικά ενδεχόμενα:</p>
+<ul>
+<li>Δεν έχει γίνει καμία αλλαγή στον κύριο κλάδο.
+Αυτό που θα συμβεί σε αυτή την περίπτωση είναι γνωστό και ως Fast Forward Merge, δηλαδή ο HEAD απλώς μετακινείται στο τελευταίο commit του test-feature1 κλάδου και αυτά είναι πλέον τα περιεχόμενα του master branch</li>
+<li>Έχουν γίνει αλλαγές και στον κύριο κλάδο αλλά δεν είναι αντικρουόμενες και η συγχώνευση ολοκληρώνεται χωρίς πρόβλημα.</li>
+<li>Έχουν γίνει αλλαγές και στον κύριο κλάδο, οι οποίες δεν είναι συμβατές με τις αλλαγές που έχουν γίνει στον κλαδο test-feature1. Σε αυτή την περίπτωση υπάρχει <strong>σύγκρουση</strong> (<em>conflict</em>). To git θα μας πληροφορήσει σχετικά και θα μας παρουσιάσει τη σύγκριση των δύο κλάδων. Είτε στο command line είτε σε κάποιο IDE που χρησιμοποιούμε, θα πρέπει χειροκίνητα να επέμβουμε και να διορθώσουμε τη σύγκρουση : 1) αποδεχόμενοι το κομμάτι του κλάδου test-feature1, 2) αποδεχόμενοι το κκομμάτι του κύριου κλάδου, 3) κάνοντας edit το τμήμα της σύγκρουσης όπως νομίζουμε.
+Με ότι καταλήξουμε, εφόσον κάνουμε εκ νέου commit, αυτό θα μείνει πλέον ως merged περιεχόμενο στον κύριο κλάδο.</li>
+</ul>
+<h2 id="διαγραφή-και-έλεγχος-branches">Διαγραφή και έλεγχος branches</h2>
+<p>Στη συνέχεια μπορούμε αν θέλουμε να διαγράψουμε τον κλάδο που είχαμε δημιουργήσει με την εντολή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git branch -d &lt;branch-name&gt;
+</code></pre></div><p>Μπορούμε να δούμε όλα τα branches με την εντολή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git branch --all
+</code></pre></div><p>Εφόσον λειτουργούμε σε ένα πλαίσιο CI/CD (<em>Continuous Integration/Continuous Deployment/Delivery</em>) ενδεχομένως κάποια branches να αναπτύσσονται συνεώς και ο κώδικας που αναπτύσσεται σε ξεχωριστό περιβάλλον π.χ το test brach πιθανόν να γίνεται deploy μετά από κάθε commit στο test περιβάλλον.</p>
+<p>Αν θέλει κανείς να δει το ιστορικό των commit&rsquo;s διευκολύνοντας μας στην παρακολούθηση των branching and merging, μπορεί να εκτελέσει την παρακάτω εντολή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git log --all --decorate --oneline --graph
+
+* 6e596fb <span style="color:#f92672">(</span>HEAD -&gt; master, origin/master, origin/HEAD<span style="color:#f92672">)</span> finishing merging
+* 530cfac writing git reset
+* 03b1d5e working on git reset
+* cb6ede2 Working on git reset
+* a2e1f4b working on commit
+* 6a66aa2 working on git reset
+* 5448ed2 ready to share with the team
+* 1e62faa git log, head, remote repo
+* 1771f5a more changes
+* b123574 changing..
+*   7d77268 Merge branch <span style="color:#e6db74">&#39;master&#39;</span> of https://github.com/netautogr/hugo adding content <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;Introduction to Git&#39;</span>
+|<span style="color:#ae81ff">\ </span> 
+| * b941b52 Test commit
+* | 2ff0bc8 first blocks to introduction to Git
+|/  
+</code></pre></div><h2 id="basic-configuration">Basic configuration</h2>
+<p>To Git διατηρεί τα αρχεία του σε hidden directory εντός του project όπου αποθηκεύονται δεδομένα και ρυθμίσεις με όνομα .git .
+Ωστόσο διατηρεί και global ρυθμίσεις σε κεντρικό directory.
+Το λιγότερο που μπορεί/πρέπει κανείς να ρυθμίσει στο .git/config αρχείο είναι με τις παρακάτω εντολές:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git config user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
+git config user.email johndoe@example.com
+</code></pre></div><p>Οι ρυθμίσεις μπορούν να γίνουν είτε σε τοπικό επίπεδο ανά project directory είτε σε καθολικό (global) επίπεδο:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git config --global user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
+$ git config --global user.email johndoe@example.com
+</code></pre></div><p>Από τη στιγμή που κάποιος αναπτύσσει μέσα σε μια ομάδα, έχει πλέον νόημα η χρήση remote online repositories όπου θα γίνεται συγχρονισμός και θα καθορίζεται η συνεργασία με το πλαίσιο που ορίζει το git. Οι προβλεπόμενες δομές και διαδικασίες προχωράνε σε βάθος, ωστόσο για αρχή θα πρέπει κάποιος να ορίσει τις αντίστοιχες ρυθμίσεις για το remote repository και τον τρόπο login/authenticate σε αυτό.
+Εφόσον η ανάπτυξη γίνεται με κάποιο IDE που είναι <em>git friendly</em>, oι ρυθμίσεις αυτές θα πρέπει να προσαρμοστούν και να συνδυαστούν με αντίστοιχες ρυθμίσεις εντός του IDE, ώστε οι βασικές ενέργειες που εκτελούνται με το Git να μπούν να εκτελεστούν με μεγάλη ευκολία με το GUI του IDE.</p>
+<h1 id="σημαντικά-links">Σημαντικά links</h1>
+<h2 id="γενικά">Γενικά</h2>
+<p><a href="https://git-scm.com/book/en/v2/">https://git-scm.com/book/en/v2/</a>
+<a href="https://ohshitgit.com/">https://ohshitgit.com/</a>
+<a href="https://developer.cisco.com/learning/tracks/devnet-beginner/programming-fundamentals/git-basic-workflows/step/1">https://developer.cisco.com/learning/tracks/devnet-beginner/programming-fundamentals/git-basic-workflows/step/1</a>
+<a href="https://towardsdatascience.com/an-easy-beginners-guide-to-git-2d5a99682a4c">https://towardsdatascience.com/an-easy-beginners-guide-to-git-2d5a99682a4c</a>
+<a href="https://community.codenewbie.org/wolde_ai/git-learn-the-basics-part-one-1f6b">https://community.codenewbie.org/wolde_ai/git-learn-the-basics-part-one-1f6b</a>
+<a href="https://towardsdatascience.com/the-only-6-git-commands-you-need-to-know-995065db1ae0">https://towardsdatascience.com/the-only-6-git-commands-you-need-to-know-995065db1ae0</a>
+<a href="https://towardsdatascience.com/learn-enough-git-to-be-useful-281561eef959">https://towardsdatascience.com/learn-enough-git-to-be-useful-281561eef959</a>
+<a href="https://www.freecodecamp.org/news/understanding-git-basics-commands-tips-tricks/">https://www.freecodecamp.org/news/understanding-git-basics-commands-tips-tricks/</a>
+<a href="https://towardsdatascience.com/mastering-git-commands-the-logic-behind-git-ad3fbcc6fb33">https://towardsdatascience.com/mastering-git-commands-the-logic-behind-git-ad3fbcc6fb33</a></p>
+<h2 id="git-branching">Git Branching</h2>
+<p><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a>
+<a href="https://www.freecodecamp.org/news/how-to-use-branches-in-git/">https://www.freecodecamp.org/news/how-to-use-branches-in-git/</a></p>
+<h2 id="visual-studio---git-integration">Visual Studio - Git Integration</h2>
+<p><a href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/The-New-Git-Experience">https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/The-New-Git-Experience</a>
+<a href="https://devblogs.microsoft.com/visualstudio/enhanced-productivity-with-git-in-visual-studio/">https://devblogs.microsoft.com/visualstudio/enhanced-productivity-with-git-in-visual-studio/</a>
+<a href="https://docs.microsoft.com/en-us/visualstudio/version-control/?view=vs-2019">https://docs.microsoft.com/en-us/visualstudio/version-control/?view=vs-2019</a></p>
+<h2 id="git-tutorials---labs">Git Tutorials - Labs</h2>
+<p><a href="https://git-scm.com/docs/gittutorial">https://git-scm.com/docs/gittutorial</a>
+<a href="https://youtu.be/DVRQoVRzMIY">https://youtu.be/DVRQoVRzMIY</a>
+<a href="https://www.youtube.com/watch?v=USjZcfj8yxE">https://www.youtube.com/watch?v=USjZcfj8yxE</a>
+<a href="https://developer.cisco.com/learning/tracks/devnet-beginner/programming-fundamentals/git-basic-workflows/step/1">https://developer.cisco.com/learning/tracks/devnet-beginner/programming-fundamentals/git-basic-workflows/step/1</a>
+<a href="https://developer.cisco.com/learning/lab/git-intro/step/1">https://developer.cisco.com/learning/lab/git-intro/step/1</a>
+<a href="https://developer.cisco.com/learning/lab/collab-tools-python-scripting-basics-with-git-itp/step/1">https://developer.cisco.com/learning/lab/collab-tools-python-scripting-basics-with-git-itp/step/1</a>
+<a href="https://developer.cisco.com/learning/lab/git-branching/step/1">https://developer.cisco.com/learning/lab/git-branching/step/1</a>
+<a href="https://developer.cisco.com/learning/lab/git-servers/step/1">https://developer.cisco.com/learning/lab/git-servers/step/1</a></p>
+<h1 id="next-steps">Next steps</h1>
+<p>Στην επόμενη version του άρθρου θα προσθέσουμε βασικά στοιχεία για το πως μπορεί κάποιος να διαχειριστεί το git σε ένα project μέσα από ένα IDE όπως το Visual Studio Code καθώς και να καθορίσει remote repositories (upstream/origin) και να χρησιμοποιήσει git servers για το συγχρονισμό των projects για ομάδες και κατά προέκταση σε συνδυασμό με εργαλεία CI.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Introduction to Docker</title>
