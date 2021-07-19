@@ -194,9 +194,9 @@ Changes to be committed:
 <h3 id="git-config-scopes">Git Config Scopes</h3>
 <p>Οι ρυθμίσεις για το git ορίζονται σε τρία βασικά επίπεδα:</p>
 <ul>
-<li>Global: Ορίζονται σε επίπεδο χρήστη για όλα τα πιθανά repositories που θα ορίσει ο χρήστης. Συνήθως σε linux systems βρίσκονται σε hidden dir .git κάτω από το home directory του χρήστη.</li>
-<li>System: Ορίζονται σε επίπεδο συστήματος και σε linux συστήματα βρίκονται συνήθως στο /etc/ directory. Δεν είναι σύνηθες να ορίζονται ρυθμίσεις σε αυτό το επίπεδο, η ανάπτυξη μέσω git έχει μεγάλη σχέση με την ταυτότητα του εκάστοτε χρήστη.</li>
-<li>Local: Ορίζονται ανά project directory. Συνήθως βρίσκονται σε hidden dir .git στο directory του project.</li>
+<li><em>Global</em>: Ορίζονται σε επίπεδο χρήστη για όλα τα πιθανά repositories που θα ορίσει ο χρήστης. Συνήθως σε linux systems βρίσκονται σε hidden dir .git κάτω από το home directory του χρήστη.</li>
+<li><em>System</em>: Ορίζονται σε επίπεδο συστήματος και σε linux συστήματα βρίκονται συνήθως στο /etc/ directory. Δεν είναι σύνηθες να ορίζονται ρυθμίσεις σε αυτό το επίπεδο, η ανάπτυξη μέσω git έχει μεγάλη σχέση με την ταυτότητα του εκάστοτε χρήστη.</li>
+<li><em>Local</em>: Ορίζονται ανά project directory. Συνήθως βρίσκονται σε hidden dir .git στο directory του project.</li>
 </ul>
 <h3 id="basic-configuration">Basic configuration</h3>
 <p>To Git διατηρεί τα αρχεία του σε hidden directory εντός του project όπου αποθηκεύονται δεδομένα και ρυθμίσεις με όνομα .git .
@@ -459,9 +459,11 @@ git merge test-feature1
 <p>Στη συνέχεια μπορούμε να εκτελέσουμε την εντολή</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin master 
 </code></pre></div><p>για να συγχρονίσουμε το remote master branch με τις τελευταίες αλλαγές του τοπικού master.</p>
-<p>Οι κινήσεις αυτές μπορούν να γίνουν και σε ένα βήμα με την εντολή:
-git -c http.sslVerify=false push &ndash;set-upstream <!-- raw HTML omitted -->.git <!-- raw HTML omitted --></p>
-<h3 id="δημιουργία-local-repository-από-remoteupstream">Δημιουργία local repository από remote/upstream</h3>
+<p>Οι κινήσεις αυτές μπορούν να γίνουν και σε ένα βήμα με την εντολή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git -c http.sslVerify<span style="color:#f92672">=</span>false push --set-upstream &lt;remote repo url&gt;.git &lt;remote branch&gt;
+</code></pre></div><p>Αν πρέπει πρώτα να τραβήξουμε τυχόν αλλαγές από το remote repo τότε εκτελούμε την εντολή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git pull 
+</code></pre></div><h3 id="δημιουργία-local-repository-από-remoteupstream">Δημιουργία local repository από remote/upstream</h3>
 <p>Αυτό γίνεται με απλό τρόπο με τη χρήση της εντολής git clone:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://&lt;username&gt;:&lt;API_Token&gt;@&lt;remote repo url&gt;.git &lt;local path - optional&gt; --progress
 </code></pre></div><h3 id="έλεγχος-ρυθμίσεων">Έλεγχος ρυθμίσεων</h3>
