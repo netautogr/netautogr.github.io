@@ -45,7 +45,7 @@
 <meta itemprop="description" content="Γενικά - Version Control Systems Τί είναι ένα VCS Ένα Version Control System (VCS) είναι ένα σύστημα που καταγράφει τις αλλαγές που πραγματοποιούνται σε κάποιο αρχείο ή σε ένα σύνολο από αρχεία στην διάρκεια του χρόνου. Επίσης μπορεί να πραγματοποιήσει ανάκληση προηγούμενων εκδόσεων του αρχείου αν αυτό απαιτηθεί. Ένα VCS σου επιτρέπει να επαναφέρεις κάποια αρχεία σε μια προηγούμενη κατάσταση, ένα ολόκληρο project σε μια προηγούμενη κατάσταση, να βλέπεις τις αλλαγές από προηγούμενες εκδόσεις, ποιος έκανε την τελευταία αλλαγή και ίσως προκάλεσε κάποια δυσλειτουργία και πολλά άλλα.">
 <meta itemprop="datePublished" content="2021-05-17T23:02:37&#43;03:00" />
 <meta itemprop="dateModified" content="2021-05-17T23:02:37&#43;03:00" />
-<meta itemprop="wordCount" content="4472">
+<meta itemprop="wordCount" content="5589">
 <meta itemprop="image" content="https://netautogr.github.io"/>
 
 
@@ -138,7 +138,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        21 minutes
+        27 minutes
 
         
       </p>
@@ -325,8 +325,66 @@ Changes to be committed:
 <li>git add * (το ίδιο με το προηγούμενο)</li>
 <li>git add *.py (μόνο τα αρχεία που έχουν extension &lsquo;.py&rsquo;)</li>
 </ul>
+<h2 id="git-configuration">Git Configuration</h2>
+<h3 id="γενικά">Γενικά</h3>
+<p>Μέχρι τώρα έχουμε δει εντολές που δεν χρειάζονται ιδιαίτερες ρυθμίσεις στο τοπικό μας repository. Ωστόσο προτού προχωρήσουμε στην οριστική υποβολή των αρχείων του repository για τη δημιουργία ενός <em>snapshot</em> ή <em><strong>commit</strong></em> όπως λέγεται, πρέπει να περάσουμε κάποιες βασικές ρυθμίσεις στο repository μας.</p>
+<h3 id="git-config-scopes">Git Config Scopes</h3>
+<p>Οι ρυθμίσεις για το git ορίζονται σε τρία βασικά επίπεδα:</p>
+<ul>
+<li>Global: Ορίζονται σε επίπεδο χρήστη για όλα τα πιθανά repositories που θα ορίσει ο χρήστης. Συνήθως σε linux systems βρίσκονται σε hidden dir .git κάτω από το home directory του χρήστη.</li>
+<li>System: Ορίζονται σε επίπεδο συστήματος και σε linux συστήματα βρίκονται συνήθως στο /etc/ directory. Δεν είναι σύνηθες να ορίζονται ρυθμίσεις σε αυτό το επίπεδο, η ανάπτυξη μέσω git έχει μεγάλη σχέση με την ταυτότητα του εκάστοτε χρήστη.</li>
+<li>Local: Ορίζονται ανά project directory. Συνήθως βρίσκονται σε hidden dir .git στο directory του project.</li>
+</ul>
+<h3 id="basic-configuration">Basic configuration</h3>
+<p>To Git διατηρεί τα αρχεία του σε hidden directory εντός του project όπου αποθηκεύονται δεδομένα και ρυθμίσεις με όνομα .git .
+Ωστόσο διατηρεί και global ρυθμίσεις σε κεντρικό directory.
+Το λιγότερο που μπορεί/πρέπει κανείς να ρυθμίσει στο .git/config αρχείο είναι με τις παρακάτω εντολές:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git config user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
+git config user.email johndoe@example.com
+</code></pre></div><p>Οι ρυθμίσεις μπορούν να γίνουν είτε σε τοπικό επίπεδο ανά project directory είτε σε καθολικό (global) επίπεδο:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git config --global user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
+$ git config --global user.email johndoe@example.com
+</code></pre></div><h3 id="προβολή-config">Προβολή Config</h3>
+<p>Με τις εντολές git config μαζί με τον ορισμό του scope μπορούμε να ρυθμίσουμε, να ακυρώσουμε ρυθμίσεις και να δούμε τις τρέχουσες ρυθμίσεις. Η προβολή των τρεχουσών ρυθμίσεων για το τοπικό project dir γίνεται με την εντολή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --local --list
+</code></pre></div><p>ή</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --list
+</code></pre></div><p>(το local είναι το default).
+Αντικαθιστώντας την λέξη local με <em>system</em> ή <em>global</em> βλέπουμε τις αντίστοιχες ρυθμίσεις σε επίπεδο <em>system</em> ή <em>global</em>.
+Παρακάτω βλέπουμε ένα τυπικό output αν δεν έχουμε κάνει τίποτε άλλο πέραν του init:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">core.repositoryformatversion<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+core.filemode<span style="color:#f92672">=</span>true
+core.bare<span style="color:#f92672">=</span>false
+core.logallrefupdates<span style="color:#f92672">=</span>true
+</code></pre></div><p>Μπορούμε αντίστοιχα να δούμε το αρχείο ρυθμίσεων:</p>
+<pre><code class="language-#" data-lang="#">[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+</code></pre><h3 id="προαπαιτούμενες-ρυθμίσεις">Προαπαιτούμενες ρυθμίσεις</h3>
+<p>To git θα αρνηθεί να προχωρήσει σε commit αν δεν έχουμε ορίσει τις εξής βασικές παραμέτρους που αναφέραμε νωρίτερα:</p>
+<ul>
+<li><em>user.name</em></li>
+<li><em>user.email</em></li>
+</ul>
+<p>Εκτός της χρήσης των εντολών:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config user.name &lt;user name&gt;
+git config user.email &lt;user email&gt;
+</code></pre></div><p>Διαφορετικά μπορεί κανείς να κάνει κατευθείαν edit το αρχείο:</p>
+<pre><code class="language-#" data-lang="#">[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[user]
+        email = user1@example.com
+        name = user1name
+</code></pre><p>Με αντίστοιχο τρόπο ορίζονται και άλλες παράμετροι οι οποίες παίζουν ρόλο είτε για λειτουργία σε τοπικό επίπεδο είτε για λειτουργία με απομακρυσμένα repositories.
+Ενδεχομένως να χρειαστεί να οριστεί και η παράμετρος <em><strong>http.sslVerify</strong></em> σε <em><strong>False</strong></em>.</p>
+<p>Τώρα είμαστε έτοιμοι να προχωρήσουμε σε commit!</p>
 <h2 id="git-commit">Git commit</h2>
-<p>Αφού έχει ολοκληρωθεί η δημιουργία του staging area το επόμενο βήμα είναι να γίνουν commit οι αλλαγές. Οποιοδήποτε αρχείο έχει τροποποιηθεί ή έχει δημιουργηθεί και δεν έχει προστεθεί με git add δεν θα αποτελέσει μέρος του επόμενου commit.</p>
+<p>Αφού έχει ολοκληρωθεί η δημιουργία του staging area (και έχουμε ολοκληρώσει τις βασικές ρυθμίσεις) το επόμενο βήμα είναι να γίνουν commit οι αλλαγές. Οποιοδήποτε αρχείο έχει τροποποιηθεί ή έχει δημιουργηθεί και δεν έχει προστεθεί με git add δεν θα αποτελέσει μέρος του επόμενου commit.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git commit
 </code></pre></div><p>Συνήθως κατά το git commit μας ζητείται να ορίσουμε ένα σύντομο μήνυμα που συνοδεύει το συγκεκριμένο commit.
 Για να οριστεί κατευθείαν το μήνυμα παράλληλα με το commit, μπορούμε να χρησιμοποιήσουμε την ίδια εντολή με μια μικρή παραλλαγή:</p>
@@ -503,19 +561,72 @@ git merge test-feature1
 | * b941b52 Test commit
 * | 2ff0bc8 first blocks to introduction to Git
 |/  
-</code></pre></div><h2 id="basic-configuration">Basic configuration</h2>
-<p>To Git διατηρεί τα αρχεία του σε hidden directory εντός του project όπου αποθηκεύονται δεδομένα και ρυθμίσεις με όνομα .git .
-Ωστόσο διατηρεί και global ρυθμίσεις σε κεντρικό directory.
-Το λιγότερο που μπορεί/πρέπει κανείς να ρυθμίσει στο .git/config αρχείο είναι με τις παρακάτω εντολές:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git config user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
-git config user.email johndoe@example.com
-</code></pre></div><p>Οι ρυθμίσεις μπορούν να γίνουν είτε σε τοπικό επίπεδο ανά project directory είτε σε καθολικό (global) επίπεδο:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git config --global user.name <span style="color:#e6db74">&#34;John Doe&#34;</span>
-$ git config --global user.email johndoe@example.com
-</code></pre></div><p>Από τη στιγμή που κάποιος αναπτύσσει μέσα σε μια ομάδα, έχει πλέον νόημα η χρήση remote online repositories όπου θα γίνεται συγχρονισμός και θα καθορίζεται η συνεργασία με το πλαίσιο που ορίζει το git. Οι προβλεπόμενες δομές και διαδικασίες προχωράνε σε βάθος, ωστόσο για αρχή θα πρέπει κάποιος να ορίσει τις αντίστοιχες ρυθμίσεις για το remote repository και τον τρόπο login/authenticate σε αυτό.
+</code></pre></div><h1 id="δουλεύοντας-με-repote-repositories">Δουλεύοντας με repote repositories</h1>
+<h2 id="γενικά-1">Γενικά</h2>
+<p>Από τη στιγμή που κάποιος αναπτύσσει μέσα σε μια ομάδα, έχει πλέον νόημα η χρήση remote online repositories όπου θα γίνεται συγχρονισμός και θα καθορίζεται η συνεργασία με το πλαίσιο που ορίζει το git. Οι προβλεπόμενες δομές και διαδικασίες προχωράνε σε βάθος, ωστόσο για αρχή θα πρέπει κάποιος να ορίσει τις αντίστοιχες ρυθμίσεις για το remote repository και τον τρόπο login/authenticate σε αυτό.
 Εφόσον η ανάπτυξη γίνεται με κάποιο IDE που είναι <em>git friendly</em>, oι ρυθμίσεις αυτές θα πρέπει να προσαρμοστούν και να συνδυαστούν με αντίστοιχες ρυθμίσεις εντός του IDE, ώστε οι βασικές ενέργειες που εκτελούνται με το Git να μπούν να εκτελεστούν με μεγάλη ευκολία με το GUI του IDE.</p>
+<h2 id="public--private-repositoriesservers">Public &amp; Private Repositories/Servers</h2>
+<p>Η συνεργασία δεν έχει νόημα αν δεν <em>ανεβεί</em> περιεχόμενο σε server που να έχουν πρόσβαση και άλλοι developers. Γνωστά sites που δίνουν τέτοια δυνατότητα είτε για δημόσια repositories ή για repositories περιορισμένης πρόσβασης, είναι το Github - <a href="https://github.com">https://github.com</a> και το Gitlab - <a href="https://about.gitlab.com/">https://about.gitlab.com/</a> .
+Αν θέλετε να στήσετε ιδιωτικό repository στο enterprise περιβάλλον που εργάζεστε, αυτό είναι σαφέστατα πιο εύκολο με το gitlab το οποίο διαθέτει και έκδοση δωρεάν για τέτοιο σκοπό. Το πως μπορεί κανείς να στήσει το gitlab σε τέτοια μορφή είναι πέρα από το scope του παρόντος άρθρου.
+Το Gitlab διαθέτει και ενισχυμένες δυνατότητες για enterprise level DevOps (CI/CD κλπ) στο ίδιο προϊόν. Από την άλλη, το Github είναι πλέον στον έλεγχο της Microsoft, η οποία είναι πίσω από την ανάπτυξη του Visual Studio Code (πολύ διαδεδομένου IDE για ανάπτυξη κώδικα), το οποίο δίνει αυξημένες δυνατότητες integration μεταξύ του εργαλείου και του Github, χωρίς ιδιαίτερο κόπο.</p>
+<h2 id="ελάχιστες-ενέργειες">Ελάχιστες ενέργειες</h2>
+<p>Δύο είναι τα βασικά σενάρια:</p>
+<ul>
+<li>Δημιουργείτε ένα τοπικό repository το οποίο θέλετε στη συνέχεια να ανεβάσετε σε ένα Git Server ώστε να είναι εφικτή η συνεργασία με τρίτους γι αυτό το project.</li>
+<li>Τραβάτε τον κώδικα από ένα remote repository από κάποιον git server σε τοπικό directory και στη συνέχεια προχωράτε σε τοπική επεξεργασία του project συγχρονίζοντας κατά διαστήματα τις αλλαγές τόσο τις δικές σας προς το remote όσο και άλλες αλλαγές που συμβαίνουν στο remote και γίνονται commit &amp; push από άλλους, στο δικό σας τοπικό repository.</li>
+</ul>
+<p>Και στις δύο περιπτώσεις είναι απαραίτητο να έχετε δημιουργήσει χρήστη στην απομακρυσμένη πλατφόρμα και να έχετε την κατάλληλη πρόσβαση/δικαιώματα είτε για να φτιάξετε νέο project είτε για να συμμετέχετε στην ανάπτυξη ενός υπάρχοντος. Αυτές οι ενέργειες γίνονται στην ίδια την πλατφόρμα και προηγούνται. Στη συνέχεια η επικοινωνία γίνεται με δύο δυνατούς τρόπους:</p>
+<ul>
+<li>μέσω ssh (τελεί υπό κατάργηση)</li>
+<li>μέσω https (συνήθως μέσω API Token)</li>
+</ul>
+<h3 id="δημιουργία-remoteupstream-από-local-repository">Δημιουργία remote/upstream από local repository</h3>
+<p>Στo πρώτo σενάριο είναι απαραίτητο να έχετε ορίσει δύο βασικά κομμάτια ρυθμίσεων:</p>
+<ul>
+<li>Την τοποθεσία του remote repository και τον ορισμό του ως upstream</li>
+<li>Την αντιστοίχιση του τοπικού τρέχοντος branch με αντίστοιχο branch στο remote/upstream</li>
+</ul>
+<p>Οι απαραίτητες εντολές είναι οι:</p>
+<ul>
+<li><em>git remote add origin <!-- raw HTML omitted -->.git</em> - ορίζει ως origin (remote) το remote repo url</li>
+<li><em>git branch &ndash;set-upstream-to origin/<!-- raw HTML omitted --></em> - ορίζει το remote branch ως upstream του τρέχοντος τοπικού branch. Αν το τρέχον είναι το master, τότε η εντολή:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch --set-upstream-to origin/master 
+</code></pre></div><p>καθορίζει το remote master ως αντίστοιχο upstream του local master branch.</p>
+<p>Στη συνέχεια μπορούμε να εκτελέσουμε την εντολή</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin master 
+</code></pre></div><p>για να συγχρονίσουμε το remote master branch με τις τελευταίες αλλαγές του τοπικού master.</p>
+<p>Οι κινήσεις αυτές μπορούν να γίνουν και σε ένα βήμα με την εντολή:
+git -c http.sslVerify=false push &ndash;set-upstream <!-- raw HTML omitted -->.git <!-- raw HTML omitted --></p>
+<h3 id="δημιουργία-local-repository-από-remoteupstream">Δημιουργία local repository από remote/upstream</h3>
+<p>Αυτό γίνεται με απλό τρόπο με τη χρήση της εντολής git clone:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://&lt;username&gt;:&lt;API_Token&gt;@&lt;remote repo url&gt;.git &lt;local path - optional&gt; --progress
+</code></pre></div><h3 id="έλεγχος-ρυθμίσεων">Έλεγχος ρυθμίσεων</h3>
+<p>Αν δείτε ότι κατόπιν εκτέλεσης της εντολής υπολείπονται ρυθμίσεις στο config, μπορείτε να εφαρμόσετε τις εντολές που αναφέραμε παραπάνω για να τις συμπληρώσετε (π.χ. <em>git branch &ndash;set-upstream-to</em>)
+Μπορείτε να χρησιμοποιήσετε την εντολή <em>git remote -v</em> και το <em>git status remote</em> για να ελέγχετε την κατάσταση.</p>
+<h3 id="authentication">Authentication</h3>
+<p>Ένας απλός τρόπος είναι να ορίσετε στο config ότι τα credentials αποθηκεύονται σε τοπικό αρχείο με την εντολή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config credential.helper store --file &lt;filepath&gt;
+</code></pre></div><p>ή σε επίπεδο χρήστη με την εντολή</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global credential.helper store --file &lt;filepath&gt;
+</code></pre></div><p>Στη συνέχεια στην πρώτη προσπάθεια για git push ή git pull, θα πάρετε prompt για το password του χρήστη με user name αυτό που ορίσατε στο config. Εδώ προφανώς με όσα γράφουμε μέχρι τώρα, το password αντιστοιχεί στο https API Token.</p>
+<p><strong>Η επιτυχημένη εργασία με remote repositories είναι η βάση για τη συνεργατική ανάπτυξη κώδικα σε κοινά project ομάδων, ανεξάρτητα με την τοποθεσία των μελών της εκάστοτε ομάδας</strong>.</p>
+<h2 id="the-cli-way-or-the-ide-way">The CLI way or the IDE way?</h2>
+<p>Αν χρησιμοποιείτε IDE όπως το Visual Studio Code, τo authentication προς γνωστά remote sites γίνεται πιο εύκολα εφόσον το επιθυμούμε. Στην περίπτωση του github μπορεί να γίνει login από το profil του χρήστη ή να δοθεί εξουσιοδότηση από τη σελίδα του Github προς το visual studio code αν εκτελέσει κανείς το κατάλληλο link.
+Αλλά και οι υπόλοιπες εργασίες, όπως το git init, add, commit, add remote, git push, pull, branch, status, log, κλπ μπορούν να εκτελεστούν με τη βοήθεια VS Code extensions, όπως:</p>
+<ul>
+<li>gitlab workflow</li>
+<li>gitlab explorer</li>
+<li>git lens</li>
+<li>git autoconfig</li>
+<li>git automator</li>
+<li>git history</li>
+<li>git-ignore</li>
+</ul>
+<p>κλπ.
+Κάθε extension έχει δικό της κομμάτι στο αρχείο ρυθμίσεων του vs code. Το αρχείο είναι διαμορφωμένο σε μορφή json.</p>
 <h1 id="σημαντικά-links">Σημαντικά links</h1>
-<h2 id="γενικά">Γενικά</h2>
+<h2 id="γενικά-2">Γενικά</h2>
 <p><a href="https://git-scm.com/book/en/v2/">https://git-scm.com/book/en/v2/</a>
 <a href="https://ohshitgit.com/">https://ohshitgit.com/</a>
 <a href="https://developer.cisco.com/learning/tracks/devnet-beginner/programming-fundamentals/git-basic-workflows/step/1">https://developer.cisco.com/learning/tracks/devnet-beginner/programming-fundamentals/git-basic-workflows/step/1</a>
@@ -568,7 +679,7 @@ $ git config --global user.email johndoe@example.com
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        4472 Words
+        5589 Words
       </p>
 
       <p>
