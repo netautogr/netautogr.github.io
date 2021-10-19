@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Introduction_to_yang</title>
+      <link>https://netautogr.github.io/posts/2021/09/introduction_to_yang/</link>
+      <pubDate>Fri, 24 Sep 2021 01:12:57 +0300</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/09/introduction_to_yang/</guid>
+      <description>Γενικά Τί είναι τα YANG data models To YANG (Yet Another Next Generation) είναι γλώσσα μοντελοποίησης. Πολλές φορές όμως χρησιμοποιούμε τον όρο αναφερόμενοι στα ίδια τα μοντέλα, στα δεδομένα τα οποία αναπαριστώνται με βάση αυτά τα μοντέλα ή τη γλώσσα μοντελοποίησης (Yang data modeling language / Yang data models / Yang data).
+Κάποια στιγμή, προέκυψε η ανάγκη της δημιουργίας ενός νέου μοντέλου δεδομένων για τη διαχείριση των δικτυακών συσκευών και των λειτουργιών τους, όπου οι πληροφορίες για την κατάσταση και λειτουργικότητα των συσκευών (operational data) θα ήταν ξέχωρα από τις πληροφορίες για τη ρύθμιση τους (configuration data), όπου τα μοντέλα θα ήταν επεκτάσιμα και καλύτερα δομημένα, η μετάδοση θα ήταν ασφαλής (με χρήση κρυπτογράφησης) και αξιόπιστη (over TCP) και η χρήση των καναλιών μεταφοράς βελτιστοποιημένη, δηλαδή ότι δεν ήταν το SNMP και το αντίστοιχο μοντέλο δεδομένων, το SMI.</description>
+    </item>
+    
+    <item>
       <title>Introduction to git</title>
       <link>https://netautogr.github.io/posts/2021/05/introduction-to-git/</link>
       <pubDate>Mon, 17 May 2021 23:02:37 +0300</pubDate>
@@ -96,16 +106,6 @@ event manager applet vm-2008-up authorization bypass event track 3 state up acti
       <guid>https://netautogr.github.io/posts/2020/11/eem-send-mail/</guid>
       <description>Generic EEM script to send emails
 event manager environment _email_to router-notifications@mydomain.com event manager environment _email_server 192.168.1.1 (This is your SMTP Server) event manager environment _email_from 2951@Office1 event manager environment _router_name 2951@Office1 event manager directory user policy &amp;quot;flash:/&amp;quot; courtesy of Chris Partsenidis</description>
-    </item>
-    
-    <item>
-      <title>αbout</title>
-      <link>https://netautogr.github.io/about/</link>
-      <pubDate>Mon, 16 Nov 2020 14:58:02 +0200</pubDate>
-      
-      <guid>https://netautogr.github.io/about/</guid>
-      <description>Επειδή η μικρή γωνιά που φτιάχτηκε στο Slack για τους network automation engineers &amp;ldquo;ξεχνάει&amp;rdquo; εύκολα, δημιουργήθηκε ένα GitHub account με σκοπό την αποθήκευση της γνώσης που κατά καιρούς περνάει από εκεί. Η παρούσα σελίδα είναι μια απόπειρα να ταξινομηθούν τα παραπάνω&amp;hellip;
-English A slack group has been created to host our discussion group for Greek Network Engineers (and more) interested in Network Automation, but since slack doesn&amp;rsquo;t store posts permanently, this github pages site has been created to host our articles and lists of resouces so all those posts can be archived and be kept available.</description>
     </item>
     
   </channel>

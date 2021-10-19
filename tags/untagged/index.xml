@@ -6,10 +6,20 @@
     <description>Recent content in untagged on Network Automation GR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 May 2021 23:02:37 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 24 Sep 2021 01:12:57 +0300</lastBuildDate>
     
 	<atom:link href="https://netautogr.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction_to_yang</title>
+      <link>https://netautogr.github.io/posts/2021/09/introduction_to_yang/</link>
+      <pubDate>Fri, 24 Sep 2021 01:12:57 +0300</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/09/introduction_to_yang/</guid>
+      <description>Γενικά Τί είναι τα YANG data models To YANG (Yet Another Next Generation) είναι γλώσσα μοντελοποίησης. Πολλές φορές όμως χρησιμοποιούμε τον όρο αναφερόμενοι στα ίδια τα μοντέλα, στα δεδομένα τα οποία αναπαριστώνται με βάση αυτά τα μοντέλα ή τη γλώσσα μοντελοποίησης (Yang data modeling language / Yang data models / Yang data).
+Κάποια στιγμή, προέκυψε η ανάγκη της δημιουργίας ενός νέου μοντέλου δεδομένων για τη διαχείριση των δικτυακών συσκευών και των λειτουργιών τους, όπου οι πληροφορίες για την κατάσταση και λειτουργικότητα των συσκευών (operational data) θα ήταν ξέχωρα από τις πληροφορίες για τη ρύθμιση τους (configuration data), όπου τα μοντέλα θα ήταν επεκτάσιμα και καλύτερα δομημένα, η μετάδοση θα ήταν ασφαλής (με χρήση κρυπτογράφησης) και αξιόπιστη (over TCP) και η χρήση των καναλιών μεταφοράς βελτιστοποιημένη, δηλαδή ότι δεν ήταν το SNMP και το αντίστοιχο μοντέλο δεδομένων, το SMI.</description>
+    </item>
     
     <item>
       <title>Introduction to git</title>
