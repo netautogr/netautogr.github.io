@@ -226,8 +226,11 @@ leaf completed {
     type percent;
 }
 </code></pre><h1 id="τρόποι-επικοινωνίας">Τρόποι επικοινωνίας</h1>
+<p><img src="/images/stack.png" alt="yang stack"></p>
 <h2 id="netconf">Netconf</h2>
-<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε XML RPCs τα οποία μεταδίδονται μέσω SSH.</p>
+<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε XML RPCs τα οποία μεταδίδονται μέσω SSH.
+<a href="https://datatracker.ietf.org/doc/html/rfc4741">https://datatracker.ietf.org/doc/html/rfc4741</a>
+<a href="https://datatracker.ietf.org/doc/html/rfc6241">https://datatracker.ietf.org/doc/html/rfc6241</a></p>
 <h2 id="restconf">Restconf</h2>
 <p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε HTTPS</p>
 <h2 id="grpc">GRPC</h2>
