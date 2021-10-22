@@ -52,12 +52,151 @@
 <h2 id="yang-node-types">Yang Node Types</h2>
 <p>Ανάλογα με τον τρόπο οργάνωσης και αναπάραστασης της πληροφορίας σε ένα μοντέλο, ορίζονται οι παρακάτω τύποι:</p>
 <ul>
-<li>container: Ένα subset από δεδομένα που μπορούν να είναι ανόμοια ως προς τον τύπο τους και ομαδοποιούνται για οργανωτικούς λόγους. Ένα container δεν διαθέτει data type</li>
+<li>container: Ένα subset από δεδομένα που μπορούν να είναι ανόμοια ως προς τον τύπο τους και ομαδοποιούνται για οργανωτικούς λόγους. Ένα container δεν διαθέτει data type.</li>
+</ul>
+<pre><code>container system {
+    container login {
+        leaf message {
+            type string;
+            description
+                &quot;Message given at start of login session&quot;;
+        }
+    }
+}
+</code></pre><ul>
 <li>list: Μια ομάδα από δεδομένα του ίδιου τύπου (μπορεί να είναι και ένα άλλο μοντέλο που εισάγεται σε αυτό που εξετάζουμε) και για την οργάνωση των οποίων και την απευθείας πρόσβαση σε συγκεκριμένα από αυτά, ορίζονται πεδία - κλειδιά.</li>
 <li>key: Τα παραπάνω αναφερόμενα πεδία - κλειδιά, π.χ. το όνομα ενός δικτυακού interface. Μία λίστα μπορεί να έχει παραπάνω από ένα πεδίο κλειδί, και για την απευθείας πρόσβαση σε συγκεκριμένα δεδομένα, ανάλογα με την περίπτωση, πρέπει κανείς να ορίζει ή όλα τα κλειδιά ή κάποια από αυτά.</li>
-<li>leaf: Ένα απλό πεδίο όπου ορίζεται μια τιμή για το μοντέλο. Κάθε leaf συνήθως έχει συγκεκριμένο τύπο δεδομένων ενώ μπορεί να ορίζει και κανόνες για το πότε είναι σωστά τα δεδομένα που θέλει κάποιος να αποθηκεύσει σε αυτό (<em>Data Validation</em>)</li>
 </ul>
-<h2 id="data-types--validation">Data types &amp; Validation</h2>
+<pre><code>list user {
+    key &quot;name&quot;;
+    leaf name {
+        type string;
+    }
+    leaf full-name {
+        type string;
+    }
+    leaf class {
+        type string;
+    }
+}
+</code></pre><ul>
+<li>leaf: Ένα απλό πεδίο όπου ορίζεται μια τιμή για το μοντέλο. Κάθε leaf συνήθως έχει συγκεκριμένο τύπο δεδομένων ενώ μπορεί να ορίζει και κανόνες για το πότε είναι σωστά τα δεδομένα που θέλει κάποιος να αποθηκεύσει σε αυτό (<em>Data Validation</em>).</li>
+</ul>
+<pre><code>leaf host-name {
+    type string;
+    description &quot;Hostname for this system&quot;;
+}
+</code></pre><h2 id="data-types--validation">Data types &amp; Validation</h2>
+<h2 id="built-in-data-types">Built-in Data Types</h2>
+<p>Όπως και σε άλλες γλώσσες έτσι και στην Yang είναι ορισμένοι ενσωματωμένοι τύποι δεδoμένων.
+Τα παρακάτω ορίζονται στο documentation:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binary</td>
+<td>Text</td>
+<td>Any binary data</td>
+</tr>
+<tr>
+<td>bits</td>
+<td>Text/Number</td>
+<td>A set of bits or flags</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Text</td>
+<td>&ldquo;true&rdquo; or &ldquo;false&rdquo;</td>
+</tr>
+<tr>
+<td>decimal64</td>
+<td>Number</td>
+<td>64-bit fixed point real number</td>
+</tr>
+<tr>
+<td>empty</td>
+<td>Empty</td>
+<td>A leaf that does not have any value</td>
+</tr>
+<tr>
+<td>enumeration</td>
+<td>Text/Number</td>
+<td>Enumerated strings with associated numeric values</td>
+</tr>
+<tr>
+<td>identityref</td>
+<td>Text</td>
+<td>A reference to an abstract identity</td>
+</tr>
+<tr>
+<td>instance-identifier</td>
+<td>Text</td>
+<td>References a data tree node</td>
+</tr>
+<tr>
+<td>int8</td>
+<td>Number</td>
+<td>8-bit signed integer</td>
+</tr>
+<tr>
+<td>int16</td>
+<td>Number</td>
+<td>16-bit signed integer</td>
+</tr>
+<tr>
+<td>int32</td>
+<td>Number</td>
+<td>32-bit signed integer</td>
+</tr>
+<tr>
+<td>int64</td>
+<td>Number</td>
+<td>64-bit signed integer</td>
+</tr>
+<tr>
+<td>leafref</td>
+<td>Text/Number</td>
+<td>A reference to a leaf instance</td>
+</tr>
+<tr>
+<td>string</td>
+<td>Text</td>
+<td>Human readable string</td>
+</tr>
+<tr>
+<td>uint8</td>
+<td>Number</td>
+<td>8-bit unsigned integer</td>
+</tr>
+<tr>
+<td>uint16</td>
+<td>Number</td>
+<td>16-bit unsigned integer</td>
+</tr>
+<tr>
+<td>uint32</td>
+<td>Number</td>
+<td>32-bit unsigned integer</td>
+</tr>
+<tr>
+<td>uint64</td>
+<td>Number</td>
+<td>64-bit unsigned integer</td>
+</tr>
+<tr>
+<td>union</td>
+<td>Text/Number</td>
+<td>Choice of member types</td>
+</tr>
+</tbody>
+</table>
+<h2 id="derived-types">Derived Types</h2>
 <h1 id="τρόποι-επικοινωνίας">Τρόποι επικοινωνίας</h1>
 <h2 id="netconf">Netconf</h2>
 <h2 id="restconf">Restconf</h2>
