@@ -30,7 +30,7 @@
 <p>Ακόμα όμως και εκτός των ορίων του Streaming Telemetry, η δυνατότητα να έχουμε προγραμματική πρόσβαση ανά πάσα στιγμή στις παραμέτρους λειτουργίας του δικτύου χωρίς να μεσολαβεί κάποια μετάφραση (<em>parsing</em> - βλέπετε <a href="https://netautogr.github.io/posts/2021/01/how-to-get-started-with-network-automation/">How to get started with Network Automation</a>) από συνδέσεις κονσόλας μέσω Telnet/SSH, αλλά απευθείας στα δεδομένα που ο κατασκευαστής προέβλεψε να θέσει στη διάθεση μας, είναι μια πολύ μεγάλη ευκολία.
 Για την περίπτωση όπου θέλουμε να έχουμε προγραμματική πρόσβαση στη διαμόρφωση των παραμέτρων λειτουργίας του εξοπλισμού, η χρήση YANG Data Models με κατάλληλα πρωτόκολλα επικοινωνίας δίνει πολύ μεγάλη ευελιξία και ακρίβεια.</p>
 <h3 id="mdt-vs-snmp">MDT vs SNMP</h3>
-<p>Καταρχήν όπως είπαμε η ανάπτυξη στον τομέα του SNMP έχει σταματήσει από τόσο παλιά, που κάνει πραγματικά εντύπωση. Όποιος έχει παρακολουθήσει τις διαλέξεις του <a href="https://blogs.cisco.com/author/benoitclaise">Benoit Claise</a> ή έχει διαβάσει το βιβλίο του <a href="https://www.informit.com/store/network-programmability-with-yang-the-structure-of-9780135180396">Network Programmability with YANG: The Structure of Network Automation with YANG, NETCONF, RESTCONF, and gNMI</a> γνωρίζει ότι πρακτικά μετά το 2007 τα πράγματα είχαν εντελώς τελματώσει για το SNMP.</p>
+<p>Καταρχήν όπως είπαμε η ανάπτυξη στον τομέα του SNMP έχει σταματήσει από τόσο παλιά, που κάνει πραγματικά εντύπωση. Όποιος έχει παρακολουθήσει τις διαλέξεις (<a href="https://www.ciscolive.com/global/on-demand-library.html?search=BRKNMS-2032#/session/1564610718224001cM9p">presentation</a> και <a href="https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKNMS-2032.pdf">pdf</a>) του <a href="https://blogs.cisco.com/author/benoitclaise">Benoit Claise</a> ή έχει διαβάσει το βιβλίο του <a href="https://www.informit.com/store/network-programmability-with-yang-the-structure-of-9780135180396">Network Programmability with YANG: The Structure of Network Automation with YANG, NETCONF, RESTCONF, and gNMI</a> γνωρίζει ότι πρακτικά μετά το 2007 τα πράγματα είχαν εντελώς τελματώσει για το SNMP.</p>
 <p>Επίσης όλοι γνωρίζουμε ότι SNMP είναι αρκετά δυσνόητο (ASN.1 notation, SMI tree, MIB imports, κλπ), οι υλοποιήσεις του αρκετά προβληματικές (μεγάλο πρόβλημα με ασυμβατότητα μεταξύ των MIBs) και όσο αφορά την ασφάλεια, δεν είναι τυχαίο που μεγάλος αριθμός συσκευών δεν υποστηρίζει την <em>&ldquo;ασφαλή&rdquo;</em> έκδοση SNMPv3, η οποία έχει πέντε διαφορετικές παραλαγές, όπου κάποιες από αυτές μόνο ασφαλείς δεν είναι. Σαν επισφράγισμα στον <a href="https://youtu.be/McNm_WfQTHw">&ldquo;τάφο&rdquo; του SNMP</a>, πολλοί λίγοι οργανισμοί τολμούν να εφαρμόσουν το συγκεκριμένο πρωτόκολλο και προτιμούν την λιγότερη ασφαλή αλλά <em>&ldquo;απλή&rdquo;</em> και <em>&ldquo;προβλέψιμη&rdquo;</em> έκδοση SNMPv2c.</p>
 <p>Αντίθετα οι τρόποι μεταφοράς YANG Data προσφέρουν ασφάλεια δεδομένων κατά τη μεταφορά, τα μοντέλα προβλέπουν θέματα συμβατότητας και ο τρόπος αναπαράστασης είναι κατά πολύ βελτιωμένος σε σχέση με το SNMP.
 Παρόλα αυτά, αν κανείς ξεκινήσει να ασχολείται με το YANG δανειζόμενος την οπτική γιγάντων του χώρου όπως ο <a href="https://www.linkedin.com/in/benoit-claise-7534b42/">Benoit Claise</a> και o <a href="https://www.linkedin.com/in/carlmoberg/">Carl Moberg</a> (πρώην <a href="https://www.tail-f.com/">Tail-f</a> / Cisco), μάλλον θα αρχίσει να το ξανασκέφτεται.. Ευτυχώς υπάρχουν και πιο εύκολοι δρόμοι και .. κι εμείς εδώ είμαστε ;)</p>
@@ -67,7 +67,7 @@
 <li>list: Μια ομάδα από δεδομένα του ίδιου τύπου (μπορεί να είναι και ένα άλλο μοντέλο που εισάγεται σε αυτό που εξετάζουμε) και για την οργάνωση των οποίων και την απευθείας πρόσβαση σε συγκεκριμένα από αυτά, ορίζονται πεδία - κλειδιά.</li>
 <li>key: Τα παραπάνω αναφερόμενα πεδία - κλειδιά, π.χ. το όνομα ενός δικτυακού interface. Μία λίστα μπορεί να έχει παραπάνω από ένα πεδίο κλειδί, και για την απευθείας πρόσβαση σε συγκεκριμένα δεδομένα, ανάλογα με την περίπτωση, πρέπει κανείς να ορίζει ή όλα τα κλειδιά ή κάποια από αυτά.</li>
 </ul>
-<pre><code>list user {
+<pre><code class="language-yang" data-lang="yang">list user {
     key &quot;name&quot;;
     leaf name {
         type string;
@@ -79,12 +79,30 @@
         type string;
     }
 }
-</code></pre><ul>
-<li>leaf: Ένα απλό πεδίο όπου ορίζεται μια τιμή για το μοντέλο. Κάθε leaf συνήθως έχει συγκεκριμένο τύπο δεδομένων ενώ μπορεί να ορίζει και κανόνες για το πότε είναι σωστά τα δεδομένα που θέλει κάποιος να αποθηκεύσει σε αυτό (<em>Data Validation</em>).</li>
-</ul>
-<pre><code>leaf host-name {
-    type string;
-    description &quot;Hostname for this system&quot;;
+```yang
+- leaf: Ένα απλό πεδίο όπου ορίζεται μια τιμή για το μοντέλο. Κάθε leaf συνήθως έχει συγκεκριμένο τύπο δεδομένων ενώ μπορεί να ορίζει και κανόνες για το πότε είναι σωστά τα δεδομένα που θέλει κάποιος να αποθηκεύσει σε αυτό (*Data Validation*).
+</code></pre><p>leaf host-name {
+type string;
+description &ldquo;Hostname for this system&rdquo;;
+}</p>
+<pre><code>## Grouping
+Ομάδες δεδομένων που μπορούν να χρησιμοποιηθούν εντός του μοντέλου με το πρόθεμα *uses*.
+```yang
+grouping target {
+    leaf address {
+        type inet:ip-address;
+        description &quot;Target IP address&quot;;
+    }
+    leaf port {
+        type inet:port-number;
+        description &quot;Target port number&quot;;
+    }
+}
+
+container peer {
+    container destination {
+        uses target;
+    }
 }
 </code></pre><h2 id="data-types--validation">Data types &amp; Validation</h2>
 <h2 id="built-in-data-types">Built-in Data Types</h2>
@@ -197,10 +215,24 @@
 </tbody>
 </table>
 <h2 id="derived-types">Derived Types</h2>
-<h1 id="τρόποι-επικοινωνίας">Τρόποι επικοινωνίας</h1>
+<p>Είναι τύποι δεδομένων που προκύπτουν κατασκευάζονται με την εντολή typedef.</p>
+<pre><code class="language-yang" data-lang="yang">typedef percent {
+    type uint16 {
+        range &quot;0 .. 100&quot;;
+    }
+    description &quot;Percentage&quot;;
+}
+
+leaf completed {
+    type percent;
+}
+</code></pre><h1 id="τρόποι-επικοινωνίας">Τρόποι επικοινωνίας</h1>
 <h2 id="netconf">Netconf</h2>
+<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε XML RPCs τα οποία μεταδίδονται μέσω SSH.</p>
 <h2 id="restconf">Restconf</h2>
+<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε HTTPS</p>
 <h2 id="grpc">GRPC</h2>
+<p>Πρωτόλλο μεταφοράς κατασκευασμένο από τη Google</p>
 <h2 id="gnmi">GNMI</h2>
 <h1 id="τρόποι-αναπαράστασης---εργαλεία">Τρόποι αναπαράστασης - εργαλεία</h1>
 <h2 id="pyang">pyang</h2>
