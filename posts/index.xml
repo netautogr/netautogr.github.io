@@ -54,7 +54,7 @@
 <ul>
 <li>container: Ένα subset από δεδομένα που μπορούν να είναι ανόμοια ως προς τον τύπο τους και ομαδοποιούνται για οργανωτικούς λόγους. Ένα container δεν διαθέτει data type.</li>
 </ul>
-<pre><code>container system {
+<pre><code class="language-yang" data-lang="yang">container system {
     container login {
         leaf message {
             type string;
@@ -70,7 +70,7 @@
 <pre><code class="language-yang" data-lang="yang">list user {
     key &quot;name&quot;;
     leaf name {
-        type string;
+        typaaaaaaaaaaaaaae string;
     }
     leaf full-name {
         type string;
@@ -79,16 +79,16 @@
         type string;
     }
 }
-```yang
-- leaf: Ένα απλό πεδίο όπου ορίζεται μια τιμή για το μοντέλο. Κάθε leaf συνήθως έχει συγκεκριμένο τύπο δεδομένων ενώ μπορεί να ορίζει και κανόνες για το πότε είναι σωστά τα δεδομένα που θέλει κάποιος να αποθηκεύσει σε αυτό (*Data Validation*).
-</code></pre><p>leaf host-name {
-type string;
-description &ldquo;Hostname for this system&rdquo;;
-}</p>
-<pre><code>## Grouping
-Ομάδες δεδομένων που μπορούν να χρησιμοποιηθούν εντός του μοντέλου με το πρόθεμα *uses*.
-```yang
-grouping target {
+</code></pre><ul>
+<li>leaf: Ένα απλό πεδίο όπου ορίζεται μια τιμή για το μοντέλο. Κάθε leaf συνήθως έχει συγκεκριμένο τύπο δεδομένων ενώ μπορεί να ορίζει και κανόνες για το πότε είναι σωστά τα δεδομένα που θέλει κάποιος να αποθηκεύσει σε αυτό (<em>Data Validation</em>).</li>
+</ul>
+<pre><code class="language-yang" data-lang="yang">leaf host-name {
+    type string;
+    description &quot;Hostname for this system&quot;;
+}
+</code></pre><h2 id="grouping">Grouping</h2>
+<p>Ομάδες δεδομένων που μπορούν να επαναχρησιμοποιηθούν εντός του μοντέλου με το πρόθεμα <em>uses</em>.</p>
+<pre><code class="language-yang" data-lang="yang">grouping target {
     leaf address {
         type inet:ip-address;
         description &quot;Target IP address&quot;;
@@ -98,7 +98,6 @@ grouping target {
         description &quot;Target port number&quot;;
     }
 }
-
 container peer {
     container destination {
         uses target;
@@ -236,6 +235,7 @@ leaf completed {
 <h2 id="gnmi">GNMI</h2>
 <h1 id="τρόποι-αναπαράστασης---εργαλεία">Τρόποι αναπαράστασης - εργαλεία</h1>
 <h2 id="pyang">pyang</h2>
+<p><img src="/images/pyang-1.png" alt="pyang example"></p>
 <h2 id="postman">Postman</h2>
 <h2 id="yang-catalogue">Yang Catalogue</h2>
 <h2 id="ans">ANS</h2>

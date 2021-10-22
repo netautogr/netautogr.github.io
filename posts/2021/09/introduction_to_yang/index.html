@@ -47,7 +47,7 @@
 Κάποια στιγμή, προέκυψε η ανάγκη της δημιουργίας ενός νέου μοντέλου δεδομένων για τη διαχείριση των δικτυακών συσκευών και των λειτουργιών τους, όπου οι πληροφορίες για την κατάσταση και λειτουργικότητα των συσκευών (operational data) θα ήταν ξέχωρα από τις πληροφορίες για τη ρύθμιση τους (configuration data), όπου τα μοντέλα θα ήταν επεκτάσιμα και καλύτερα δομημένα, η μετάδοση θα ήταν ασφαλής (με χρήση κρυπτογράφησης) και αξιόπιστη (over TCP) και η χρήση των καναλιών μεταφοράς βελτιστοποιημένη, δηλαδή ότι δεν ήταν το SNMP και το αντίστοιχο μοντέλο δεδομένων, το SMI.">
 <meta itemprop="datePublished" content="2021-09-24T01:12:57&#43;03:00" />
 <meta itemprop="dateModified" content="2021-09-24T01:12:57&#43;03:00" />
-<meta itemprop="wordCount" content="1616">
+<meta itemprop="wordCount" content="1612">
 <meta itemprop="image" content="https://netautogr.github.io"/>
 
 
@@ -194,7 +194,7 @@
 <ul>
 <li>container: Ένα subset από δεδομένα που μπορούν να είναι ανόμοια ως προς τον τύπο τους και ομαδοποιούνται για οργανωτικούς λόγους. Ένα container δεν διαθέτει data type.</li>
 </ul>
-<pre><code>container system {
+<pre><code class="language-yang" data-lang="yang">container system {
     container login {
         leaf message {
             type string;
@@ -210,7 +210,7 @@
 <pre><code class="language-yang" data-lang="yang">list user {
     key &quot;name&quot;;
     leaf name {
-        type string;
+        typaaaaaaaaaaaaaae string;
     }
     leaf full-name {
         type string;
@@ -219,16 +219,16 @@
         type string;
     }
 }
-```yang
-- leaf: Ένα απλό πεδίο όπου ορίζεται μια τιμή για το μοντέλο. Κάθε leaf συνήθως έχει συγκεκριμένο τύπο δεδομένων ενώ μπορεί να ορίζει και κανόνες για το πότε είναι σωστά τα δεδομένα που θέλει κάποιος να αποθηκεύσει σε αυτό (*Data Validation*).
-</code></pre><p>leaf host-name {
-type string;
-description &ldquo;Hostname for this system&rdquo;;
-}</p>
-<pre><code>## Grouping
-Ομάδες δεδομένων που μπορούν να χρησιμοποιηθούν εντός του μοντέλου με το πρόθεμα *uses*.
-```yang
-grouping target {
+</code></pre><ul>
+<li>leaf: Ένα απλό πεδίο όπου ορίζεται μια τιμή για το μοντέλο. Κάθε leaf συνήθως έχει συγκεκριμένο τύπο δεδομένων ενώ μπορεί να ορίζει και κανόνες για το πότε είναι σωστά τα δεδομένα που θέλει κάποιος να αποθηκεύσει σε αυτό (<em>Data Validation</em>).</li>
+</ul>
+<pre><code class="language-yang" data-lang="yang">leaf host-name {
+    type string;
+    description &quot;Hostname for this system&quot;;
+}
+</code></pre><h2 id="grouping">Grouping</h2>
+<p>Ομάδες δεδομένων που μπορούν να επαναχρησιμοποιηθούν εντός του μοντέλου με το πρόθεμα <em>uses</em>.</p>
+<pre><code class="language-yang" data-lang="yang">grouping target {
     leaf address {
         type inet:ip-address;
         description &quot;Target IP address&quot;;
@@ -238,7 +238,6 @@ grouping target {
         description &quot;Target port number&quot;;
     }
 }
-
 container peer {
     container destination {
         uses target;
@@ -376,6 +375,7 @@ leaf completed {
 <h2 id="gnmi">GNMI</h2>
 <h1 id="τρόποι-αναπαράστασης---εργαλεία">Τρόποι αναπαράστασης - εργαλεία</h1>
 <h2 id="pyang">pyang</h2>
+<p><img src="https://netautogr.github.io/images/pyang-1.png" alt="pyang example"></p>
 <h2 id="postman">Postman</h2>
 <h2 id="yang-catalogue">Yang Catalogue</h2>
 <h2 id="ans">ANS</h2>
@@ -415,7 +415,7 @@ leaf completed {
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1616 Words
+        1612 Words
       </p>
 
       <p>
