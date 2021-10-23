@@ -233,10 +233,13 @@ leaf completed {
 <p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε XML RPCs τα οποία μεταδίδονται μέσω SSH.
 <a href="https://datatracker.ietf.org/doc/html/rfc4741">https://datatracker.ietf.org/doc/html/rfc4741</a>
 <a href="https://datatracker.ietf.org/doc/html/rfc6241">https://datatracker.ietf.org/doc/html/rfc6241</a></p>
-<p>Το Netconf μεταφέρει και επιστρέφει δεδομένα σε XML.
-<img src="netconf-stack.png" alt="netconf stack"></p>
+<p>Το Netconf μεταφέρει και επιστρέφει δεδομένα σε XML. Παρακάτω βλέπουμε το protocol stack του:
+<img src="/images/netconf-stack.png" alt="netconf stack"></p>
 <p>Παρακάτω βλέπουμε ένα παράδειγμα output από python script από το session BRKDEV-1368 στο Cisco Live:
-<img src="netconf.png" alt="netconf example"></p>
+<img src="/images/netconf.png" alt="netconf example"></p>
+<p>Οι βιβλιοθήκες Python που υποστηρίζουν Netconf είναι οι:
+ncclient - <a href="https://github.com/ncclient/ncclient">https://github.com/ncclient/ncclient</a>
+scrapli-netconf - <a href="https://www.montanari.io/posts/2020/scrapli_netconf/">https://www.montanari.io/posts/2020/scrapli_netconf/</a></p>
 <h2 id="restconf">Restconf</h2>
 <p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε HTTPS
 <a href="https://datatracker.ietf.org/doc/html/rfc8040">https://datatracker.ietf.org/doc/html/rfc8040</a></p>
