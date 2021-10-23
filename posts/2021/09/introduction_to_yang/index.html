@@ -47,7 +47,7 @@
 Κάποια στιγμή, προέκυψε η ανάγκη της δημιουργίας ενός νέου μοντέλου δεδομένων για τη διαχείριση των δικτυακών συσκευών και των λειτουργιών τους, όπου οι πληροφορίες για την κατάσταση και λειτουργικότητα των συσκευών (operational data) θα ήταν ξέχωρα από τις πληροφορίες για τη ρύθμιση τους (configuration data), όπου τα μοντέλα θα ήταν επεκτάσιμα και καλύτερα δομημένα, η μετάδοση θα ήταν ασφαλής (με χρήση κρυπτογράφησης) και αξιόπιστη (over TCP) και η χρήση των καναλιών μεταφοράς βελτιστοποιημένη, δηλαδή ότι δεν ήταν το SNMP και το αντίστοιχο μοντέλο δεδομένων, το SMI.">
 <meta itemprop="datePublished" content="2021-09-24T01:12:57&#43;03:00" />
 <meta itemprop="dateModified" content="2021-09-24T01:12:57&#43;03:00" />
-<meta itemprop="wordCount" content="1614">
+<meta itemprop="wordCount" content="1736">
 <meta itemprop="image" content="https://netautogr.github.io"/>
 
 
@@ -142,7 +142,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        8 minutes
+        9 minutes
 
         
       </p>
@@ -210,7 +210,7 @@
 <pre><code class="language-yang" data-lang="yang">list user {
     key &quot;name&quot;;
     leaf name {
-        typaaaaaaaaaaaaaae string;
+        type string;
     }
     leaf full-name {
         type string;
@@ -246,7 +246,7 @@ container peer {
 </code></pre><h2 id="data-types--validation">Data types &amp; Validation</h2>
 <h2 id="built-in-data-types">Built-in Data Types</h2>
 <p>Όπως και σε άλλες γλώσσες έτσι και στην Yang είναι ορισμένοι ενσωματωμένοι τύποι δεδoμένων.
-Τα παρακάτω ορίζονται στο documentation:</p>
+Τα παρακάτω ορίζονται στο documentation: <a href="https://datatracker.ietf.org/doc/html/rfc6991">Common YANG Data Types</a></p>
 <table>
 <thead>
 <tr>
@@ -366,19 +366,31 @@ leaf completed {
     type percent;
 }
 </code></pre><h1 id="τρόποι-επικοινωνίας">Τρόποι επικοινωνίας</h1>
-<p><img src="https://netautogr.github.io/images/stack.png" alt="yang stack"></p>
+<p><img src="https://netautogr.github.io/images/yang-data.png" alt="yang data"></p>
+<p>Παρακάτω βλέπουμε μια αναπαράσταση του Yang stack από την παρουσίαση του Hank Preston στο <a href="https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKDEV-1368.pdf">BRKDEV-1368 στο Cisco Live του 2020 ΕΜΕΑ</a>
+<img src="https://netautogr.github.io/images/stack.png" alt="yang stack"></p>
 <h2 id="netconf">Netconf</h2>
 <p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε XML RPCs τα οποία μεταδίδονται μέσω SSH.
 <a href="https://datatracker.ietf.org/doc/html/rfc4741">https://datatracker.ietf.org/doc/html/rfc4741</a>
 <a href="https://datatracker.ietf.org/doc/html/rfc6241">https://datatracker.ietf.org/doc/html/rfc6241</a></p>
+<p>Το Netconf μεταφέρει και επιστρέφει δεδομένα σε XML.
+Παρακάτω βλέπουμε ένα παράδειγμα output από python script από το session BRKDEV-1368 στο Cisco Live:
+<img src="netconf.png" alt="netconf example"></p>
 <h2 id="restconf">Restconf</h2>
-<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε HTTPS</p>
+<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε HTTPS
+<a href="https://datatracker.ietf.org/doc/html/rfc8040">https://datatracker.ietf.org/doc/html/rfc8040</a></p>
 <h2 id="grpc">GRPC</h2>
 <p>Πρωτόλλο μεταφοράς κατασκευασμένο από τη Google</p>
 <h2 id="gnmi">GNMI</h2>
 <h1 id="τρόποι-αναπαράστασης---εργαλεία">Τρόποι αναπαράστασης - εργαλεία</h1>
 <h2 id="pyang">pyang</h2>
+<p>Command Line εργαλείο βασισμένο σε python για human readable formated αναπαράσταση ενός μοντέλου Yang.
+Η πιο απλή σύνταξη της εντολής είναι η παρακάτω, η οποία αναπαριστά ένα μοντέλο σε δενδροειδή μορφή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pyang –f tree &lt;yang-model-filename.yang&gt;
+</code></pre></div><p>To Yang tree diagram καθορίζεται εδώ: <a href="https://datatracker.ietf.org/doc/html/rfc8340">https://datatracker.ietf.org/doc/html/rfc8340</a></p>
+<p>Παράδειγμα παρμένο από το <a href="http://nxos-prog.ciscolive.com/pod0/labs/lab7/lab7-m1">site της Cisco για NX-OS Programmability</a> :</p>
 <p><img src="https://netautogr.github.io/images/pyang-1.png" alt="pyang example"></p>
+<p>O πηγαίος κώδικας διατίθεται στο <a href="https://github.com/mbj4668/pyang">https://github.com/mbj4668/pyang</a> ενώ εδώ μπορείτε να βρείτε ένα <a href="https://github.com/mbj4668/pyang/wiki/Tutorial">tutorial</a>.</p>
 <h2 id="postman">Postman</h2>
 <h2 id="yang-catalogue">Yang Catalogue</h2>
 <h2 id="ans">ANS</h2>
@@ -389,10 +401,17 @@ leaf completed {
 <a href="https://www.fir3net.com/Networking/Protocols/an-introduction-to-netconf-yang.html">https://www.fir3net.com/Networking/Protocols/an-introduction-to-netconf-yang.html</a>
 <a href="https://discuss.tail-f.com/c/yang/8">https://discuss.tail-f.com/c/yang/8</a></p>
 <p><a href="https://github.com/YangModels/yang">https://github.com/YangModels/yang</a>
+<a href="https://www.yangcatalog.org/">https://www.yangcatalog.org/</a>
 <a href="https://github.com/mbj4668/pyang">https://github.com/mbj4668/pyang</a>
 <a href="https://github.com/mbj4668/pyang/wiki/Tutorial">https://github.com/mbj4668/pyang/wiki/Tutorial</a>
-<a href="https://developer.cisco.com/docs/yangsuite/">https://developer.cisco.com/docs/yangsuite/</a></p>
-<p><a href="https://blogs.cisco.com/getyourbuildon/network-programmability-with-yang-the-structure-of-network-automation-with-yang-netconf-restconf-and-gnmi">https://blogs.cisco.com/getyourbuildon/network-programmability-with-yang-the-structure-of-network-automation-with-yang-netconf-restconf-and-gnmi</a></p>
+<a href="https://developer.cisco.com/docs/yangsuite/">https://developer.cisco.com/docs/yangsuite/</a>
+<a href="https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/">https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/</a></p>
+<p><a href="https://blogs.cisco.com/getyourbuildon/network-programmability-with-yang-the-structure-of-network-automation-with-yang-netconf-restconf-and-gnmi">https://blogs.cisco.com/getyourbuildon/network-programmability-with-yang-the-structure-of-network-automation-with-yang-netconf-restconf-and-gnmi</a>
+<a href="https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKDEV-1368.pdf">https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKDEV-1368.pdf</a>
+<a href="https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKNMS-2032.pdf">https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKNMS-2032.pdf</a>
+<a href="https://www.slideshare.net/cmoberg/a-30minute-introduction-to-netconf-and-yang">https://www.slideshare.net/cmoberg/a-30minute-introduction-to-netconf-and-yang</a>
+<a href="https://www.tail-f.com/what-is-yang/">https://www.tail-f.com/what-is-yang/</a>
+<a href="https://www.tail-f.com/wordpress/wp-content/uploads/2013/03/Tail-f-NETCONF-YANG-Service-Automation-LISA-Usenix-2011.pdf">https://www.tail-f.com/wordpress/wp-content/uploads/2013/03/Tail-f-NETCONF-YANG-Service-Automation-LISA-Usenix-2011.pdf</a></p>
 
       </div>
     </article>
@@ -418,7 +437,7 @@ leaf completed {
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1614 Words
+        1736 Words
       </p>
 
       <p>
