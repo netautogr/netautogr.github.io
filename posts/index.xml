@@ -294,6 +294,8 @@ leaf completed {
 <li>ncclient - <a href="https://github.com/ncclient/ncclient">https://github.com/ncclient/ncclient</a></li>
 <li>scrapli-netconf - <a href="https://www.montanari.io/posts/2020/scrapli_netconf/">https://www.montanari.io/posts/2020/scrapli_netconf/</a></li>
 </ul>
+<p>Scrapli is a python framework developed by Carl Montanari.
+Ncclient was developed by Shikar Bhushan. It is now maintained by Leonidas Poulopoulos and Einar Nilsen-Nygaard.</p>
 <p>Για την επικοινωνία με τον εξοπλισμό, πρέπει να χρησιμοποιήσει κανείς είτε XML Subtrees είτε XML XPaths.
 Η δεύτερη μέθοδος είναι σαφέστατα πιο κομψή.</p>
 <h2 id="restconf">Restconf</h2>
@@ -370,13 +372,12 @@ leaf completed {
 <h1 id="πηγές---links">Πηγές - Links</h1>
 <p><a href="https://www.juniper.net/documentation/us/en/software/junos/netconf/topics/concept/netconf-yang-modules-overview.html">https://www.juniper.net/documentation/us/en/software/junos/netconf/topics/concept/netconf-yang-modules-overview.html</a>
 <a href="https://www.fir3net.com/Networking/Protocols/an-introduction-to-netconf-yang.html">https://www.fir3net.com/Networking/Protocols/an-introduction-to-netconf-yang.html</a>
-<a href="https://discuss.tail-f.com/c/yang/8">https://discuss.tail-f.com/c/yang/8</a>
-<a href="https://grpc.io/docs/what-is-grpc/introduction/">https://grpc.io/docs/what-is-grpc/introduction/</a>
-<a href="https://developers.google.com/protocol-buffers/docs/overview">https://developers.google.com/protocol-buffers/docs/overview</a></p>
+<a href="https://discuss.tail-f.com/c/yang/8">https://discuss.tail-f.com/c/yang/8</a></p>
 <p><a href="https://github.com/YangModels/yang">https://github.com/YangModels/yang</a>
 <a href="https://www.yangcatalog.org/">https://www.yangcatalog.org/</a>
 <a href="https://github.com/mbj4668/pyang">https://github.com/mbj4668/pyang</a>
 <a href="https://github.com/mbj4668/pyang/wiki/Tutorial">https://github.com/mbj4668/pyang/wiki/Tutorial</a>
+<a href="https://blogs.cisco.com/developer/363-yangsuite-01">https://blogs.cisco.com/developer/363-yangsuite-01</a>
 <a href="https://developer.cisco.com/docs/yangsuite/">https://developer.cisco.com/docs/yangsuite/</a>
 <a href="https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/">https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/</a>
 <a href="https://developer.cisco.com/codeexchange/github/repo/cisco-ie/anx">https://developer.cisco.com/codeexchange/github/repo/cisco-ie/anx</a>
@@ -387,7 +388,16 @@ leaf completed {
 <a href="https://www.netacad.com/sites/default/files/images/careers/Webinars/DevNet/devnet_session_7_networkprogrammability_yang_netconf_restconf.pdf">https://www.netacad.com/sites/default/files/images/careers/Webinars/DevNet/devnet_session_7_networkprogrammability_yang_netconf_restconf.pdf</a>
 <a href="https://www.slideshare.net/cmoberg/a-30minute-introduction-to-netconf-and-yang">https://www.slideshare.net/cmoberg/a-30minute-introduction-to-netconf-and-yang</a>
 <a href="https://www.tail-f.com/what-is-yang/">https://www.tail-f.com/what-is-yang/</a>
-<a href="https://www.tail-f.com/wordpress/wp-content/uploads/2013/03/Tail-f-NETCONF-YANG-Service-Automation-LISA-Usenix-2011.pdf">https://www.tail-f.com/wordpress/wp-content/uploads/2013/03/Tail-f-NETCONF-YANG-Service-Automation-LISA-Usenix-2011.pdf</a></p>
+<a href="https://www.tail-f.com/wordpress/wp-content/uploads/2013/03/Tail-f-NETCONF-YANG-Service-Automation-LISA-Usenix-2011.pdf">https://www.tail-f.com/wordpress/wp-content/uploads/2013/03/Tail-f-NETCONF-YANG-Service-Automation-LISA-Usenix-2011.pdf</a>
+<a href="http://nxos-prog.ciscolive.com/pod0/labs/lab7/lab7-m1">http://nxos-prog.ciscolive.com/pod0/labs/lab7/lab7-m1</a>
+<a href="https://developers.google.com/protocol-buffers/docs/overview">https://developers.google.com/protocol-buffers/docs/overview</a>
+<a href="https://grpc.io/docs/what-is-grpc/introduction/">https://grpc.io/docs/what-is-grpc/introduction/</a>
+<a href="https://datatracker.ietf.org/meeting/101/materials/slides-101-netconf-grpc-network-management-interface-gnmi-00">https://datatracker.ietf.org/meeting/101/materials/slides-101-netconf-grpc-network-management-interface-gnmi-00</a>
+<a href="https://www.postman.com/product/what-is-postman/">https://www.postman.com/product/what-is-postman/</a></p>
+<p><a href="https://www.montanari.io/posts/2020/scrapli_netconf/">https://www.montanari.io/posts/2020/scrapli_netconf/</a>
+<a href="https://github.com/ncclient/ncclient">https://github.com/ncclient/ncclient</a>
+<a href="https://ncclient.readthedocs.io/en/latest/">https://ncclient.readthedocs.io/en/latest/</a></p>
+<p><a href="https://www.cbtnuggets.com/learn/it-training/playlist/nrn:playlist:certification:5f57b50480e1f9001566c4cf/132?autostart=1">https://www.cbtnuggets.com/learn/it-training/playlist/nrn:playlist:certification:5f57b50480e1f9001566c4cf/132?autostart=1</a></p>
 ]]></content>
         </item>
         
