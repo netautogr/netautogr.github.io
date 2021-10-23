@@ -12,13 +12,12 @@
     
     
     <item>
-      <title>Introduction_to_yang</title>
-      <link>https://netautogr.github.io/posts/2021/09/introduction_to_yang/</link>
+      <title>Introduction to Υang</title>
+      <link>https://netautogr.github.io/posts/2021/09/introduction-to-%CF%85ang/</link>
       <pubDate>Fri, 24 Sep 2021 01:12:57 +0300</pubDate>
       
-      <guid>https://netautogr.github.io/posts/2021/09/introduction_to_yang/</guid>
-      <description>Γενικά Τί είναι τα YANG data models To YANG (Yet Another Next Generation) είναι γλώσσα μοντελοποίησης. Πολλές φορές όμως χρησιμοποιούμε τον όρο αναφερόμενοι στα ίδια τα μοντέλα, στα δεδομένα τα οποία αναπαριστώνται με βάση αυτά τα μοντέλα ή τη γλώσσα μοντελοποίησης (Yang data modeling language / Yang data models / Yang data).
-Κάποια στιγμή, προέκυψε η ανάγκη της δημιουργίας ενός νέου μοντέλου δεδομένων για τη διαχείριση των δικτυακών συσκευών και των λειτουργιών τους, όπου οι πληροφορίες για την κατάσταση και λειτουργικότητα των συσκευών (operational data) θα ήταν ξέχωρα από τις πληροφορίες για τη ρύθμιση τους (configuration data), όπου τα μοντέλα θα ήταν επεκτάσιμα και καλύτερα δομημένα, η μετάδοση θα ήταν ασφαλής (με χρήση κρυπτογράφησης) και αξιόπιστη (over TCP) και η χρήση των καναλιών μεταφοράς βελτιστοποιημένη, δηλαδή ότι δεν ήταν το SNMP και το αντίστοιχο μοντέλο δεδομένων, το SMI.</description>
+      <guid>https://netautogr.github.io/posts/2021/09/introduction-to-%CF%85ang/</guid>
+      <description>Γενικά Πριν αρχίσουμε Ας ξεκαθαρίσουμε κάτι από την αρχή. Δεν είναι δυνατό σε ένα άρθρο να πούμε ότι πρέπει να γνωρίζετε για τα Yang Data Models. Ακόμα και ο τίτλος &amp;ldquo;Introduction&amp;rdquo; δεν είναι ακριβής. Πιο σωστός θα ήταν το &amp;ldquo;Σημείο έναρξης για να προσεγγίσετε τα Yang Data Models&amp;rdquo; ή κάτι παρόμοιο. Σε πολλά σημεία παραλείπουμε πληροφορίες. Άλλα σημεία δεν τα αναφέρουμε καθόλου. Ο σκοπός είναι το παρόν άρθρο να είναι εύκολο στην ανάγνωση, να προσφέρει μια περίληψη και ένα σωστό σημείο εκκίνησης, από το οποίο θα μπορέσετε να εξερευνήσετε περισσότερο τα σημεία για τα οποία ενδιαφέρεστε περισσότερο.</description>
     </item>
     
     <item>
