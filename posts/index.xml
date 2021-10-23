@@ -339,9 +339,14 @@ leaf completed {
 <p><img src="/images/pyang-1.png" alt="pyang example"></p>
 <p>O πηγαίος κώδικας διατίθεται στο <a href="https://github.com/mbj4668/pyang">https://github.com/mbj4668/pyang</a> ενώ εδώ μπορείτε να βρείτε ένα <a href="https://github.com/mbj4668/pyang/wiki/Tutorial">tutorial</a>.</p>
 <h2 id="postman">Postman</h2>
+<p><a href="https://www.postman.com/product/what-is-postman/">https://www.postman.com/product/what-is-postman/</a></p>
 <h2 id="yang-catalogue">Yang Catalogue</h2>
+<p><a href="https://www.yangcatalog.org/">https://www.yangcatalog.org/</a></p>
 <h2 id="ans">ANS</h2>
+<p><a href="https://github.com/cisco-ie/anx">https://github.com/cisco-ie/anx</a></p>
 <h2 id="yang-suite">Yang-Suite</h2>
+<p><a href="https://developer.cisco.com/docs/yangsuite/">https://developer.cisco.com/docs/yangsuite/</a>
+<a href="https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/">https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/</a></p>
 <h1 id="whats-next">What&rsquo;s next</h1>
 <h1 id="πηγές---links">Πηγές - Links</h1>
 <p><a href="https://www.juniper.net/documentation/us/en/software/junos/netconf/topics/concept/netconf-yang-modules-overview.html">https://www.juniper.net/documentation/us/en/software/junos/netconf/topics/concept/netconf-yang-modules-overview.html</a>
@@ -354,7 +359,9 @@ leaf completed {
 <a href="https://github.com/mbj4668/pyang">https://github.com/mbj4668/pyang</a>
 <a href="https://github.com/mbj4668/pyang/wiki/Tutorial">https://github.com/mbj4668/pyang/wiki/Tutorial</a>
 <a href="https://developer.cisco.com/docs/yangsuite/">https://developer.cisco.com/docs/yangsuite/</a>
-<a href="https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/">https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/</a></p>
+<a href="https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/">https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/</a>
+<a href="https://developer.cisco.com/codeexchange/github/repo/cisco-ie/anx">https://developer.cisco.com/codeexchange/github/repo/cisco-ie/anx</a>
+<a href="https://github.com/cisco-ie/anx">https://github.com/cisco-ie/anx</a></p>
 <p><a href="https://blogs.cisco.com/getyourbuildon/network-programmability-with-yang-the-structure-of-network-automation-with-yang-netconf-restconf-and-gnmi">https://blogs.cisco.com/getyourbuildon/network-programmability-with-yang-the-structure-of-network-automation-with-yang-netconf-restconf-and-gnmi</a>
 <a href="https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKDEV-1368.pdf">https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKDEV-1368.pdf</a>
 <a href="https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKNMS-2032.pdf">https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKNMS-2032.pdf</a>
