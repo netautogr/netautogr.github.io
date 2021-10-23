@@ -47,7 +47,7 @@
 Κάποια στιγμή, προέκυψε η ανάγκη της δημιουργίας ενός νέου μοντέλου δεδομένων για τη διαχείριση των δικτυακών συσκευών και των λειτουργιών τους, όπου οι πληροφορίες για την κατάσταση και λειτουργικότητα των συσκευών (operational data) θα ήταν ξέχωρα από τις πληροφορίες για τη ρύθμιση τους (configuration data), όπου τα μοντέλα θα ήταν επεκτάσιμα και καλύτερα δομημένα, η μετάδοση θα ήταν ασφαλής (με χρήση κρυπτογράφησης) και αξιόπιστη (over TCP) και η χρήση των καναλιών μεταφοράς βελτιστοποιημένη, δηλαδή ότι δεν ήταν το SNMP και το αντίστοιχο μοντέλο δεδομένων, το SMI.">
 <meta itemprop="datePublished" content="2021-09-24T01:12:57&#43;03:00" />
 <meta itemprop="dateModified" content="2021-09-24T01:12:57&#43;03:00" />
-<meta itemprop="wordCount" content="1757">
+<meta itemprop="wordCount" content="1915">
 <meta itemprop="image" content="https://netautogr.github.io"/>
 
 
@@ -370,22 +370,105 @@ leaf completed {
 <p>Παρακάτω βλέπουμε μια αναπαράσταση του Yang stack από την παρουσίαση του Hank Preston στο <a href="https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKDEV-1368.pdf">BRKDEV-1368 στο Cisco Live του 2020 ΕΜΕΑ</a>
 <img src="https://netautogr.github.io/images/stack.png" alt="yang stack"></p>
 <h2 id="netconf">Netconf</h2>
-<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε XML RPCs τα οποία μεταδίδονται μέσω SSH.
+<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε XML RPCs τα οποία μεταδίδονται μέσω SSH (default port 830).
 <a href="https://datatracker.ietf.org/doc/html/rfc4741">https://datatracker.ietf.org/doc/html/rfc4741</a>
 <a href="https://datatracker.ietf.org/doc/html/rfc6241">https://datatracker.ietf.org/doc/html/rfc6241</a></p>
 <p>Το Netconf μεταφέρει και επιστρέφει δεδομένα σε XML. Παρακάτω βλέπουμε το protocol stack του:
 <img src="https://netautogr.github.io/images/netconf-stack.png" alt="netconf stack"></p>
 <p>Παρακάτω βλέπουμε ένα παράδειγμα output από python script από το session BRKDEV-1368 στο Cisco Live:
 <img src="https://netautogr.github.io/images/netconf.png" alt="netconf example"></p>
-<p>Οι βιβλιοθήκες Python που υποστηρίζουν Netconf είναι οι:
-ncclient - <a href="https://github.com/ncclient/ncclient">https://github.com/ncclient/ncclient</a>
-scrapli-netconf - <a href="https://www.montanari.io/posts/2020/scrapli_netconf/">https://www.montanari.io/posts/2020/scrapli_netconf/</a></p>
+<p>Οι βιβλιοθήκες Python που υποστηρίζουν Netconf είναι οι:</p>
+<ul>
+<li>ncclient - <a href="https://github.com/ncclient/ncclient">https://github.com/ncclient/ncclient</a></li>
+<li>scrapli-netconf - <a href="https://www.montanari.io/posts/2020/scrapli_netconf/">https://www.montanari.io/posts/2020/scrapli_netconf/</a></li>
+</ul>
+<p>Τα Netconf Operations είναι τα παρακάτω:</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;get&gt;</td>
+<td>Retrieve running configuration and device state information</td>
+</tr>
+<tr>
+<td>&lt;get-config&gt;</td>
+<td>Retrieve all or part of specified configuration data store</td>
+</tr>
+<tr>
+<td>&lt;edit-config&gt;</td>
+<td>Loads all or part of a configuration to the specified configuration data store</td>
+</tr>
+<tr>
+<td>&lt;copy-config&gt;</td>
+<td>Replace an entire configuration data store with another</td>
+</tr>
+<tr>
+<td>&lt;delete-config&gt;</td>
+<td>Delete a configuration data store</td>
+</tr>
+<tr>
+<td>&lt;commit&gt;</td>
+<td>Copy candidate data store to running data store</td>
+</tr>
+<tr>
+<td>&lt;lock&gt;-&lt;unlock&gt;</td>
+<td>Lock or unlock the entire configuration data store system</td>
+</tr>
+<tr>
+<td>&lt;close-session&gt;</td>
+<td>Graceful termination of NETCONF session</td>
+</tr>
+<tr>
+<td>&lt;kill-session&gt;</td>
+<td>Forced termination of NETCONF session</td>
+</tr>
+</tbody>
+</table>
 <h2 id="restconf">Restconf</h2>
-<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο συνήθως σε HTTPS
+<p>Πρωτόκολλο ασφαλούς μεταφοράς YANG Data βασισμένο σε HTTPS για το transport.
 <a href="https://datatracker.ietf.org/doc/html/rfc8040">https://datatracker.ietf.org/doc/html/rfc8040</a></p>
+<p>Επιστρέφει δεδομένα είτε σε JSON format είτε σε XML. Παρακάτω βλέπουμε το protocol stack του:
+<img src="https://netautogr.github.io/images/restconf-stack.png" alt="restconf stack"></p>
+<p>Κι εδώ βλέπουμε την αντιστοιχία των CRUD Operations του Restconf με τις αντίστοιχες του Netconf:</p>
+<table>
+<thead>
+<tr>
+<th>RESTCONF</th>
+<th>NETCONF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>&lt;get&gt; , &lt;get-config&gt;</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>&lt;edit-config&gt; (operation=&quot;create&rdquo;)</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>&lt;edit-config&gt; (operation=&quot;create/replace&rdquo;)</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>&lt;edit-config&gt; (operation=&quot;merge&rdquo;)</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>&lt;edit-config&gt; (operation=&quot;delete&rdquo;)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="grpc">GRPC</h2>
-<p>Πρωτόλλο μεταφοράς κατασκευασμένο από τη Google</p>
-<h2 id="gnmi">GNMI</h2>
+<p>Το <a href="https://grpc.io/docs/what-is-grpc/introduction/">GRPC</a> είναι πρωτόκολο μεταφοράς κατασκευασμένο από τη Google, τα αρχικά σημαίνουν Google Remote Procedure Call.
+Χρησιμοποιεί <a href="https://developers.google.com/protocol-buffers/docs/overview">Protocol Buffers</a> για το format των δεδομένων.
+<img src="https://netautogr.github.io/images/GRPC.svg" alt="GRPC diagram"></p>
 <h1 id="τρόποι-αναπαράστασης---εργαλεία">Τρόποι αναπαράστασης - εργαλεία</h1>
 <h2 id="pyang">pyang</h2>
 <p>Command Line εργαλείο βασισμένο σε python για human readable formated αναπαράσταση ενός μοντέλου Yang.
@@ -403,7 +486,9 @@ scrapli-netconf - <a href="https://www.montanari.io/posts/2020/scrapli_netconf/"
 <h1 id="πηγές---links">Πηγές - Links</h1>
 <p><a href="https://www.juniper.net/documentation/us/en/software/junos/netconf/topics/concept/netconf-yang-modules-overview.html">https://www.juniper.net/documentation/us/en/software/junos/netconf/topics/concept/netconf-yang-modules-overview.html</a>
 <a href="https://www.fir3net.com/Networking/Protocols/an-introduction-to-netconf-yang.html">https://www.fir3net.com/Networking/Protocols/an-introduction-to-netconf-yang.html</a>
-<a href="https://discuss.tail-f.com/c/yang/8">https://discuss.tail-f.com/c/yang/8</a></p>
+<a href="https://discuss.tail-f.com/c/yang/8">https://discuss.tail-f.com/c/yang/8</a>
+<a href="https://grpc.io/docs/what-is-grpc/introduction/">https://grpc.io/docs/what-is-grpc/introduction/</a>
+<a href="https://developers.google.com/protocol-buffers/docs/overview">https://developers.google.com/protocol-buffers/docs/overview</a></p>
 <p><a href="https://github.com/YangModels/yang">https://github.com/YangModels/yang</a>
 <a href="https://www.yangcatalog.org/">https://www.yangcatalog.org/</a>
 <a href="https://github.com/mbj4668/pyang">https://github.com/mbj4668/pyang</a>
@@ -442,7 +527,7 @@ scrapli-netconf - <a href="https://www.montanari.io/posts/2020/scrapli_netconf/"
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1757 Words
+        1915 Words
       </p>
 
       <p>
