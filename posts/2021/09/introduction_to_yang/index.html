@@ -47,7 +47,7 @@
 Κάποια στιγμή, προέκυψε η ανάγκη της δημιουργίας ενός νέου μοντέλου δεδομένων για τη διαχείριση των δικτυακών συσκευών και των λειτουργιών τους, όπου οι πληροφορίες για την κατάσταση και λειτουργικότητα των συσκευών (operational data) θα ήταν ξέχωρα από τις πληροφορίες για τη ρύθμιση τους (configuration data), όπου τα μοντέλα θα ήταν επεκτάσιμα και καλύτερα δομημένα, η μετάδοση θα ήταν ασφαλής (με χρήση κρυπτογράφησης) και αξιόπιστη (over TCP) και η χρήση των καναλιών μεταφοράς βελτιστοποιημένη, δηλαδή ότι δεν ήταν το SNMP και το αντίστοιχο μοντέλο δεδομένων, το SMI.">
 <meta itemprop="datePublished" content="2021-09-24T01:12:57&#43;03:00" />
 <meta itemprop="dateModified" content="2021-09-24T01:12:57&#43;03:00" />
-<meta itemprop="wordCount" content="2310">
+<meta itemprop="wordCount" content="2105">
 <meta itemprop="image" content="https://netautogr.github.io"/>
 
 
@@ -142,7 +142,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        11 minutes
+        10 minutes
 
         
       </p>
@@ -169,11 +169,11 @@
 <h3 id="απευθείας-προγρααμματική-πρόσβαση-στα-δεδομένα">Απευθείας προγρααμματική πρόσβαση στα δεδομένα</h3>
 <p>Ακόμα όμως και εκτός των ορίων του Streaming Telemetry, η δυνατότητα να έχουμε προγραμματική πρόσβαση ανά πάσα στιγμή στις παραμέτρους λειτουργίας του δικτύου χωρίς να μεσολαβεί κάποια μετάφραση (<em>parsing</em> - βλέπετε <a href="https://netautogr.github.io/posts/2021/01/how-to-get-started-with-network-automation/">How to get started with Network Automation</a>) από συνδέσεις κονσόλας μέσω Telnet/SSH, αλλά απευθείας στα δεδομένα που ο κατασκευαστής προέβλεψε να θέσει στη διάθεση μας, είναι μια πολύ μεγάλη ευκολία.
 Για την περίπτωση όπου θέλουμε να έχουμε προγραμματική πρόσβαση στη διαμόρφωση των παραμέτρων λειτουργίας του εξοπλισμού, η χρήση YANG Data Models με κατάλληλα πρωτόκολλα επικοινωνίας δίνει πολύ μεγάλη ευελιξία και ακρίβεια.</p>
-<h3 id="mdt-vs-snmp">MDT vs SNMP</h3>
+<h3 id="yangmdt-vs-snmp">YANG/MDT vs SNMP</h3>
 <p>Καταρχήν όπως είπαμε η ανάπτυξη στον τομέα του SNMP έχει σταματήσει από τόσο παλιά, που κάνει πραγματικά εντύπωση. Όποιος έχει παρακολουθήσει τις διαλέξεις (<a href="https://www.ciscolive.com/global/on-demand-library.html?search=BRKNMS-2032#/session/1564610718224001cM9p">presentation</a> και <a href="https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKNMS-2032.pdf">pdf</a>) του <a href="https://blogs.cisco.com/author/benoitclaise">Benoit Claise</a> ή έχει διαβάσει το βιβλίο του <a href="https://www.informit.com/store/network-programmability-with-yang-the-structure-of-9780135180396">Network Programmability with YANG: The Structure of Network Automation with YANG, NETCONF, RESTCONF, and gNMI</a> γνωρίζει ότι πρακτικά μετά το 2007 τα πράγματα είχαν εντελώς τελματώσει για το SNMP.</p>
 <p>Επίσης όλοι γνωρίζουμε ότι SNMP είναι αρκετά δυσνόητο (ASN.1 notation, SMI tree, MIB imports, κλπ), οι υλοποιήσεις του αρκετά προβληματικές (μεγάλο πρόβλημα με ασυμβατότητα μεταξύ των MIBs) και όσο αφορά την ασφάλεια, δεν είναι τυχαίο που μεγάλος αριθμός συσκευών δεν υποστηρίζει την <em>&ldquo;ασφαλή&rdquo;</em> έκδοση SNMPv3, η οποία έχει πέντε διαφορετικές παραλαγές, όπου κάποιες από αυτές μόνο ασφαλείς δεν είναι. Σαν επισφράγισμα στον <a href="https://youtu.be/McNm_WfQTHw">&ldquo;τάφο&rdquo; του SNMP</a>, πολλοί λίγοι οργανισμοί τολμούν να εφαρμόσουν το συγκεκριμένο πρωτόκολλο και προτιμούν την λιγότερη ασφαλή αλλά <em>&ldquo;απλή&rdquo;</em> και <em>&ldquo;προβλέψιμη&rdquo;</em> έκδοση SNMPv2c.</p>
-<p>Αντίθετα οι τρόποι μεταφοράς YANG Data προσφέρουν ασφάλεια δεδομένων κατά τη μεταφορά, τα μοντέλα προβλέπουν θέματα συμβατότητας και ο τρόπος αναπαράστασης είναι κατά πολύ βελτιωμένος σε σχέση με το SNMP.
-Παρόλα αυτά, αν κανείς ξεκινήσει να ασχολείται με το YANG δανειζόμενος την οπτική γιγάντων του χώρου όπως ο <a href="https://www.linkedin.com/in/benoit-claise-7534b42/">Benoit Claise</a> και o <a href="https://www.linkedin.com/in/carlmoberg/">Carl Moberg</a> (πρώην <a href="https://www.tail-f.com/">Tail-f</a> / Cisco), μάλλον θα αρχίσει να το ξανασκέφτεται.. Ευτυχώς υπάρχουν και πιο εύκολοι δρόμοι και .. κι εμείς εδώ είμαστε ;)</p>
+<p>Αντίθετα οι τρόποι μεταφοράς YANG Data προσφέρουν ασφάλεια δεδομένων κατά τη μεταφορά, τα μοντέλα προβλέπουν θέματα συμβατότητας και ο τρόπος αναπαράστασης είναι κατά πολύ βελτιωμένος σε σχέση με το SNMP. Επίσης για την χρήση σε monitoring/supervision οι δυνατότητες που προσφέρει το MDT - Model Driven Telemetry (γνωστό και ως Streaming Telemetry) για μεγαλύτερη πυκνότητα δεδομένων χωρίς μεγάλη επίπτωση στις επιδόσεις του εξοπλισμού, είτε για streaming data είτε on-change, είτε με outgoing subscriptions (no polling, μεγαλύτερη ασφάλεια και scalability), είτε incoming (συνεχή tcp connections όσο διαρκεί το streaming με ευθύνη του monitoring station). Για τον ορισμό των subscriptions είναι απαραίτητη η χρήση xpath querries και η μεταφορά γίνεται είτε μέσω Netconf είτε με GRPC.</p>
+<p>Παρόλα αυτά, αν κανείς ξεκινήσει να ασχολείται με το YANG δανειζόμενος την οπτική γιγάντων του χώρου όπως ο <a href="https://www.linkedin.com/in/benoit-claise-7534b42/">Benoit Claise</a> και o <a href="https://www.linkedin.com/in/carlmoberg/">Carl Moberg</a> (πρώην <a href="https://www.tail-f.com/">Tail-f</a> / Cisco), μάλλον θα αρχίσει να το ξανασκέφτεται.. Ευτυχώς υπάρχουν και πιο εύκολοι δρόμοι και .. κι εμείς εδώ είμαστε ;)</p>
 <h2 id="ιστορικό">Ιστορικό</h2>
 <p>Η συζήτηση για την ανεπάρκεια των υπαρχόντων τεχνολογιών ξεκίνησε νωρίς, το 2002 με το <a href="https://datatracker.ietf.org/doc/html/rfc3535">IAB Network Management Workshop</a> το οποίο συμπληρώθηκε και με άλλα κείμενα π.χ. <a href="https://datatracker.ietf.org/doc/html/rfc3444">On the Difference between Information Models and Data Models</a>. Στη συνέχεια πρώτα καθορίστηκε ένα πρωτόκολλο για τη μεταφορά δεδομένων, το <a href="https://datatracker.ietf.org/doc/html/rfc4741">Netconf</a> το 2006 με την RFC4741, η οποία έγινε obsolete από την <a href="https://datatracker.ietf.org/doc/html/rfc6241">RFC6241</a> το 2011.</p>
 <p>Στη συνέχεια προέκυψε η προδιαγραφή για τη γλώσσα YANG:<a href="https://datatracker.ietf.org/doc/html/rfc6020">YANG - A Data Modeling Language for the Network Configuration Protocol (NETCONF)</a> το 2010 και με τα χρόνια και τα σχετικά συστατικά της π.χ. <a href="https://datatracker.ietf.org/doc/html/rfc6991">Common YANG Data Types</a> και <a href="https://datatracker.ietf.org/doc/html/rfc8340">YANG Tree Diagrams</a>, ενώ το πρωτόκολλο <a href="https://datatracker.ietf.org/doc/html/rfc8040">RESTCONF</a> άργησε να καθοριστεί.
@@ -465,6 +465,8 @@ leaf completed {
 </tr>
 </tbody>
 </table>
+<p>Τα payloads που χρησιμοποιούνται στο Restconf είναι συνήθως JSON ενώ οι απαντήσεις από τις συσκευές μπορούν να είναι σε XML(default) ή JSON.
+Για χρήση εντός Python scripts μπορεί κανείς να χρησιμοποιήσει τόσο το requests library όσο και το httpx το οποίο υποστηρίζει ASYNC-IO.</p>
 <h2 id="grpc">GRPC</h2>
 <p>Το <a href="https://grpc.io/docs/what-is-grpc/introduction/">GRPC</a> είναι πρωτόκολο μεταφοράς κατασκευασμένο από τη Google, τα αρχικά σημαίνουν Google Remote Procedure Call.
 Χρησιμοποιεί <a href="https://developers.google.com/protocol-buffers/docs/overview">Protocol Buffers</a> για το format των δεδομένων.
@@ -479,24 +481,18 @@ leaf completed {
 <p><img src="https://netautogr.github.io/images/pyang-1.png" alt="pyang example"></p>
 <p>O πηγαίος κώδικας διατίθεται στο <a href="https://github.com/mbj4668/pyang">https://github.com/mbj4668/pyang</a> ενώ εδώ μπορείτε να βρείτε ένα <a href="https://github.com/mbj4668/pyang/wiki/Tutorial">tutorial</a>.</p>
 <h2 id="postman">Postman</h2>
-<p>Το <a href="https://www.postman.com/product/what-is-postman/">Postman</a> είναι ένα REST API client. Διαθέτει δυνατότητα για δημιουργία και συγχρονισμό, εισαγωγή, εξαγωγή συλλογών από REST API calls, χρήση παραμέτρων και μεταβλητών, διάφορες μορφοποιήσεις δεδομένων εισόδου - εξόδου, και μεγάλη ευκολία χρήσης. Δεν είναι τυχαίο που αποτελεί το εργαλείο που χρησιμοποιείται πιο συχνά όταν κάποιος θέλει να επιδείξει ή να εξερευνίσει ένα REST API μέσω Restconf.
-Στην περίπτωση των YANG data models, είναι προσφιλές εργαλείο εξερεύνησης μέσω Restconf των δυνατοτήτων και δεδομένων που υποστηρίζει ένας δικτυακός εξοπλισμός. Σε σύγκριση με το Pyang, μας δίνει τη δυαντότητα να αναζητήσουμε όσα γνωρίζουμε σε θεωρητικό επίπεδο για ένα μοντέλο, όπως αυτό εφαρμόζεται στην πράξη στον δικτακό εξοπλισμό. Συνήθως κανείς ξεκινά από τα capabilities του εξοπλισμού (το σύνολο των Yang models που εφαρμόζει ο εξοπλισμός) και προχωρά σε συγκεκριμένα μοντέλα και ιδιότητες.</p>
+<p>Το <a href="https://www.postman.com/product/what-is-postman/">Postman</a> είναι ένα REST API client. Διαθέτει δυνατότξτα να διατηρεί κανείς συλλογές από REST API calls, ορισμούς παραμέτρων και μεταβλητών, αναπαράσταση δεδομένων ε εξόδοεξ</p>
 <h2 id="yang-catalogue">Yang Catalogue</h2>
-<p>Άλλος ένας τρόπος να εξερευνήσει κανείς τα Yang Data Models. Στη διεύθυνση <a href="https://www.yangcatalog.org/">https://www.yangcatalog.org/</a> μπορεί κανείς να βρει όλα τα μοντέλα που δημοσιεύονται προς χρήση και να τα μελετήσει ενδελεχώς online. Είναι ένα εντυπωσιακό εγχείρημα (υπάρχουν σχετικές αναφορές στις διαλέξεις των Claise &amp; Moberg).</p>
-<h2 id="anx">ANX</h2>
-<p>To ANX είναι εργαλείο το οποίο επιτρέπει την απευθείας εξερεύνηση των μοντέλων YANG από τον ίδιο το δικτυακό εξοπλισμό και στη συνέχεια και την εξαγωγή τους αλλά και τη χρήση τους για την διαχείριση του ίδιου ή άλλων συμβατών με αυτόν. Έχει αναπτυχθεί από μηχανικούς της Cisco και μέχρι πρόσφατα ηταν το μοναδικό εργαλείο που επέτρεπε την add-hoc εξερεύνηση των μοντέλων χωρίς μεγάλη προσπάθεια και πρότερη γνώση.
-Είναι Open Source και μπορεί να χρησιμοποιηθεί και σε μορφή Docker Container. Θα το συνατήσετε σε τουλάχιστον δύο διαφορετικές πλατφόρμες online training σε courses για Network Programmability.
-<a href="https://github.com/cisco-ie/anx">https://github.com/cisco-ie/anx</a></p>
+<p><a href="https://www.yangcatalog.org/">https://www.yangcatalog.org/</a></p>
+<h2 id="ans">ANS</h2>
+<p><a href="https://github.com/cisco-ie/anx">https://github.com/cisco-ie/anx</a></p>
 <h2 id="yang-suite">Yang-Suite</h2>
-<p>Είναι ένα εξαιρετικό εργαλείο λογισμικού, ανεπτυγμένο και πάλι από μηχανικούς της Cisco, ως διάδοχος του πολύ επιτυχημένου αλλά πλέον παρωχημένου <a href="https://github.com/CiscoDevNet/yang-explorer">Yang Explorer</a>, το οποίο χρησιμοποιούνταν για την εξερεύνηση και διαχείριση μοντέλων YANG, ώσπου τα συστατικά στα οποία βασιζόταν σταμάτησαν να υποστηρίζονται.
-Αναφορά στο Yang Explorer θα βρείτε και στο Cisco Code Exchange: <a href="https://developer.cisco.com/codeexchange/github/repo/CiscoDevNet/yang-explorer/">https://developer.cisco.com/codeexchange/github/repo/CiscoDevNet/yang-explorer/</a>
-Το Yang Suite ωστόσο είναι σύγχρονο και ευέλικτο, έχει όλες τις δυνατότητες και πολλές περισσότερες και σύντομα θα προσφέρει στους μηχανικούς μια γέφυρα μεταξύ του παλιού κόσμου στον οποίο βασίζονταν (SNMP) και του καινούργιου (YANG). Όταν ανακοινωθεί επίσημα, θα ενημερώσουμε το άρθρο.
-<a href="https://developer.cisco.com/docs/yangsuite/">https://developer.cisco.com/docs/yangsuite/</a>
+<p><a href="https://developer.cisco.com/docs/yangsuite/">https://developer.cisco.com/docs/yangsuite/</a>
 <a href="https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/">https://gblogs.cisco.com/pt/2021/07/01/introduction-to-yang-suite/</a></p>
-<h2 id="ydk---yang-development-kit">YDK - Yang Development Kit</h2>
-<p>Υπάρχει άλλο ένα εργαλείο που μπορεί να χρησιμοποιηθεί προγραμματιστικά για χειρισμό Yang Data Models &amp; Yang Data. Διαθέτει βιβλιοθήλες C++ και Python.
-<a href="https://developer.cisco.com/site/ydk/">https://developer.cisco.com/site/ydk/</a></p>
 <h1 id="whats-next">What&rsquo;s next</h1>
+<p>Η ομάδα μας δεν δημοσιευει tutorials. Μπορείτε να βρείτε πολλά σε blogs, YouTube videos, free &amp; paid training platforms.
+Μπορείτε επίσης να αναζητησετε βοήθεια εντός της ομάδας.
+Επόμενο introductory post: Introduction to PyATS.</p>
 <h1 id="πηγές---links">Πηγές - Links</h1>
 <p><a href="https://www.juniper.net/documentation/us/en/software/junos/netconf/topics/concept/netconf-yang-modules-overview.html">https://www.juniper.net/documentation/us/en/software/junos/netconf/topics/concept/netconf-yang-modules-overview.html</a>
 <a href="https://www.fir3net.com/Networking/Protocols/an-introduction-to-netconf-yang.html">https://www.fir3net.com/Networking/Protocols/an-introduction-to-netconf-yang.html</a>
@@ -543,7 +539,7 @@ leaf completed {
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2310 Words
+        2105 Words
       </p>
 
       <p>
