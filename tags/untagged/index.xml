@@ -6,10 +6,20 @@
     <description>Recent content in untagged on Network Automation GR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Sep 2021 01:12:57 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 08 Dec 2021 17:28:27 +0200</lastBuildDate>
     
 	<atom:link href="https://netautogr.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction_to_jinja2</title>
+      <link>https://netautogr.github.io/posts/2021/12/introduction_to_jinja2/</link>
+      <pubDate>Wed, 08 Dec 2021 17:28:27 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/12/introduction_to_jinja2/</guid>
+      <description>Γενικά Ο σκοπός του παρόντος άρθρου είναι να φέρει τον αναγνώστη σε μια πρώτη επαφή με τη Jinja2 και τις εφαρμογές της.
+Τι είναι η Jinja2 Η Jinja2 είναι γλώσσα για μια γρήγορη, εκφραστική και επεκτάσιμη μηχανή προτύπων (templating engine) γραμμένη σε καθαρό python. Τα ειδικά σύμβολα θέσης στο πρότυπο επιτρέπουν την σύνταξη κώδικα παρόμοιου με την σύνταξη της Python και χρησιμοποιείται για την δημιουργία HTML,XML και άλλων γλωσσών σήμανσης (markup language).</description>
+    </item>
     
     <item>
       <title>Introduction to Yang</title>
