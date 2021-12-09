@@ -5,8 +5,50 @@
         <description>Recent content in Posts on Network Automation GR</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 08 Dec 2021 17:28:27 +0200</lastBuildDate>
+        <lastBuildDate>Fri, 10 Dec 2021 00:29:41 +0200</lastBuildDate>
         <atom:link href="https://netautogr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Python_Vs_Ansible skirmish</title>
+            <link>https://netautogr.github.io/posts/2021/12/python_vs_ansible-skirmish/</link>
+            <pubDate>Fri, 10 Dec 2021 00:29:41 +0200</pubDate>
+            
+            <guid>https://netautogr.github.io/posts/2021/12/python_vs_ansible-skirmish/</guid>
+            <description>Συζήτηση Η παρακάτω συζήτηση έγινε ένα απόγευμα στην κοινότητα μας μεταξύ του Πέτρου και του Νίκου (οποιαδήποτε ομοιότητα ή συσχετισμός με υπαρκτά πρόσωπα ενδεχομένως και να είναι συμπτωματική): Πέτρος: *- Εχω ξεκινήσει το ταξίδι μου και εγώ για DevNet &amp;amp; Automation. Παντού βλέπω ότι συγκρίνουν την python vs Ansible. Αφού δεν ειναι τα ιδια, γιατι αυτη η σύγκριση; Καταλαβαινω να συγκρινουν:
+ Python vs Java Python vs C or C++ Μπορειτε να με βοηθήσετε ωστε να καταλαβω και εγω;*  Πλαίσιο Νίκος: *- Ο λόγος που ενίοτε γίνεται αυτή η σύγκριση είναι ότι python και Ansible είναι δύο βασικά εργαλεία για network automation.</description>
+            <content type="html"><![CDATA[<h1 id="συζήτηση">Συζήτηση</h1>
+<p>Η παρακάτω συζήτηση έγινε ένα απόγευμα στην κοινότητα μας μεταξύ του Πέτρου και του Νίκου (οποιαδήποτε ομοιότητα ή συσχετισμός με υπαρκτά πρόσωπα ενδεχομένως και να είναι συμπτωματική):
+Πέτρος:
+*- Εχω ξεκινήσει το ταξίδι μου και εγώ για DevNet &amp; Automation. Παντού βλέπω ότι συγκρίνουν την python vs Ansible. Αφού δεν ειναι τα ιδια, γιατι αυτη η σύγκριση;
+Καταλαβαινω να συγκρινουν:</p>
+<ul>
+<li>Python vs Java</li>
+<li>Python vs C or C++
+Μπορειτε να με βοηθήσετε ωστε να καταλαβω και εγω;*</li>
+</ul>
+<h1 id="πλαίσιο">Πλαίσιο</h1>
+<p>Νίκος:
+*- Ο λόγος που ενίοτε γίνεται αυτή η σύγκριση είναι ότι python και Ansible είναι δύο βασικά εργαλεία για network automation. Προφανώς έχεις δίκιο ότι συγκρίνονται μήλα με πορτοκάλια οπότε θα προσπαθήσω να εξηγήσω γιατί έχει νόημα η σύγκριση..</p>
+<p>Σε αυτό το context λοιπόν, η σύγκριση στην πράξη είναι μεταξύ Ansible και του &ldquo;συμπλέγματος&rdquo; python+nornir+napalm+netmiko (ή κάποιας light παραλλαγής αυτού). Αυτά τα δύο είναι σε κάποιο βαθμό &ldquo;ισοδύναμα&rdquo; ως προς τις δυνατότητές τους.</p>
+<h1 id="python-libraries">Python Libraries</h1>
+<p>Αν δεν είσαι εξοικιωμένος με τα libraries που αναφέρω, έχουμε και λέμε:</p>
+<ul>
+<li>Νornir: python library που αναλαμβάνει τα κομμάτια του inventory και του παραλληλισμού tasks (και τα δύο είναι ενσωματωμένα στην Ansible) Γιάννης: (<em>Επίσης το Nornir είναι framework, όχι απλά ένα connection library και δεν διαθέτει το ίδιο connection provider αλλά χρησιμοποιεί plugins γι αυτό το σκοπό</em>)</li>
+<li>NAPALM: άλλο library που αναλαμβάνει την επικοινωνία με τα διάφορα devices. Επιπλέον, έχει την δυνατότητα να επιστρέψει structured data (JSON, dict) όπως λχ τα network resource modules της Ansible.</li>
+<li>Netmiko: τρίτο library που &ldquo;ξέρει&rdquo; πώς να συνδέεται με SSH σε legacy devices και να τραβάει data. Με λίγο φαντασία, μοιάζει με το &ldquo;network_cli&rdquo; connection της Ansible.</li>
+</ul>
+<h1 id="τομείς-σύγκρισης">Τομείς Σύγκρισης</h1>
+<p>Τέλος, η σύγκριση που αναφέρεις γίνεται στο 99% των περιπτώσεων για έναν από τους τέσσερις παρακάτω λόγους:</p>
+<ul>
+<li>Speed: η Ansible για έναν πολύ μεγάλο αριθμό περιπτώσεων είναι αργή όσο optimization και να κάνεις. Αντίθετα, με τον συνδυασμό Python/Nornir μπορείς να πετύχεις μέχρι και 10x ταχύτητα. [Python-Ansible 1-0]</li>
+<li>Learning curve: για κάποιον που προέρχεται από παραδοσιακό networking background, είθισται να προτείνεται η Ansible καθώς είναι πολύ πιο απλή για κάποιον που δεν έχει εμπειρία στον προγραμματισμό. [Python-Ansible 1-1]</li>
+<li>Readability: για projects σχετικά μικρής πολυπλοκότητας, η ευκολία της Ansible της δίνει σημαντικό προβάδισμα. Όσο όμως ανεβαίνει η πολυπλοκότητα, τόσο η ζυγαριά δείχνει προς την πλευρά της Python. [Python-Ansible 2-2]</li>
+<li>Extensibility: από ένα επίπεδο εμπειρίας και πέρα, όταν η πολυπλοκότητα των tasks που καλούμαστε να επιλύσουμε ανεβαίνει, η domain-specific language (DSL) που χρησιμοποιεί η Ansible καταλήγει να είναι εμπόδιο. Αντίθετα, η πληθώρα μηχανισμών που διαθέτει μια proper language όπως η Python μπορεί να σου λύσει τα χέρια.</li>
+</ul>
+<h1 id="τελικό-αποτέλεσμα">Τελικό αποτέλεσμα</h1>
+<p>[Python-Ansible 3-2 με γκολ στο 90&rsquo;]</p>
+]]></content>
+        </item>
         
         <item>
             <title>Introduction_to_jinja2</title>

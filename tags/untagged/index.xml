@@ -6,10 +6,20 @@
     <description>Recent content in untagged on Network Automation GR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Dec 2021 17:28:27 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 10 Dec 2021 00:29:41 +0200</lastBuildDate>
     
 	<atom:link href="https://netautogr.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python_Vs_Ansible skirmish</title>
+      <link>https://netautogr.github.io/posts/2021/12/python_vs_ansible-skirmish/</link>
+      <pubDate>Fri, 10 Dec 2021 00:29:41 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/12/python_vs_ansible-skirmish/</guid>
+      <description>Συζήτηση Η παρακάτω συζήτηση έγινε ένα απόγευμα στην κοινότητα μας μεταξύ του Πέτρου και του Νίκου (οποιαδήποτε ομοιότητα ή συσχετισμός με υπαρκτά πρόσωπα ενδεχομένως και να είναι συμπτωματική): Πέτρος: *- Εχω ξεκινήσει το ταξίδι μου και εγώ για DevNet &amp;amp; Automation. Παντού βλέπω ότι συγκρίνουν την python vs Ansible. Αφού δεν ειναι τα ιδια, γιατι αυτη η σύγκριση; Καταλαβαινω να συγκρινουν:
+ Python vs Java Python vs C or C++ Μπορειτε να με βοηθήσετε ωστε να καταλαβω και εγω;*  Πλαίσιο Νίκος: *- Ο λόγος που ενίοτε γίνεται αυτή η σύγκριση είναι ότι python και Ansible είναι δύο βασικά εργαλεία για network automation.</description>
+    </item>
     
     <item>
       <title>Introduction_to_jinja2</title>
