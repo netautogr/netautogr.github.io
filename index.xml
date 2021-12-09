@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Introduction_to_jinja2</title>
+      <link>https://netautogr.github.io/posts/2021/12/introduction_to_jinja2/</link>
+      <pubDate>Wed, 08 Dec 2021 17:28:27 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/12/introduction_to_jinja2/</guid>
+      <description>Γενικά Ο σκοπός του παρόντος άρθρου είναι να φέρει τον αναγνώστη σε μια πρώτη επαφή με τη Jinja2 και τις εφαρμογές της.
+Τι είναι η Jinja2 Η Jinja2 είναι γλώσσα για μια γρήγορη, εκφραστική και επεκτάσιμη μηχανή προτύπων (templating engine) γραμμένη σε καθαρό python. Τα ειδικά σύμβολα θέσης στο πρότυπο επιτρέπουν την σύνταξη κώδικα παρόμοιου με την σύνταξη της Python και χρησιμοποιείται για την δημιουργία HTML,XML και άλλων γλωσσών σήμανσης (markup language).</description>
+    </item>
+    
+    <item>
       <title>Introduction to Yang</title>
       <link>https://netautogr.github.io/posts/2021/09/introduction-to-yang/</link>
       <pubDate>Fri, 24 Sep 2021 01:12:57 +0300</pubDate>
@@ -95,16 +105,6 @@ event manager applet cpu_monitor authorization bypass event snmp oid 1.3.6.1.4.1
       <guid>https://netautogr.github.io/posts/2020/11/e%CE%B5%CE%BC-monitor-track/</guid>
       <description>This applet monitors &amp;ldquo;track 3&amp;rdquo; events which is configured to monitor a VM server via Ping. When &amp;lsquo;Track 3&amp;rsquo; is up, it will trigger this script, execute the show commands, capture the output and send them to me in an email:
 event manager applet vm-2008-up authorization bypass event track 3 state up action 1.01 wait 5 action 1.02 syslog msg &amp;quot;------ IP SLA GENERATED MESSAGE ---------&amp;quot; action 1.03 syslog msg &amp;quot;------ VM-2008 Server UP ----&amp;quot; action 1.</description>
-    </item>
-    
-    <item>
-      <title>EEM send mail</title>
-      <link>https://netautogr.github.io/posts/2020/11/eem-send-mail/</link>
-      <pubDate>Thu, 26 Nov 2020 01:14:18 +0200</pubDate>
-      
-      <guid>https://netautogr.github.io/posts/2020/11/eem-send-mail/</guid>
-      <description>Generic EEM script to send emails
-event manager environment _email_to router-notifications@mydomain.com event manager environment _email_server 192.168.1.1 (This is your SMTP Server) event manager environment _email_from 2951@Office1 event manager environment _router_name 2951@Office1 event manager directory user policy &amp;quot;flash:/&amp;quot; courtesy of Chris Partsenidis</description>
     </item>
     
   </channel>
