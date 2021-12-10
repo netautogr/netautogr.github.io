@@ -6,10 +6,19 @@
     <description>Recent content in untagged on Network Automation GR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Dec 2021 00:29:41 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 10 Dec 2021 08:20:22 +0200</lastBuildDate>
     
 	<atom:link href="https://netautogr.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jumpstart_your_Python_Learning</title>
+      <link>https://netautogr.github.io/posts/2021/12/jumpstart_your_python_learning/</link>
+      <pubDate>Fri, 10 Dec 2021 08:20:22 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/12/jumpstart_your_python_learning/</guid>
+      <description>Γενικά Το βασικό θέμα του παρόντος post είναι πως να ξεκινήσει κανείς να μαθαίνει Python (με οποιοδήποτε τρόπο). Τα παρακάτω προέκυψαν από συζητήσεις μελών μας στο LinkedIn, εσωτερικές συζητήσεις μέσα στην κοινότητα και συλλογή από online resources. Αφορμή υπήρξαν μια ερώτηση προερχόμενη εκτός της κοινότητας για εκμάθηση Python για συγκεκριμένο πακέτο Business Intelligence και ερώτηση μέλους ποιο είναι το καταλληλότερο σημείο εκκίνησης για εκμάθηση Python, πιθανώς ξεκινώντας από το μηδέν.</description>
+    </item>
     
     <item>
       <title>Python_Vs_Ansible skirmish</title>

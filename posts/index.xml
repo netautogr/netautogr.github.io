@@ -5,8 +5,141 @@
         <description>Recent content in Posts on Network Automation GR</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 10 Dec 2021 00:29:41 +0200</lastBuildDate>
+        <lastBuildDate>Fri, 10 Dec 2021 08:20:22 +0200</lastBuildDate>
         <atom:link href="https://netautogr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Jumpstart_your_Python_Learning</title>
+            <link>https://netautogr.github.io/posts/2021/12/jumpstart_your_python_learning/</link>
+            <pubDate>Fri, 10 Dec 2021 08:20:22 +0200</pubDate>
+            
+            <guid>https://netautogr.github.io/posts/2021/12/jumpstart_your_python_learning/</guid>
+            <description>Γενικά Το βασικό θέμα του παρόντος post είναι πως να ξεκινήσει κανείς να μαθαίνει Python (με οποιοδήποτε τρόπο). Τα παρακάτω προέκυψαν από συζητήσεις μελών μας στο LinkedIn, εσωτερικές συζητήσεις μέσα στην κοινότητα και συλλογή από online resources. Αφορμή υπήρξαν μια ερώτηση προερχόμενη εκτός της κοινότητας για εκμάθηση Python για συγκεκριμένο πακέτο Business Intelligence και ερώτηση μέλους ποιο είναι το καταλληλότερο σημείο εκκίνησης για εκμάθηση Python, πιθανώς ξεκινώντας από το μηδέν.</description>
+            <content type="html"><![CDATA[<h1 id="γενικά">Γενικά</h1>
+<p>Το βασικό θέμα του παρόντος post είναι πως να ξεκινήσει κανείς να μαθαίνει Python (με οποιοδήποτε τρόπο).
+Τα παρακάτω προέκυψαν από συζητήσεις μελών μας στο LinkedIn, εσωτερικές συζητήσεις μέσα στην κοινότητα και συλλογή από online resources. Αφορμή υπήρξαν μια ερώτηση προερχόμενη εκτός της κοινότητας για εκμάθηση Python για συγκεκριμένο πακέτο Business Intelligence και ερώτηση μέλους ποιο είναι το καταλληλότερο σημείο εκκίνησης για εκμάθηση Python, πιθανώς ξεκινώντας από το μηδέν.</p>
+<h1 id="disclaimer">Disclaimer</h1>
+<p>Η κοινότητα μας δεν αποτελεί επίσημη οντότητα, δεν έχει καμία εμπορική σχέση ή ωφέλεια και δεν κάνει διαφημίσεις. Μοναδικός σκοπός είναι η βοήθεια στο χώρο των μηχανικών για την πιο ομαλή εκκίνηση της ενασχόλησης τους με το Network Automation &amp; Programmability.</p>
+<p>Δεν θεωρώ τον εαυτό μου ειδικό στην python. Ωστόσο για διάφορους λόγους έχω περάσει πλέον 5 χρόνια εξερευνώντας τις δυνατότητες της γλώσσας για αυτοματισμό κυρίως γύρω από δίκτυα και σχετικό λογισμικό, προσπαθώντας ταυτόχρονα να τη χρησιμοποιήσω και ως &ldquo;κόλλα&rdquo; για διάφορα integrations.
+Συνεπώς πάρτε ότι συμβουλή ακολουθήσει &ldquo;with a grain of salt&rdquo; όπως λένε..</p>
+<h1 id="ξεκίνημα-για-αρχάριους">Ξεκίνημα για αρχάριους</h1>
+<p>Για γενικές γνώσεις πάνω στην Python ο κόσμος συνήθως λαμβάνει κατευθύνσεις για αντίστοιχα βιβλία και courses. Τέτοια είναι για παράδειγμα :</p>
+<ul>
+<li>Angela Yu&rsquo;s &ldquo;100 Days of Code&rdquo; - <a href="https://www.udemy.com/course/100-days-of-code/">https://www.udemy.com/course/100-days-of-code/</a></li>
+<li>Learn Python3 the hard way - <a href="https://learnpythonthehardway.org/python3/preface.html">https://learnpythonthehardway.org/python3/preface.html</a></li>
+</ul>
+<h1 id="python-and-apis">Python and APIs</h1>
+<p>Πολλά software πακέτα, μεταξύ αυτών και κάποια για BI διαθέτουν API που είναι βασισμένο σε REST.
+Η python έχει libraries για να μιλήσετε με REST APIs, η πιο δημοφιλής (αλλά όχι η μοναδική) είναι η requests. Κάποιοι μιλούν πολύ θετικά για την httpx αλλά για αρχή μπορείτε να την αγνοήσετε.
+Ειδικά για REST APIs, πήρα τις πρώτες μου γνώσεις μέσω Cisco Devnet γιατί με ενδιέφεραν τα APIs που έχουν οι σχετικές πλατφόρμες λογισμικού. Το Cisco Devnet διαθέτει δωρεάν πρόσβαση (κατόπιν εγγραφής με το email σας) σε μια μεγάλη συλλογή από self paced labs και trainings (μικρά σε έκταση) όπου μπορεί κανείς να μάθει τις σχετικές τεχνολογίες.
+Δεν είναι όπως υποχρεωτικό να ακολουθήσετε αυτή την οδό.</p>
+<h2 id="start-with-postman-rest-client">Start with Postman (REST Client)</h2>
+<p>Για να μιλήσετε με REST APIs μπορείτε να πειραματιστείτε κατευθείαν με εργαλεία που δεν απαιτούν γνώσεις προγραμματισμού, όπως το Postman. <a href="https://www.postman.com/">https://www.postman.com/</a></p>
+<p>Στο site του postman μπορείτε να βρείτε collections για δημοφιλή λογισμικά που υποστηρίζουν REST, π.χ. <a href="https://www.postman.com/power-bi?tab=collections">https://www.postman.com/power-bi?tab=collections</a></p>
+<h2 id="use-an-ide-visual-studio-code">Use an IDE (Visual Studio Code)</h2>
+<p>Αν ήδη γνωρίζετε προγραμματισμό και χρησιμοποιείτε κάποιο IDE όπως το visual studio code (<a href="https://code.visualstudio.com/),">https://code.visualstudio.com/),</a> κάποια από αυτά έχουν extensions/plugins που ενσωματώνουν rest clients χωρίς να χρειάζεστε εξωτερικά εργαλεία (<a href="https://www.producthunt.com/posts/thunder-client">https://www.producthunt.com/posts/thunder-client</a>)</p>
+<p>Υπάρχουν resources για να πειραματιστείτε με REST APIs στο internet. Π.χ. <a href="https://deckofcardsapi.com/">https://deckofcardsapi.com/</a></p>
+<h1 id="use-python-with-excel-and-csvs-maybe-for-data-analysis">Use Python with Excel and CSVs (maybe) for Data Analysis</h1>
+<p>Επειδή αναφέρατε το excel, θα πρέπει να έχετε υπόψη σας δύο βιβλιοθήκες. Openpyxl &amp; Pandas.</p>
+<ul>
+<li><a href="https://openpyxl.readthedocs.io/en/stable/">https://openpyxl.readthedocs.io/en/stable/</a></li>
+<li><a href="https://pandas.pydata.org/docs/">https://pandas.pydata.org/docs/</a></li>
+</ul>
+<p>Η πρώτη είναι πιο lightweight και προσφέρεται για να μάθετε το excel manipulation μέσω Python.</p>
+<p>Η δεύτερη δουλεύει με dataframes, διαθέτει μεγαλύτερο βάθος και είναι must για data analysts καθώς διαθέτει τεράστιες δυνατότητες για επεξεργασία δεδομένων.
+Sources για να ξεκινήσετε.</p>
+<h1 id="online-learning-platforms--resources">Online Learning Platforms &amp; Resources</h1>
+<p>Υπάρχουν πολλές πλατφόρμες που δίνουν δωρεάν γνώση για python και άλλες όπου υπάρχει συνδρομή.</p>
+<h2 id="δωρεάν">Δωρεάν</h2>
+<ul>
+<li><a href="https://www.codecademy.com/">https://www.codecademy.com/</a></li>
+<li><a href="https://www.freecodecamp.org/">https://www.freecodecamp.org/</a></li>
+</ul>
+<p>Αυτό το post αναφέρει κι άλλα sources, εκτός αυτών και η NSA είχε δημοσιεύσει το internal course της για Python, δωρεάν.
+<a href="https://www.makeuseof.com/how-to-learn-python-for-free/amp/">https://www.makeuseof.com/how-to-learn-python-for-free/amp/</a></p>
+<p>Εδώ αναφέρονται αρκετά free courses. Κάποια είναι σε Πανεπιστήμια και ακολουθούν πρόγραμμα - <a href="https://www.makeuseof.com/python-online-course-free/">https://www.makeuseof.com/python-online-course-free/</a></p>
+<h2 id="δωρεάν---learning-at-cisco">Δωρεάν - Learning at Cisco</h2>
+<p><a href="https://learningnetwork.cisco.com/s/learning-plan-detail-standard?ltui__urlRecordId=a1c6e0000096sAfAAI&amp;ltui__urlRedirect=learning-plan-detail-standard">https://learningnetwork.cisco.com/s/learning-plan-detail-standard?ltui__urlRecordId=a1c6e0000096sAfAAI&amp;ltui__urlRedirect=learning-plan-detail-standard</a> - Course για Python, δωρεάν πρόσβαση.</p>
+<h2 id="network-oriented">Network Oriented</h2>
+<p>Εγώ προσωπικά, λόγω ενδιαφερόντων ξεκίνησα από εδω:</p>
+<ul>
+<li><a href="https://pynet.twb-tech.com/free-python-course.html">https://pynet.twb-tech.com/free-python-course.html</a> - To Free Email Course του Kirk Byers (υπάρχει και Paid Version που περιλαμβάνει και προχωρημένα αντικείμενα, έχει λάβει καλές κριτικές. Για το Free course οι απόψεις διίστανται)</li>
+<li><a href="https://developer.cisco.com/video/net-prog-basics/">https://developer.cisco.com/video/net-prog-basics/</a></li>
+<li><a href="https://www.slideshare.net/JeremySchulman/python-for-network-engineers-a-practical-guide-for-getting-started">https://www.slideshare.net/JeremySchulman/python-for-network-engineers-a-practical-guide-for-getting-started</a> - Slides από Jeremy Schulman (πρώην Juniper Networks, νυν NBL)</li>
+</ul>
+<p>Πέραν του Video στο Cisco Devnet θα βρείτε αρκετά labs και για καθαρό Python, όπως:</p>
+<ul>
+<li><a href="https://developer.cisco.com/learning/modules/programming-fundamentals/intro-python-part1/step/1">https://developer.cisco.com/learning/modules/programming-fundamentals/intro-python-part1/step/1</a></li>
+<li><a href="https://developer.cisco.com/learning/modules/programming-fundamentals/intro-python-part2/step/1">https://developer.cisco.com/learning/modules/programming-fundamentals/intro-python-part2/step/1</a></li>
+<li><a href="https://developer.cisco.com/learning/modules/programming-fundamentals/parsing-json-python/step/1">https://developer.cisco.com/learning/modules/programming-fundamentals/parsing-json-python/step/1</a></li>
+</ul>
+<p>Το βιβλίο του Eric Chou (από την PACT, διαθέσιμο μέσω Amazon) είναι εξαιρετικό κατά γενική ομολογία.
+<a href="https://www.amazon.com/Mastering-Python-Networking-automation-programmability/dp/1839214678/">https://www.amazon.com/Mastering-Python-Networking-automation-programmability/dp/1839214678/</a></p>
+<h2 id="γενικά-για-automation">Γενικά για automation</h2>
+<p><a href="https://automatetheboringstuff.com/">https://automatetheboringstuff.com/</a> - Το βιβλίο Al Sweigart το Automate the boring stuff with Python (2nd edition)</p>
+<h2 id="for-non-programmers">For non-programmers</h2>
+<ul>
+<li><a href="https://store.lerner.co.il/python-for-non-programmers-live">https://store.lerner.co.il/python-for-non-programmers-live</a></li>
+<li><a href="https://thenewstack.io/an-introduction-to-python-for-non-programmers/">https://thenewstack.io/an-introduction-to-python-for-non-programmers/</a></li>
+</ul>
+<h2 id="δωρεάν-ως-ένα-βαθμό">Δωρεάν ως ένα βαθμό</h2>
+<ul>
+<li><a href="https://realpython.com/start-here/">https://realpython.com/start-here/</a> Εδώ θα βρείτε και αρκετά posts για excel &amp; csv, must για να πάρετε μια γρήγορη ιδέα.</li>
+<li><a href="https://realpython.com/openpyxl-excel-spreadsheets-python/">https://realpython.com/openpyxl-excel-spreadsheets-python/</a></li>
+<li><a href="https://realpython.com/lessons/excel-python-openpyxl-overview/">https://realpython.com/lessons/excel-python-openpyxl-overview/</a></li>
+<li><a href="https://realpython.com/pandas-read-write-files/">https://realpython.com/pandas-read-write-files/</a></li>
+<li><a href="https://realpython.com/python-csv/">https://realpython.com/python-csv/</a></li>
+<li><a href="https://realpython.com/python-interview-problem-parsing-csv-files/">https://realpython.com/python-interview-problem-parsing-csv-files/</a></li>
+<li><a href="https://store.lerner.co.il/python-for-non-programmers-live">https://store.lerner.co.il/python-for-non-programmers-live</a></li>
+</ul>
+<h2 id="άλλα-σημαντικά-site">Άλλα σημαντικά site</h2>
+<ul>
+<li><a href="https://www.w3schools.com/python/default.asp">https://www.w3schools.com/python/default.asp</a> - Προτείνεται και από Πανεπιστήμια</li>
+<li><a href="https://dev.to/">https://dev.to/</a></li>
+<li><a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+</ul>
+<p>Επίσης μην ξεχνάτε τη δύναμη του google &amp; youtube.</p>
+<h2 id="online-platforms-με-κόστος">Online Platforms με κόστος</h2>
+<ul>
+<li>
+<p><a href="https://www.udemy.com/">https://www.udemy.com/</a> - κόστος ανά course</p>
+</li>
+<li>
+<p><a href="https://www.pluralsight.com/">https://www.pluralsight.com/</a> - Συνδρομή (μεγάλη έκπτωση στην Blackfriday)</p>
+</li>
+<li>
+<p><a href="https://www.cbtnuggets.com/features">https://www.cbtnuggets.com/features</a> - Συνδρομή (αρκετά ακριβότεροι, πάνε σε μεγαλύτερο βάθος σε ορισμένες περιπτώσεις).</p>
+</li>
+</ul>
+<p>Ειδικά σε αυτό:</p>
+<ul>
+<li>
+<p><a href="https://www.cbtnuggets.com/it-training/python/network-engineers-intro">https://www.cbtnuggets.com/it-training/python/network-engineers-intro</a></p>
+</li>
+<li>
+<p><a href="https://www.cbtnuggets.com/it-training/python/beginner-python-3">https://www.cbtnuggets.com/it-training/python/beginner-python-3</a></p>
+</li>
+<li>
+<p><a href="https://www.oreilly.com/online-learning/">https://www.oreilly.com/online-learning/</a> - Συνδρομή (αρκετά ακριβότεροι, πρόσβαση σε online ζωντανά σεμινάρια, recorded video trainings και βιβλία από αρκετούς εκδοτικούς οίκους.</p>
+</li>
+</ul>
+<h2 id="ελληνικά-academies">Ελληνικά Academies</h2>
+<p>Το μόνο που γνωρίζω που προσφέρει αυτή τη στιγμή σχετικό training είναι το HAEC (Εκπαιδευτικό Κέντρο της ΕλληνοΑμερικανικής Ένωσης)</p>
+<ul>
+<li><a href="https://www.haec.gr/en/devnet-associate">https://www.haec.gr/en/devnet-associate</a> - Devnet Associate Training (περιλαμβάνει και Python αλλά έχει focus σε automation &amp; Devops training για το Cisco Devnet Associate Certification)</li>
+<li><a href="https://www.haec.gr/el/programmatismos-me-python">https://www.haec.gr/el/programmatismos-me-python</a> - Python Training</li>
+</ul>
+<h1 id="set-up-your-ide">Set up your IDE</h1>
+<p><a href="https://www.youtube.com/watch?v=7FltByLPnrg">https://www.youtube.com/watch?v=7FltByLPnrg</a> - Setting up VS Code for Python Beginners</p>
+<h1 id="άρθρα-με-συμβουλές-και-walkthroughs">Άρθρα με συμβουλές και walkthroughs</h1>
+<p>Το internet γεμάτο. Κάποια sites είναι πιο αξιόπιστα, να είστε λίγο προσεκτικοί, μπορεί να σας βοηθήσουν στην εύκολη κατανόηση αλλά είναι εύκολο να περιέχουν μισή γνώση ή λάθη.
+Ένα παράδειγμα:</p>
+<p><a href="https://towardsdatascience.com/python-go-from-rookie-to-rockstar-d03fa07a32e8">https://towardsdatascience.com/python-go-from-rookie-to-rockstar-d03fa07a32e8</a></p>
+<h1 id="πρόταση-προσέγγισης">Πρόταση προσέγγισης</h1>
+<p>Θα πρότεινα να πάρετε γρήγορα γενικές γνώσεις (variables, input &amp; output, δομές ελέγχου, functions, classes - optional, virtual environments) και μετά να εστιάσετε στα excel libraries &amp; REST APIs. Επίσης θα χρειαστεί κάποια στιγμή να ασχοληθείτε με το debugging είτε μέσω κάποιου IDE (π.χ. visual studio code) είτε με αντίστοιχα libraries όπως ipdb.</p>
+<p>Καλή επιτυχία!</p>
+]]></content>
+        </item>
         
         <item>
             <title>Python_Vs_Ansible skirmish</title>

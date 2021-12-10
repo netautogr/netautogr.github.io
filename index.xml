@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Jumpstart_your_Python_Learning</title>
+      <link>https://netautogr.github.io/posts/2021/12/jumpstart_your_python_learning/</link>
+      <pubDate>Fri, 10 Dec 2021 08:20:22 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/12/jumpstart_your_python_learning/</guid>
+      <description>Γενικά Το βασικό θέμα του παρόντος post είναι πως να ξεκινήσει κανείς να μαθαίνει Python (με οποιοδήποτε τρόπο). Τα παρακάτω προέκυψαν από συζητήσεις μελών μας στο LinkedIn, εσωτερικές συζητήσεις μέσα στην κοινότητα και συλλογή από online resources. Αφορμή υπήρξαν μια ερώτηση προερχόμενη εκτός της κοινότητας για εκμάθηση Python για συγκεκριμένο πακέτο Business Intelligence και ερώτηση μέλους ποιο είναι το καταλληλότερο σημείο εκκίνησης για εκμάθηση Python, πιθανώς ξεκινώντας από το μηδέν.</description>
+    </item>
+    
+    <item>
       <title>Python_Vs_Ansible skirmish</title>
       <link>https://netautogr.github.io/posts/2021/12/python_vs_ansible-skirmish/</link>
       <pubDate>Fri, 10 Dec 2021 00:29:41 +0200</pubDate>
@@ -97,16 +106,6 @@ event manager applet wan-download_monitor authorization bypass event interface n
       <guid>https://netautogr.github.io/posts/2020/11/eem-monitor-environment/</guid>
       <description>The following applet is triggered whenever there is a system environment message (%ENVMON) generated in the device&amp;rsquo;s syslog. E.g high temperature, failed power supply etc. As soon as EEM &amp;ldquo;sees&amp;rdquo; %ENVMON messages, it will execute the below commands, capture the output and email it to me:
 event manager applet env_monitor authorization bypass event syslog pattern &amp;quot;%ENVMON&amp;quot; action 1.01 syslog msg &amp;quot;------ EEM GENERATED MESSAGE ---------&amp;quot; action 1.02 syslog msg &amp;quot;------ENVIRONMENT PROBLEM DETECTED----&amp;quot; action 1.</description>
-    </item>
-    
-    <item>
-      <title>EEM monitor CPU</title>
-      <link>https://netautogr.github.io/posts/2020/11/eem-monitor-cpu/</link>
-      <pubDate>Thu, 26 Nov 2020 01:22:15 +0200</pubDate>
-      
-      <guid>https://netautogr.github.io/posts/2020/11/eem-monitor-cpu/</guid>
-      <description>This applet monitors CPU usage. It&amp;rsquo;s extremely useful to monitor router or switch CPU usage. If the CPU usage exceeds 70% for more than 2 minutes, it will execute the commands below, capture the output and email it to me. Be mindful that the SNMP IODs might change depending on the IOS version or hardware device:
-event manager applet cpu_monitor authorization bypass event snmp oid 1.3.6.1.4.1.9.9.109.1.1.1.1.3.1 get-type exact entry-op gt entry-val &amp;quot;70&amp;quot; entry-type value poll-interval 120 maxrun 20 action 1.</description>
     </item>
     
   </channel>
