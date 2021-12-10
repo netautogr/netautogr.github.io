@@ -198,11 +198,25 @@
 </code></pre></div><h2 id="παράδειγμα-network-automation-με-ansible">Παράδειγμα Network Automation με Ansible</h2>
 <p>(<em>Τα επόμενα παραδείγματα αναδημοσιεύονται από το ansible.github.io</em>)
 Στο επόμενο παράδειγμα θα χρησιμοποιήσουμε Ansible Variables για να αποθηκεύσουμε τις IP διευθύνσεις δύο router. Θα χρησιμοποιήσουμε επίσης το Jinja2 lookup plugin , το οποίο θα μας μας επιτρέψει να δημιουργήσουμε ένα πρότυπο διαμόρφωσης συσκευής. Δεν αναφέρονται πλήρη playbook και κώδικας, τα οποία είναι διαθέσιμα στις πηγές του άρθρου αλλά παρουσιάζεται και επεξηγείται η λογική.</p>
-<p>Θα χρησιμοποιήσουμε το παρακάτω IP schema για να δηλώσουμε IP διευθύνσεις στην Loopback1 στο rtr1 και rtr2 :
-|Device | Lo1 IP address |
-| &ndash; | &mdash;&mdash;&mdash;&ndash; |
-|r1	| 192.168.1.1/32 |
-|r2	| 192.168.1.2/32 |</p>
+<p>Θα χρησιμοποιήσουμε το παρακάτω IP schema για να δηλώσουμε IP διευθύνσεις στην Loopback1 στο rtr1 και rtr2 :</p>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Lo1 IP address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r1</td>
+<td>192.168.1.1/32</td>
+</tr>
+<tr>
+<td>r2</td>
+<td>192.168.1.2/32</td>
+</tr>
+</tbody>
+</table>
 <p>Οι μεταβλητές μπορούν δηλωθούν στον φάκελο host_vars η στο group_vars.
 Tα interfaces αλλά και οι IP πρέπει να αποθηκευτούν ως μεταβλητές. Tο περιεχόμενου του YAML αρχείου θα δημιουργηθεί ώς εξής:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">nodes</span>:
