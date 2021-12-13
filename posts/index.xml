@@ -33,7 +33,7 @@
 <p>Πολλά software πακέτα, μεταξύ αυτών και κάποια για BI διαθέτουν API που είναι βασισμένο σε REST.
 Η python έχει libraries για να μιλήσετε με REST APIs, η πιο δημοφιλής (αλλά όχι η μοναδική) είναι η requests. Κάποιοι μιλούν πολύ θετικά για την httpx αλλά για αρχή μπορείτε να την αγνοήσετε.
 Ειδικά για REST APIs, πήρα τις πρώτες μου γνώσεις μέσω Cisco Devnet γιατί με ενδιέφεραν τα APIs που έχουν οι σχετικές πλατφόρμες λογισμικού. Το Cisco Devnet διαθέτει δωρεάν πρόσβαση (κατόπιν εγγραφής με το email σας) σε μια μεγάλη συλλογή από self paced labs και trainings (μικρά σε έκταση) όπου μπορεί κανείς να μάθει τις σχετικές τεχνολογίες.
-Δεν είναι όπως υποχρεωτικό να ακολουθήσετε αυτή την οδό.</p>
+Δεν είναι όμως υποχρεωτικό να ακολουθήσετε αυτή την οδό.</p>
 <h2 id="start-with-postman-rest-client">Start with Postman (REST Client)</h2>
 <p>Για να μιλήσετε με REST APIs μπορείτε να πειραματιστείτε κατευθείαν με εργαλεία που δεν απαιτούν γνώσεις προγραμματισμού, όπως το Postman. <a href="https://www.postman.com/">https://www.postman.com/</a></p>
 <p>Στο site του postman μπορείτε να βρείτε collections για δημοφιλή λογισμικά που υποστηρίζουν REST, π.χ. <a href="https://www.postman.com/power-bi?tab=collections">https://www.postman.com/power-bi?tab=collections</a></p>
@@ -47,8 +47,7 @@
 <li><a href="https://pandas.pydata.org/docs/">https://pandas.pydata.org/docs/</a></li>
 </ul>
 <p>Η πρώτη είναι πιο lightweight και προσφέρεται για να μάθετε το excel manipulation μέσω Python.</p>
-<p>Η δεύτερη δουλεύει με dataframes, διαθέτει μεγαλύτερο βάθος και είναι must για data analysts καθώς διαθέτει τεράστιες δυνατότητες για επεξεργασία δεδομένων.
-Sources για να ξεκινήσετε.</p>
+<p>Η δεύτερη δουλεύει με dataframes, διαθέτει μεγαλύτερο βάθος και είναι must για data analysts καθώς διαθέτει τεράστιες δυνατότητες για επεξεργασία δεδομένων.</p>
 <h1 id="online-learning-platforms--resources">Online Learning Platforms &amp; Resources</h1>
 <p>Υπάρχουν πολλές πλατφόρμες που δίνουν δωρεάν γνώση για python και άλλες όπου υπάρχει συνδρομή.</p>
 <h2 id="δωρεάν">Δωρεάν</h2>
