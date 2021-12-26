@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Introduction_to_PyATS</title>
+      <link>https://netautogr.github.io/posts/2021/12/introduction_to_pyats/</link>
+      <pubDate>Sat, 18 Dec 2021 00:55:02 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/12/introduction_to_pyats/</guid>
+      <description>Εισαγωγή Το PyATS είναι ένα software framework για την κατασκευή αυτόματων διαδικασιών ελέγχου για δικτυακές συσκευές, ή όπως λέει η Cisco, ένα ολοκληρωμένο οικοσύστημα αυτοματισμού και δοκιμών, προσφέροντας όλα τα εργαλεία για τις καθημερινές DevOps εργασίες των μηχανικών δικτύων, δίνοντας εργαλεία είτε για τη γραμμή εντολών, είτε με τη χρήση libraries, είτε μέσω ενός σύγχρονου GUI Dashboard.
+Είναι εσωτερικό εργαλείο της Cisco εδώ και 13 χρόνια για την δοκιμή των προϊόντων και συστημάτων τους, το οποίο αποφάσισαν να διαθέσουν στο ευρύ κοινό από το 2017.</description>
+    </item>
+    
+    <item>
       <title>Jumpstart_your_Python_Learning</title>
       <link>https://netautogr.github.io/posts/2021/12/jumpstart_your_python_learning/</link>
       <pubDate>Fri, 10 Dec 2021 08:20:22 +0200</pubDate>
@@ -96,16 +106,6 @@ event manager applet speaker_monitor_Gi7/0/9 authorization bypass event interfac
       <guid>https://netautogr.github.io/posts/2020/11/eem-monitor-traffic/</guid>
       <description>The two below applets monitor Upload and Download traffic on specific interfaces. When they exceed 7Mbps for more than 180 seconds (3 minutes), it will execute the configured commands, capture the output and email it to me. Very useful for monitoring WAN links.
 event manager applet wan-download_monitor authorization bypass event interface name GigabitEthernet0/1 parameter receive_rate_bps entry-op ge entry-val 7000000 entry-type increment poll-interval 180 action 1.01 syslog msg &amp;quot;------ EEM GENERATED MESSAGE ---------&amp;quot; action 1.</description>
-    </item>
-    
-    <item>
-      <title>EEM monitor environment</title>
-      <link>https://netautogr.github.io/posts/2020/11/eem-monitor-environment/</link>
-      <pubDate>Thu, 26 Nov 2020 01:24:34 +0200</pubDate>
-      
-      <guid>https://netautogr.github.io/posts/2020/11/eem-monitor-environment/</guid>
-      <description>The following applet is triggered whenever there is a system environment message (%ENVMON) generated in the device&amp;rsquo;s syslog. E.g high temperature, failed power supply etc. As soon as EEM &amp;ldquo;sees&amp;rdquo; %ENVMON messages, it will execute the below commands, capture the output and email it to me:
-event manager applet env_monitor authorization bypass event syslog pattern &amp;quot;%ENVMON&amp;quot; action 1.01 syslog msg &amp;quot;------ EEM GENERATED MESSAGE ---------&amp;quot; action 1.02 syslog msg &amp;quot;------ENVIRONMENT PROBLEM DETECTED----&amp;quot; action 1.</description>
     </item>
     
   </channel>

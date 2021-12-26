@@ -6,10 +6,20 @@
     <description>Recent content in untagged on Network Automation GR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Dec 2021 08:20:22 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 18 Dec 2021 00:55:02 +0200</lastBuildDate>
     
 	<atom:link href="https://netautogr.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction_to_PyATS</title>
+      <link>https://netautogr.github.io/posts/2021/12/introduction_to_pyats/</link>
+      <pubDate>Sat, 18 Dec 2021 00:55:02 +0200</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2021/12/introduction_to_pyats/</guid>
+      <description>Εισαγωγή Το PyATS είναι ένα software framework για την κατασκευή αυτόματων διαδικασιών ελέγχου για δικτυακές συσκευές, ή όπως λέει η Cisco, ένα ολοκληρωμένο οικοσύστημα αυτοματισμού και δοκιμών, προσφέροντας όλα τα εργαλεία για τις καθημερινές DevOps εργασίες των μηχανικών δικτύων, δίνοντας εργαλεία είτε για τη γραμμή εντολών, είτε με τη χρήση libraries, είτε μέσω ενός σύγχρονου GUI Dashboard.
+Είναι εσωτερικό εργαλείο της Cisco εδώ και 13 χρόνια για την δοκιμή των προϊόντων και συστημάτων τους, το οποίο αποφάσισαν να διαθέσουν στο ευρύ κοινό από το 2017.</description>
+    </item>
     
     <item>
       <title>Jumpstart_your_Python_Learning</title>
