@@ -250,6 +250,13 @@ bash$ pyats parse <span style="color:#e6db74">&#34;show interfaces&#34;</span> -
 <li>All Learning Labs - <a href="https://developer.cisco.com/learning/modules/pyats-genie">https://developer.cisco.com/learning/modules/pyats-genie</a></li>
 </ul>
 </li>
+<li>Cisco Live Workshops
+<ul>
+<li>Cisco Live! DEVWKS-2595: Stateful Network Validation using pyATS/Genie - <a href="https://github.com/CiscoTestAutomation/CL-DevNet-2595">https://github.com/CiscoTestAutomation/CL-DevNet-2595</a></li>
+<li>CL-DevNet-2595 Workshop - <a href="https://github.com/CiscoTestAutomation/CL-DevNet-2595/blob/master/workshop.md">https://github.com/CiscoTestAutomation/CL-DevNet-2595/blob/master/workshop.md</a></li>
+<li>Cisco Live! DEVWKS-2808 - <a href="https://github.com/CiscoTestAutomation/CL-DEVWKS-2808/blob/master/workshop.md">https://github.com/CiscoTestAutomation/CL-DEVWKS-2808/blob/master/workshop.md</a></li>
+</ul>
+</li>
 <li>Training
 <ul>
 <li>CBT Nuggets, John McGovern - <a href="https://www.cbtnuggets.com/learn/it-training/automate-network-testing-with-pyats">https://www.cbtnuggets.com/learn/it-training/automate-network-testing-with-pyats</a></li>
