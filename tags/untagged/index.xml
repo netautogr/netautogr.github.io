@@ -6,10 +6,20 @@
     <description>Recent content in untagged on Network Automation GR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Dec 2021 00:55:02 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 24 Oct 2025 19:21:01 +0300</lastBuildDate>
     
 	<atom:link href="https://netautogr.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Network_Simulation_Tools_for_Labs</title>
+      <link>https://netautogr.github.io/posts/2025/10/network_simulation_tools_for_labs/</link>
+      <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2025/10/network_simulation_tools_for_labs/</guid>
+      <description>Ειοαγωγή Το post αυτό κάνει μια διπλή προσπάθεια:
+ Να περιγράψει το τοπίο γύρω από το Network Sumulation και τις ανάγκες που μπορεί να καλύψει για network labs και όχι μόνο Να επαναφέρει το ρυθμό της παραγωγής περιοχομένου της ομάδας για το Network Automation σε ένα κύκλο λίγο πιο συχνό από τέσσερα χρόνια (τελευταίο post ήταν το 2021)  Network Simulation Τί είναι; </description>
+    </item>
     
     <item>
       <title>Introduction_to_PyATS</title>

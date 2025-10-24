@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Network_Simulation_Tools_for_Labs</title>
+      <link>https://netautogr.github.io/posts/2025/10/network_simulation_tools_for_labs/</link>
+      <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2025/10/network_simulation_tools_for_labs/</guid>
+      <description>Ειοαγωγή Το post αυτό κάνει μια διπλή προσπάθεια:
+ Να περιγράψει το τοπίο γύρω από το Network Sumulation και τις ανάγκες που μπορεί να καλύψει για network labs και όχι μόνο Να επαναφέρει το ρυθμό της παραγωγής περιοχομένου της ομάδας για το Network Automation σε ένα κύκλο λίγο πιο συχνό από τέσσερα χρόνια (τελευταίο post ήταν το 2021)  Network Simulation Τί είναι; </description>
+    </item>
+    
+    <item>
       <title>Introduction_to_PyATS</title>
       <link>https://netautogr.github.io/posts/2021/12/introduction_to_pyats/</link>
       <pubDate>Sat, 18 Dec 2021 00:55:02 +0200</pubDate>
@@ -96,16 +106,6 @@
       <guid>https://netautogr.github.io/posts/2020/11/eem-monitor-interface-stats/</guid>
       <description>The following applet is triggered whenever the transmit rate on the given interface falls below the configured threshold.
 event manager applet speaker_monitor_Gi7/0/9 authorization bypass event interface name GigabitEthernet7/0/9 parameter transmit_rate_bps entry-op le entry-val 1500000 entry-type value poll-interval 120 action 1.01 syslog msg &amp;quot;------ EEM GENERATED MESSAGE ---------&amp;quot; action 1.02 syslog msg &amp;quot;----- SPEAKER RECEIVE RATE UNDER 1.5Mbps DETECTED ----&amp;quot; action 1.03 cli command &amp;quot;enable&amp;quot; action 1.05 cli command &amp;quot;configure terminal&amp;quot; action 1.</description>
-    </item>
-    
-    <item>
-      <title>EEM monitor traffic</title>
-      <link>https://netautogr.github.io/posts/2020/11/eem-monitor-traffic/</link>
-      <pubDate>Thu, 26 Nov 2020 01:25:46 +0200</pubDate>
-      
-      <guid>https://netautogr.github.io/posts/2020/11/eem-monitor-traffic/</guid>
-      <description>The two below applets monitor Upload and Download traffic on specific interfaces. When they exceed 7Mbps for more than 180 seconds (3 minutes), it will execute the configured commands, capture the output and email it to me. Very useful for monitoring WAN links.
-event manager applet wan-download_monitor authorization bypass event interface name GigabitEthernet0/1 parameter receive_rate_bps entry-op ge entry-val 7000000 entry-type increment poll-interval 180 action 1.01 syslog msg &amp;quot;------ EEM GENERATED MESSAGE ---------&amp;quot; action 1.</description>
     </item>
     
   </channel>

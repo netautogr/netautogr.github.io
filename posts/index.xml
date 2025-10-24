@@ -5,8 +5,27 @@
         <description>Recent content in Posts on Network Automation GR</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 18 Dec 2021 00:55:02 +0200</lastBuildDate>
+        <lastBuildDate>Fri, 24 Oct 2025 19:21:01 +0300</lastBuildDate>
         <atom:link href="https://netautogr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Network_Simulation_Tools_for_Labs</title>
+            <link>https://netautogr.github.io/posts/2025/10/network_simulation_tools_for_labs/</link>
+            <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
+            
+            <guid>https://netautogr.github.io/posts/2025/10/network_simulation_tools_for_labs/</guid>
+            <description>Ειοαγωγή Το post αυτό κάνει μια διπλή προσπάθεια:
+ Να περιγράψει το τοπίο γύρω από το Network Sumulation και τις ανάγκες που μπορεί να καλύψει για network labs και όχι μόνο Να επαναφέρει το ρυθμό της παραγωγής περιοχομένου της ομάδας για το Network Automation σε ένα κύκλο λίγο πιο συχνό από τέσσερα χρόνια (τελευταίο post ήταν το 2021)  Network Simulation Τί είναι; </description>
+            <content type="html"><![CDATA[<h1 id="ειοαγωγή">Ειοαγωγή</h1>
+<p>Το post αυτό κάνει μια διπλή προσπάθεια:</p>
+<ul>
+<li>Να περιγράψει το τοπίο γύρω από το Network Sumulation και τις ανάγκες που μπορεί να καλύψει για network labs και όχι μόνο</li>
+<li>Να επαναφέρει το ρυθμό της παραγωγής περιοχομένου της ομάδας για το Network Automation σε ένα κύκλο λίγο πιο συχνό από τέσσερα χρόνια (τελευταίο post ήταν το 2021)</li>
+</ul>
+<h1 id="network-simulation">Network Simulation</h1>
+<h2 id="τί-είναι">Τί είναι;</h2>
+]]></content>
+        </item>
         
         <item>
             <title>Introduction_to_PyATS</title>
