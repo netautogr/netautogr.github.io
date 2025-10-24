@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Εισαγωγή Το PyATS είναι ένα software framework για την κατασκευή αυτόματων διαδικασιών ελέγχου για δικτυακές συσκευές, ή όπως λέει η Cisco, ένα ολοκληρωμένο οικοσύστημα αυτοματισμού και δοκιμών, προσφέροντας όλα τα εργαλεία για τις καθημερινές DevOps εργασίες των μηχανικών δικτύων, δίνοντας εργαλεία είτε για τη γραμμή εντολών, είτε με τη χρήση libraries, είτε μέσω ενός σύγχρονου GUI Dashboard.
+Είναι εσωτερικό εργαλείο της Cisco εδώ και 10 χρόνια (2012) για την δοκιμή των προϊόντων και συστημάτων τους, το οποίο αποφάσισαν να διαθέσουν στο ευρύ κοινό από το 2017." />
+<meta name="keywords" content=", untagged" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://netautogr.github.io/posts/2021/12/introduction-to-pyats/" />
+
+
+    <title>
+        
+            Introduction to PyATS :: Network Automation GR 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://netautogr.github.io/main.393856bf2c430bb6c01d7af07c6fe966e7cce8073435cfbbc46e590bab7405ef.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://netautogr.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://netautogr.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://netautogr.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://netautogr.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://netautogr.github.io/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://netautogr.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Introduction to PyATS">
+<meta itemprop="description" content="Εισαγωγή Το PyATS είναι ένα software framework για την κατασκευή αυτόματων διαδικασιών ελέγχου για δικτυακές συσκευές, ή όπως λέει η Cisco, ένα ολοκληρωμένο οικοσύστημα αυτοματισμού και δοκιμών, προσφέροντας όλα τα εργαλεία για τις καθημερινές DevOps εργασίες των μηχανικών δικτύων, δίνοντας εργαλεία είτε για τη γραμμή εντολών, είτε με τη χρήση libraries, είτε μέσω ενός σύγχρονου GUI Dashboard.
+Είναι εσωτερικό εργαλείο της Cisco εδώ και 10 χρόνια (2012) για την δοκιμή των προϊόντων και συστημάτων τους, το οποίο αποφάσισαν να διαθέσουν στο ευρύ κοινό από το 2017.">
+<meta itemprop="datePublished" content="2021-12-18T00:55:02&#43;02:00" />
+<meta itemprop="dateModified" content="2021-12-18T00:55:02&#43;02:00" />
+<meta itemprop="wordCount" content="2764">
+<meta itemprop="image" content="https://netautogr.github.io"/>
+
+
+
+<meta itemprop="keywords" content="untagged," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://netautogr.github.io"/>
+
+<meta name="twitter:title" content="Introduction to PyATS"/>
+<meta name="twitter:description" content="Εισαγωγή Το PyATS είναι ένα software framework για την κατασκευή αυτόματων διαδικασιών ελέγχου για δικτυακές συσκευές, ή όπως λέει η Cisco, ένα ολοκληρωμένο οικοσύστημα αυτοματισμού και δοκιμών, προσφέροντας όλα τα εργαλεία για τις καθημερινές DevOps εργασίες των μηχανικών δικτύων, δίνοντας εργαλεία είτε για τη γραμμή εντολών, είτε με τη χρήση libraries, είτε μέσω ενός σύγχρονου GUI Dashboard.
+Είναι εσωτερικό εργαλείο της Cisco εδώ και 10 χρόνια (2012) για την δοκιμή των προϊόντων και συστημάτων τους, το οποίο αποφάσισαν να διαθέσουν στο ευρύ κοινό από το 2017."/>
+
+
+
+    <meta property="og:title" content="Introduction to PyATS" />
+<meta property="og:description" content="Εισαγωγή Το PyATS είναι ένα software framework για την κατασκευή αυτόματων διαδικασιών ελέγχου για δικτυακές συσκευές, ή όπως λέει η Cisco, ένα ολοκληρωμένο οικοσύστημα αυτοματισμού και δοκιμών, προσφέροντας όλα τα εργαλεία για τις καθημερινές DevOps εργασίες των μηχανικών δικτύων, δίνοντας εργαλεία είτε για τη γραμμή εντολών, είτε με τη χρήση libraries, είτε μέσω ενός σύγχρονου GUI Dashboard.
+Είναι εσωτερικό εργαλείο της Cisco εδώ και 10 χρόνια (2012) για την δοκιμή των προϊόντων και συστημάτων τους, το οποίο αποφάσισαν να διαθέσουν στο ευρύ κοινό από το 2017." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://netautogr.github.io/posts/2021/12/introduction-to-pyats/" />
+<meta property="og:image" content="https://netautogr.github.io"/>
+<meta property="article:published_time" content="2021-12-18T00:55:02+02:00" />
+<meta property="article:modified_time" content="2021-12-18T00:55:02+02:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-12-18 00:55:02 &#43;0200 EET" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://netautogr.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ /home/netautogr/</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#ff8400;
+                   animation-duration:2s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://netautogr.github.io/about">about</a></li><li><a href="https://netautogr.github.io/posts/">guides</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        13 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://netautogr.github.io/posts/2021/12/introduction-to-pyats/">Introduction to PyATS</a>
+      </h1>
+
+      
+
+      <div class="post-content">
+        <h1 id="εισαγωγή">Εισαγωγή</h1>
+<p>Το PyATS είναι ένα software framework για την κατασκευή αυτόματων διαδικασιών ελέγχου για δικτυακές συσκευές, ή όπως λέει η Cisco, ένα ολοκληρωμένο οικοσύστημα αυτοματισμού και δοκιμών, προσφέροντας όλα τα εργαλεία για τις καθημερινές DevOps εργασίες των μηχανικών δικτύων, δίνοντας εργαλεία είτε για τη γραμμή εντολών, είτε με τη χρήση libraries, είτε μέσω ενός σύγχρονου GUI Dashboard.</p>
+<p>Είναι εσωτερικό εργαλείο της Cisco εδώ και 10 χρόνια (2012) για την δοκιμή των προϊόντων και συστημάτων τους, το οποίο αποφάσισαν να διαθέσουν στο ευρύ κοινό από το 2017. Είναι φτιαγμένο σε Python και αποτελείται από διάφορα layers, τα οποία μπορούν να λειτουργούν είτε σε συνδυασμό είτε ανεξάρτητα.</p>
+<p>Στο παρόν post θα εξηγήσουμε σύντομα τί είναι το PyATS και από τί αποτελείται, ποιοι είναι οι βασικοί τρόποι χρήσης του και θα σας δώσουμε κατευθύνσεις για το που μπορείτε να μάθετε περισσότερα.
+Το πρώτο που πρέπει να αναφέρουμε, είναι: προσοχή πως θα το προφέρετε:
+<img src="https://storage.googleapis.com/blogs-images/ciscoblogs/1/2021/04/Vanilla-ISE-blog-3-pic1.jpg" alt="PyATS Pronounciation"></p>
+<p>Δεν μπορώ όμως να σκεφτώ καλύτερη εισαγωγή από την παρουσίαση του μέχρι πρότινος PyATS team leader, Siming Yuan:
+<a href="https://youtu.be/aMoXuXWohTA"><img src="https://img.youtube.com/vi/aMoXuXWohTA/maxresdefault.jpg" alt="Network Assurance: pyATS / Genie for Network Engineers"></a></p>
+<p>Εδώ σχετικό post του στο Cisco Developer Blog - <a href="https://blogs.cisco.com/developer/pyats-genie-transform">https://blogs.cisco.com/developer/pyats-genie-transform</a></p>
+<p>Κι εδώ το Getting Started από το Devnet Documentation - <a href="https://developer.cisco.com/docs/pyats-getting-started/">https://developer.cisco.com/docs/pyats-getting-started/</a></p>
+<p>Η ομάδα του Cisco PyATS αποτελείται από εξαιρετικούς μηχανικούς οι οποίοι είναι πάντα πρόθυμοι να προσφέρουν βοήθεια αρκεί να τους στείλετε ένα email στο <a href="mailto:pyats-support-ext@cisco.com">pyats-support-ext@cisco.com</a>
+Επίσης, μπορείτε να κάνετε join στο σχετικό webex channel εδώ: <a href="https://eurl.io/#r18UzrQVr">https://eurl.io/#r18UzrQVr</a> ή να το βρείτε από τη λίστα εδώ: <a href="https://eurl.io/">https://eurl.io/</a></p>
+<h1 id="framework-layers">Framework Layers</h1>
+<p>Όπως αναφέραμε το PyATS αποτελείται από πολλά κομμάτια τα οποία μπορείτε να θεωρήσετε πως λειτουργούν σε ανεξάρτητα στρώματα, όπως παρακάτω:
+<img src="https://pubhub.devnetcloud.com/media/pyats-genie-docs/docs/imgs/layers.png#developer.cisco.com" alt="PyATS Layers"></p>
+<p>Τα βασικά layers λοιπόν είναι:</p>
+<ul>
+<li>PyATS Core Toolbox</li>
+<li>PyATS SDK (π.χ. <a href="https://developer.cisco.com/docs/genie-docs/">Genie</a>)</li>
+<li>Business Logic Tools</li>
+</ul>
+<p>Μπορείτε να χρησιμοποιήσετε μόνο το core toolbox, ή τα libraries ή όλα μαζί με το business logic, είτε από τη γραμμή εντολής (Genie CLI), είτε μέσω CI/CD pipelines είτε φτιάχνοντας τη δική σας business logic ενσωματώνοντας όλα σε python scripts.</p>
+<p>Πως να το εγκαταστήσετε:</p>
+<ul>
+<li><a href="https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/install/installpyATS.html">https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/install/installpyATS.html</a></li>
+</ul>
+<p>To PyATS είναι διαθέσιμο:</p>
+<ul>
+<li>Ως python package - <a href="https://pypi.org/project/pyats/">https://pypi.org/project/pyats/</a></li>
+<li>Σε διάφορα flavors από docker containers - <a href="https://hub.docker.com/r/ciscotestautomation/pyats/">https://hub.docker.com/r/ciscotestautomation/pyats/</a></li>
+<li>Ως ολοκληρωμένο πακέτο με GUI - Xpresso</li>
+</ul>
+<p>Μπορείτε να τρέξετε το python package σε Linux &amp; Mac αλλά όχι σε Windows. Αν θέλετε να τρέξετε το PyATS σε Windows, θα πρέπει να χρησιμοποιήσετε το WSL (Windows Subsystem for Linux) ή να το τρέξετε μέσω Docker (τότε όμως στην ουσία δεν το τρέχετε σε Windows).</p>
+<h1 id="pyats-features">PyATS Features</h1>
+<h2 id="γενικά">Γενικά</h2>
+<p>Τα features του PyATS είναι πραγματικά ατελείωτα. Αξίζει να επενδύσει κανείς χρόνο για να τα εντάξει ως &ldquo;βέλη&rdquo; στη &ldquo;φαρέτρα&rdquo; του.</p>
+<h2 id="platform-agnostic-models">Platform Agnostic Models</h2>
+<p>Οι μηχανικοί του PyATS έχουν κατασκευάσει μοντέλα δεδομένων για τις δικτυακές συσκευές που δεν είναι δεμένα με συγκεκριμενους κατασκευαστές και μοντέλα και μόνο. Π.χ. το ospf routing model δεν είναι ειδικά για Cisco ή Juniper κλπ.
+Έτσι μπορείτε να χρησιμοποιήσετε το PyATS με εξοπλισμό που δεν είναι cisco, ακόμα και linux hosts.</p>
+<p>Ωστόσο για να μπορέσετε να κάνετε interface με τις συσκευές και να αλληλεπιδράσετε μαζί τους και με τα μοντέλα, χρειάζεται να υπάρχει και το ενδιάμεσο layer που μιλάει με τις συσκευές. Αυτό πρέπει είτε να είναι ήδη διαθέσιμο (parse, learn, config) ή μπορείτε να το κατασκευάσετε!</p>
+<h2 id="device-connection">Device connection</h2>
+<p>To PyATS χρησιμοποιεί το Unicon library (<a href="https://developer.cisco.com/docs/unicon/">https://developer.cisco.com/docs/unicon/</a>) για να &ldquo;μιλήσει&rdquo; με τις συσκευές μέσω SSH &amp; Telnet. Μπορείτε να καθορίσετε τις παραμέτρους σύνδεσης ανάλογα με το τί υποστηρίζεται από τις συσκευές.</p>
+<p>Η σύνδεση προς τις συσκευές γίνεται σειριακά, αλλά μπορεί να γίνει και παράλληλα υπό προϋποθέσεις (pyats pcall - <a href="https://pubhub.devnetcloud.com/media/pyats/docs/async/pcall.html">https://pubhub.devnetcloud.com/media/pyats/docs/async/pcall.html</a>) για γρηγορότερη εκτέλεση και λήψη αποτελεσμάτων.</p>
+<h2 id="device-inventory---testbed">Device Inventory - Testbed</h2>
+<p>Το PyATS χρησιμοποιεί μια δομή που ονομάζει testbed για την καταχώρηση των συσκευών, η οποία εφόσον φορτωθεί από αρχείο, πρέπει να είναι YAML αρχείο (.yml) με συγκεκριμένη δομή <a href="https://pubhub.devnetcloud.com/media/pyats/docs/topology/creation.html">https://pubhub.devnetcloud.com/media/pyats/docs/topology/creation.html</a></p>
+<p><img src="https://storage.googleapis.com/blogs-images/ciscoblogs/1/5ced7e47b3b53.png" alt="PyATS Testbed Yaml"></p>
+<p>Εναλλακτικά μπορείτε είτε να παράγετε το testbed μόνο απαντώντας με ερωτήσεις στο cli ή από ένα αρχείο excel ή ακόμα και δυναμικά στη μνήμη μέσω python. Υπάρχουν κι άλλες δυνατότητες εισάγοντας δεδομένα από άλλα εργαλεία ή frameworks.</p>
+<p>Δείτε ένα παράδειγμα κατασκευής pyats testbed σε αρχείο διαβάζοντας δεδομένα από το Cisco Prime Infrastructure εδώ:
+<a href="https://github.com/itheodoridis/itheodoridis-createtestbedsfromPI">https://github.com/itheodoridis/itheodoridis-createtestbedsfromPI</a></p>
+<p>Φυσικά ένα testbed είναι κάτι περισσότερο από ένα κατάλογο συσκευών. Μπορεί να ορίζει ένα πλήρες network topology:</p>
+<ul>
+<li><a href="https://pubhub.devnetcloud.com/media/pyats/docs/topology/index.html">https://pubhub.devnetcloud.com/media/pyats/docs/topology/index.html</a></li>
+</ul>
+<h2 id="genie-cli-vs-python-library">Genie CLI vs Python Library</h2>
+<p>Μπορείτε να εκτελέσετε τις λειτουργίες που υποστηρίζει το PyATS είτε μέσω CLI (περιορισμένες λειτουργίες, π.χ. genie parse, genie learn, genie diff) είτε μέσω python, όπου μπορείτε να σχηματίσετε τη δική σας λογική και να ελέγξετε απόλυτα την εισαγωγή και εξαγωγή δεδομένων.</p>
+<p>Στην περίπτωση χρήσης του Genie CLI, τα αποτελέσματα αποθηκεύονται ως αρχεία κειμένου στο δίσκο σε ξεχωριστά directories (ορίζονται κατά την εκτέλεση).</p>
+<p>Μπορείτε να χρησιμοποιήσετε το ίδιο directory εκτελώντας πολλαπλές λειτουργίες για όλα τα devices, όπου θα αποθηκεύονται δύο αρχεία ανά συσκευή και λειτουργία, ένα δομημένο και ένα με την raw μορφή που θα τα παίρνατε από τη γραμμή εντολής αν είχατε συνδεθεί οι ίδιοι στη συσκευή και είχατε εκτελέσει τις συγκεκριμένες λειτουργίες.</p>
+<ul>
+<li>Για να δείτε συνολικά τις επιλογές που έχετε για το Genie CLI δείτε εδώ: <a href="https://pubhub.devnetcloud.com/media/genie-docs/docs/cli/index.html">https://pubhub.devnetcloud.com/media/genie-docs/docs/cli/index.html</a></li>
+<li>Αν θέλετε να δείτε τις δυνατότητες που έχετε για να χρησιμοποιήσετε το PyATS γενικότερα μέσω CLI δείτε εδώ: <a href="https://pubhub.devnetcloud.com/media/pyats/docs/cli/index.html">https://pubhub.devnetcloud.com/media/pyats/docs/cli/index.html</a></li>
+</ul>
+<h2 id="genie-parse--parsers">Genie Parse &amp; Parsers</h2>
+<p>Με το Genie μπορείτε να εκτελέσετε εντολές συλλογής δεδομένων στις δικτυακές συσκευές (π.χ. Cisco show commands) και να επεξεργαστείτε τα δεδεμένα που επιστρέφονται, ώστε να προκύψουν συγκεκριμένες δομές που μπορείτε να αξιοποιήσετε για να παράγετε αυτοματοποιημένη λογική ή να τα επεξεργαστείτε περαιτέρω.</p>
+<p>Οι Genie parsers ερμηνεύουν αυτά τα δεδομένα και απομονώνουν τα πεδία δεδομένων σε αυτά, ενώ τα επιστρέφουν πίσω σε δομημένη μορφή (multi-level dictionaries, αν χρησιμοποιείτε python).</p>
+<ul>
+<li><a href="https://developer.cisco.com/docs/pyats/#!parsing-device-output">https://developer.cisco.com/docs/pyats/#!parsing-device-output</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># using Python</span>
+bash<span style="color:#960050;background-color:#1e0010">$</span> pyats shell <span style="color:#f92672">--</span>testbed<span style="color:#f92672">-</span>file testbed<span style="color:#f92672">.</span>yaml
+<span style="color:#f92672">&gt;&gt;&gt;</span> testbed<span style="color:#f92672">.</span>devices[<span style="color:#e6db74">&#39;nx-osv-1&#39;</span>]<span style="color:#f92672">.</span>connect()
+<span style="color:#f92672">&gt;&gt;&gt;</span> output <span style="color:#f92672">=</span> testbed<span style="color:#f92672">.</span>devices[<span style="color:#e6db74">&#39;nx-osv-1&#39;</span>]<span style="color:#f92672">.</span>parse(<span style="color:#e6db74">&#39;show interfaces&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># using CLI</span> 
+bash$ pyats parse <span style="color:#e6db74">&#34;show interfaces&#34;</span> --testbed-file testbed.yaml
+</code></pre></div><p><a href="https://youtu.be/zjzqJEeEX60"><img src="https://img.youtube.com/vi/zjzqJEeEX60/maxresdefault.jpg" alt="Python Parsing with pyATS | Genie - Cisco Automation Made Easy"></a></p>
+<p>Μπορείτε να δείτε ποιοι είναι διαθέσιμοι parsers μέχρι στιγμής στο παρακάτω link:
+<a href="https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers">https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers</a></p>
+<p>Μπορείτε επίσης να κατασκευάσετε τους δικούς σας, δείτε τα παρακάτω δύο videos:</p>
+<ul>
+<li>How to write a Genie parser for Cisco! by Juhi Mahajan - <a href="https://www.youtube.com/watch?v=ibLNilSfdTc">https://www.youtube.com/watch?v=ibLNilSfdTc</a></li>
+</ul>
+<p><a href="https://youtu.be/ibLNilSfdTc"><img src="https://img.youtube.com/vi/ibLNilSfdTc/maxresdefault.jpg" alt="How to write a Genie parser"></a></p>
+<ul>
+<li>Creating a pyATS | Genie Parser from SCRATCH by Knoxx Hutchinson - <a href="https://www.youtube.com/watch?v=knxkbWTamBY">https://www.youtube.com/watch?v=knxkbWTamBY</a></li>
+</ul>
+<p><a href="https://youtu.be/knxkbWTamBY"><img src="https://img.youtube.com/vi/knxkbWTamBY/maxresdefault.jpg" alt="Creating a pyATS Genie Parser from SCRATCH"></a></p>
+<p>Μπορείτε βέβαια να ακολουθήσετε και το επίσημο documentation που περιέχει αρκετά στοιχεία σε γραπτή μορφή για το πως να μάθετε να το κάνετε:
+<a href="https://pubhub.devnetcloud.com/media/pyats-development-guide/docs/writeparser/writeparser.html">https://pubhub.devnetcloud.com/media/pyats-development-guide/docs/writeparser/writeparser.html</a></p>
+<h2 id="genie-learn--models">Genie Learn &amp; Models</h2>
+<p>Eίτε εκτελείτε το genie learn μέσω cli, είτε μαζεύετε τα στοιχεία μέσω python, στην ουσία συλλέγετε δεδομένα αντίστοιχα με τα μοντέλα που έχει κατασκευάσει η ομάδα του PyATS. Πρακτικά είναι σαν να τρέχετε πολλές εντολές μαζί, οι οποίες συμπληρώνουν την εικόνα.</p>
+<p>Μπορείτε να δείτε τα διαθέσιμα μοντέλα στο link <a href="https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/models">https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/models</a></p>
+<h2 id="genie-conf">Genie Conf</h2>
+<p>Μπορείτε να δώσετε εντολές ρυθμίσεων προς συσκευές με το PyATS (αντίστοιχα με τα Cisco configuration commands). Αυτό έχει μεγαλύτερο νόημα μέσω Python. Μπορείτε αυτό να το κάνετε είτε αυτόνομα για να περάσετε configuration στις συσκευές με δομημένο τρόπο ή ακόμα και να κάνετε μικρές αλλαγές στο δίκτυο ώστε να προκαλέσετε μικρά failures και να ελέγξετε πως ανταποκρίνεται στα πλαίσια PyATS triggers/test cases.</p>
+<p><a href="https://pubhub.devnetcloud.com/media/genie-docs/docs/cookbooks/conf.html">Genie Conf Documentation</a></p>
+<h2 id="genie-diff">Genie Diff</h2>
+<p>Είτε έχετε εκτελέσει εντολές Genie Parse/Learn μέσω CLI είτε μέσω Python, μπορείτε να χρησιμοποιήσετε το PyATS για να εντοπίσετε διαφορές μεταξύ δύο διαφορετικών καταστάσεων του δικτύου. Π.χ. πριν και μετά από μια μεγάλη αλλαγή. Στην περίπτωση αυτή το PyATS επεξεργάζεται τα δεδομένα με αστραπιαία ταχύτητα και παράγει τα αποτελέσματα εντοπίζοντας και την παραμικρή διαφορά, είτε είναι κάτι που αναμένατε είτε όχι. Προφανώς αυτό εξαρτάται από τις εντολές που επιλέξατε να τρέξετε (parse) ή τα μοντέλα που επιλέξατε να μάθετε (learn).</p>
+<p><img src="https://storage.googleapis.com/blogs-images/ciscoblogs/1/5ced7f6ca9253-768x163.png" alt="Genie Diff"></p>
+<p>Το εξαιρετικό genie diff βρίσκει όλες τις διαφορές μεταξύ των αντίστοιχων outputs στα δύο directories που αντιστοιχούν στις δύο καταστάσεις για το πριν και το μετά και δέχεται ότι εξαιρέσεις θέλει κανείς, π.χ. αν δεν ενδιαφέρουν interface counters για packets, bytes, κλπ.</p>
+<p><img src="https://storage.googleapis.com/blogs-images/ciscoblogs/1/5ced80294050e-768x192.png" alt="Genie Diff Output"></p>
+<p>Αν θέλετε να δείτε το σχετικό documentation για CLI δείτε εδώ: <a href="https://pubhub.devnetcloud.com/media/genie-docs/docs/cli/genie_diff.html">https://pubhub.devnetcloud.com/media/genie-docs/docs/cli/genie_diff.html</a></p>
+<p>Αν θέλετε να διαβάσετε για μια περίπτωση χρήσης αυτού και μόνο του feature (CLI/Python) μπορείτε να διαβάσετε το παρακάτω άρθρο ή να ρίξετε μια ματιά στο παρακάτω git repo.</p>
+<ul>
+<li><a href="https://blogs.cisco.com/developer/datacenter-core-migration">https://blogs.cisco.com/developer/datacenter-core-migration</a></li>
+<li><a href="https://github.com/itheodoridis/check-config-changes">https://github.com/itheodoridis/check-config-changes</a></li>
+</ul>
+<h2 id="testing-cases">Testing (Cases)</h2>
+<p>Αυτό είναι ίσως το πιο ουσιαστικό κομμάτι της χρήσης του PyATS, παρότι κανείς δεν μπορεί να σας πει τί μπορεί να είναι χρήσιμο για σας από ένα εργαλείο.</p>
+<p>Μπορείτε να ορίσετε σετ από δοκιμές που που πρέπει να γίνουν ορίζοντας ένα σενάριο, είτε για μεμονωμένες συσκευές είτε για ολόκληρο το δίκτυο (testbed), ώστε να δώσετε αναφορές για το αν ανταποκρίνεται σε αλλαγές σύμφωνα με το αναμενόμενο ή όχι, ορίζοντας οι ίδιοι τί αντιστοιχεί σε επιτυχία (pass) ή αποτυχία (failure).</p>
+<p><img src="https://pubhub.devnetcloud.com/media/pyats/docs/_images/script_structure.png" alt="Script Structure"></p>
+<p>Μπορεί κάποιος να κάνει script απίθανα πράγματα για να κάνει δοκιμές. Π.χ. έστησα το δίκτυο μου ρίχνω ένα λινκ, πως συμπεριφέρεται το routing; Πόσοι neighbors υπάρχουν; Υπάρχει το τάδε route; Φτιάχνεις τα test σου, τρέχεις το script και βλέπεις που έχεις pass ή fail σε ωραία reports.</p>
+<p>Μπορείτε να χρησιμοποιήσετε έτοιμα ήδη δημιουργημένα tests, γνωστά ως triggers.</p>
+<ul>
+<li>Εδώ μπορείτε να βρείτε τη λίστα με τα ήδη διαθέσιμα triggers - <a href="https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/triggers">https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/triggers</a></li>
+<li>Εδώ μπορείτε να βρείτε πως να φτιάξετε δικά σας - <a href="https://pubhub.devnetcloud.com/media/pyats-development-guide/docs/writetrigger/writetrigger.html">https://pubhub.devnetcloud.com/media/pyats-development-guide/docs/writetrigger/writetrigger.html</a></li>
+<li>Εδώ μπορείτε να δείτε πως να τα εκτελέσετε -  <a href="https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/runtestcase.html#run-a-test-case">https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/runtestcase.html#run-a-test-case</a></li>
+<li>Τα triggers ελέγχονται με verifications.
+<ul>
+<li>Εδώ είναι μια λίστα με τα έτοιμα verifications - <a href="https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/verifications">https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/verifications</a></li>
+<li>Εδώ είναι ένα παράδειγμα για triggers &amp; verifications - <a href="https://pubhub.devnetcloud.com/media/pyats-development-guide/docs/writetrigger/writetrigger.html#example-of-a-trigger-with-verifications">https://pubhub.devnetcloud.com/media/pyats-development-guide/docs/writetrigger/writetrigger.html#example-of-a-trigger-with-verifications</a></li>
+</ul>
+</li>
+</ul>
+<p>Μπορείτε όμως να ορίσετε τα test σας και ως test cases, δηλαδή συλλογές από μικρότερα tests:</p>
+<ul>
+<li>Δείτε εδώ σχετικό documentation - <a href="https://pubhub.devnetcloud.com/media/pyats/docs/aetest/structure.html#testcases">https://pubhub.devnetcloud.com/media/pyats/docs/aetest/structure.html#testcases</a></li>
+<li>Video από το PyCon 2020 με τον Hank Preston - <a href="https://www.conferencecast.tv/talk-33233-introduction-to-writing-network-tests-with-pyats#.talkPage-header">https://www.conferencecast.tv/talk-33233-introduction-to-writing-network-tests-with-pyats#.talkPage-header</a></li>
+<li>Slide Deck από Cisco Live 2018 Barcelona - <a href="https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2018/pdf/DEVNET-1480.pdf">https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2018/pdf/DEVNET-1480.pdf</a></li>
+</ul>
+<p>Μην ξεχνάτε ότι μπορείτε να πάρετε τα αποτελέσματα</p>
+<ul>
+<li>είτε ως αντικείμενα (python, <a href="https://pubhub.devnetcloud.com/media/pyats/docs/results/objects.html),">https://pubhub.devnetcloud.com/media/pyats/docs/results/objects.html),</a></li>
+<li>είτε μέσω του logging (<a href="https://pubhub.devnetcloud.com/media/pyats/docs/cli/pyats_logs.html#pyats-logs),">https://pubhub.devnetcloud.com/media/pyats/docs/cli/pyats_logs.html#pyats-logs),</a></li>
+<li>είτε ως αρχεία yaml (<a href="https://pubhub.devnetcloud.com/media/pyats/docs/reporter/overview.html),">https://pubhub.devnetcloud.com/media/pyats/docs/reporter/overview.html),</a></li>
+<li>είτε ως html reports στο Xpresso.</li>
+</ul>
+<p>Αν θέλετε όμως μπορείτε να ακολουθήσετε και τη δομή που περιέγραψε ο Julio Gomez (Cisco Developer Lead EMEAR) σε πέντε post από την καταπληκτική σειρά του για το DevOps:</p>
+<ul>
+<li><a href="https://blogs.cisco.com/developer/pyats-demo-netdevops-12">PyATS Introduction and Setup</a></li>
+<li><a href="https://blogs.cisco.com/developer/pyats-demos-get-started-netdevops-13">Getting Started</a></li>
+<li><a href="https://blogs.cisco.com/developer/pyats-demo-interactive-tests-netdevops-14">Interactive Tests</a></li>
+<li><a href="https://blogs.cisco.com/developer/pyats-network-profiling-15">Network Profiling</a></li>
+<li><a href="https://blogs.cisco.com/developer/pyats-test-cases-16">Test Cases</a></li>
+</ul>
+<h2 id="pyats-logger">PyATS Logger</h2>
+<p>Μπορείτε να οδηγήσετε το logging στα pyats tests/cases μέσω python, αλλά υπάρχει η δυνατότητα να το κάνετε και μέσω CLI, μέσω του PyATS log viewer <a href="https://pubhub.devnetcloud.com/media/pyats/docs/cli/pyats_logs.html">https://pubhub.devnetcloud.com/media/pyats/docs/cli/pyats_logs.html</a></p>
+<p>Αν τρέχετε το pyats σε Linux Desktop που διαθέτει GUI μπορείτε να προβάλλετε το log σε μορφή HTML σε browser.
+Όμως είναι πλέον δυνατό το PyATS να σηκώσει ένα webserver όπου μπορείτε να δείτε το Log.
+Φυσικά αν τρέχετε Xpresso, όλα αυτά είναι πιο εύκολα.</p>
+<p><img src="https://pubhub.devnetcloud.com/media/pyats/docs/_images/logs_webpage_example.png" alt="PyATS LogView"></p>
+<p>Δείτε γενικότερα για το logging στο PyATS εδώ: <a href="https://pubhub.devnetcloud.com/media/pyats/docs/log/index.html">https://pubhub.devnetcloud.com/media/pyats/docs/log/index.html</a></p>
+<h2 id="xpresso">Xpresso</h2>
+<p>To Xpresso είναι ένα ολοκληρωμένο γραφικό περιβάλλον βασισμένο σε web για τη χρήση του PyATS και τη δημιουργία HTML reports. Έχει πάρα πολλά χαρακτηριστικά και δυνατότητες, ξεφεύγει κατά πολύ από ένα απλό πακέτο λογισμικού.</p>
+<p>Δείτε εδώ για ένα overview <a href="https://developer.cisco.com/docs/xpresso/#!overview">https://developer.cisco.com/docs/xpresso/#!overview</a>
+Μπορείτε να το εγκαταστήσετε είτε ως συλλογή πακέτων λογισμικού είτε μέσω docker</p>
+<ul>
+<li><a href="https://developer.cisco.com/docs/xpresso/#!setting-up-your-test-environment-overview/setting-up-your-test-environment">https://developer.cisco.com/docs/xpresso/#!setting-up-your-test-environment-overview/setting-up-your-test-environment</a></li>
+<li><a href="https://github.com/CiscoTestAutomation/xpresso">https://github.com/CiscoTestAutomation/xpresso</a></li>
+<li><a href="https://developer.cisco.com/docs/xpresso/#docker-images">https://developer.cisco.com/docs/xpresso/#docker-images</a></li>
+</ul>
+<p>Έχει σημαντικές απαιτήσεις σε πόρους (σε αντίθεση με το απλό pyats), οπότε φροντίστε να έχετε αρκετούς αν σκοπεύετε να το τρέξετε:</p>
+<p><a href="https://developer.cisco.com/docs/xpresso/#!operational-requirements-constraints/operational-requirements-and-constraints">Operational Requirements and Constraints</a></p>
+<h2 id="mock-devices">Mock devices</h2>
+<p>Τα Mock Devices δεν είναι πραγματικά devices αλλά pre-recorded sets από commands &amp; responses. Βασίζονται στο playback feature του Unicon library και δίνουν τη δυνατότητα να κάνει κάποιος practice με το PyATS χωρίς να έχει κανονικές συσκευές στη διάθεση του, άλλωστε το PyATS tutorial χρησιμοποιεί mock device:</p>
+<ul>
+<li>Tutorial : <a href="https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/manageconnections.html?highlight=mocking#connect-to-devices">https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/manageconnections.html?highlight=mocking#connect-to-devices</a></li>
+</ul>
+<p>To documentation για το πως δουλεύει το playback στο Unicon μπορείτε να το δείτε εδώ:</p>
+<ul>
+<li>Create a mock device - <a href="https://pubhub.devnetcloud.com/media/unicon/docs/developer_guide/unittests.html#mock">https://pubhub.devnetcloud.com/media/unicon/docs/developer_guide/unittests.html#mock</a></li>
+<li>Playback - <a href="https://pubhub.devnetcloud.com/media/unicon/docs/playback/index.html#">https://pubhub.devnetcloud.com/media/unicon/docs/playback/index.html#</a></li>
+</ul>
+<p>Αν θέλετε μπορείτε να δείτε κι αυτό το άρθρο από τον Gary Woodward:</p>
+<ul>
+<li><a href="https://bitesizeautomation429301704.wordpress.com/2020/09/18/mocking-your-devices/amp/?__twitter_impression=true">Mocking your devices</a></li>
+</ul>
+<h2 id="parsing-for-other-python-libraries-netmiko-scrapli-ansible">Parsing for other python libraries (Netmiko, Scrapli, Ansible)</h2>
+<h3 id="netmiko">Netmiko</h3>
+<p>To γνωστό Python library του Kirk Byers προβλέπει τη χρήση network parsers για να παίρνει κανείς δεδομένα από τα sessions με τα network devices με δομημένο τρόπο. Όπως υποστηρίζεται το <a href="https://pynet.twb-tech.com/blog/automation/netmiko-textfsm.html">Text-FSM</a> (<em>NTC-Templates</em>), υποστηρίζονται οι genie parsers με το option <em><strong>use_genie = True</strong></em>.
+Μπορείτε να διαβάσετε περισσότερα εδώ:</p>
+<ul>
+<li>Παράδειγμα - <a href="https://github.com/ktbyers/netmiko/blob/develop/EXAMPLES.md#using-genie">https://github.com/ktbyers/netmiko/blob/develop/EXAMPLES.md#using-genie</a></li>
+<li>Documentation - <a href="https://ktbyers.github.io/netmiko/docs/netmiko/index.html#netmiko.BaseConnection.send_command">https://ktbyers.github.io/netmiko/docs/netmiko/index.html#netmiko.BaseConnection.send_command</a></li>
+<li>Post - <a href="https://networkautomationlane.in/how-to-install-and-parse-data-with-netmiko-genie-plugin/">https://networkautomationlane.in/how-to-install-and-parse-data-with-netmiko-genie-plugin/</a></li>
+</ul>
+<h3 id="scrapli">Scrapli</h3>
+<p>Με το Scrapli τo parsing των device responses γίνεται σε δεύτερο χρόνο. Η διαφορά είναι μικρή στην ουσία. Μπορείτε να διαβάσετε περισσότερα εδώ:</p>
+<ul>
+<li><a href="https://carlmontanari.github.io/scrapli/user_guide/basic_usage/#cisco-genie-integration">https://carlmontanari.github.io/scrapli/user_guide/basic_usage/#cisco-genie-integration</a></li>
+<li><a href="https://0x2142.com/automating-the-cli-using-scrapli/">https://0x2142.com/automating-the-cli-using-scrapli/</a></li>
+</ul>
+<h3 id="ansible">Ansible</h3>
+<p>To Ansible extension για να μπορεί κανείς να χρησιμοποιήσει το PyATS με το Ansible το έχει δημιουργήσει ο Clay Curtis. Περισσότερα μπορείτε να διαβάσετε εδώ:</p>
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/network/user_guide/cli_parsing.html#parsing-with-pyats">https://docs.ansible.com/ansible/latest/network/user_guide/cli_parsing.html#parsing-with-pyats</a></li>
+</ul>
+<h2 id="pyats-libraries-dq-clean">PyATS Libraries (Dq, Clean)</h2>
+<p>Δεν σταματάνε όμως εδώ τα features του PyATS. Παρακάτω αναφέρονται δύο εξαιρετικά χρήσιμα από αυτά, τα οποία μπορούν να χρησιμοποιηθούν μαζί με το PyATS ή ξεχωριστά.
+Γενικά για τα χρήσιμα libraries του PyATS/Genie: <a href="https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/utils/index.html">https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/utils/index.html</a></p>
+<h3 id="dq">Dq</h3>
+<p>To Dq είναι βιβλιοθήκη που βοηθάει στον εντοπισμό δεδομένων σε μια εμφωλευμένη δομή χωρίς κάποιος να χρειάζεται να ξέρει ακριβώς όλη τη δομή που πρέπει να &ldquo;διασχίσει&rdquo; μέχρι να φτάσει στο dictionary που τον ενδιαφέρει.</p>
+<ul>
+<li>Documentation: <a href="https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/utils/index.html#dq">https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/utils/index.html#dq</a></li>
+<li>Παράδειγμα: <a href="https://twitter.com/jeaubin5/status/1232668555658874881?s=09">https://twitter.com/jeaubin5/status/1232668555658874881?s=09</a></li>
+<li>Παράδειγμα: <a href="https://twitter.com/tahigash3/status/1233382956359507969?s=09">https://twitter.com/tahigash3/status/1233382956359507969?s=09</a></li>
+<li>Παράδειγμα: <a href="https://twitter.com/tahigash3/status/1233384445173850113?s=09">https://twitter.com/tahigash3/status/1233384445173850113?s=09</a></li>
+<li>Post: <a href="https://www.packetcoders.io/simplify-parsing-with-ciscos-genie-dq/">https://www.packetcoders.io/simplify-parsing-with-ciscos-genie-dq/</a></li>
+<li>Video: <a href="https://youtu.be/XNdlvlbHMUI">https://youtu.be/XNdlvlbHMUI</a></li>
+</ul>
+<p><img src="https://pbs.twimg.com/media/ER3bLfsUEAAhE_n?format=jpg&amp;name=large" alt="Up Ports with PyATS Dq"></p>
+<p><img src="https://pbs.twimg.com/media/ER3cfHqUYAMdgK3?format=jpg&amp;name=large" alt="Up Ports Key-Value pairs with PyATS Dq"></p>
+<h3 id="pyats-clean">PyATS Clean</h3>
+<p>To PyATS clean επιτρέπει να επαναφέρουμε τη συσκευή σε μια συγκεκριμένη κατάσταση με συγκεκριμένο λογισμικό, ανεξάρτητα από το λογισμικό και την κατάσταση που είχε πριν την επαναφορά.</p>
+<ul>
+<li>Documentation - <a href="https://pubhub.devnetcloud.com/media/genie-docs/docs/clean/index.html">https://pubhub.devnetcloud.com/media/genie-docs/docs/clean/index.html</a></li>
+<li>Παράδειγμα - <a href="https://github.com/CiscoTestAutomation/examples/tree/master/clean">https://github.com/CiscoTestAutomation/examples/tree/master/clean</a></li>
+</ul>
+<h1 id="use-cases">Use Cases</h1>
+<p>Τα Use Cases του PyATS περιορίζονται μόνο από τη φαντασία αλλά τα βασικότερα περιγράφονται παρακάτω:</p>
+<ul>
+<li><strong>Data Collection</strong> - Συλλογή στοιχείων από τις συσκευές του δικτύου για να πάρουμε ακριβή εικόνα του Network State. Μπορεί να έχει απλή μορφή, όπως output στο CLI, ή ακόμα και σε εργαλεία reporting, p.x. pyats -&gt; prometheus pushgateway -&gt; prometheus -&gt; grafana. Σε αυτό το concept πρέπει κανείς να δει τί έχει φτιάξει ο John Cappobianco με το Merlin project.</li>
+<li><strong>Configuration</strong> - Αυτοματοποιημένο Configuration των συσκευών σειριακά ή παράλληλα, μόνο με το PyATS ή σε συνδυασμό με άλλα εργαλεία και βιβλιοθήκες.</li>
+<li><strong>Capturing changes</strong> χωρίς να μας ξέρουμε εκ των προτέρων ακριβώς το τί άλλαξε.</li>
+<li><strong>Testing</strong> (Chaos Monkey/Validation) - Μπορούμε να ελέγξουμε αν οι συσκευές μας ή το δίκτυο μας ανταποκρίνεται όπως πρέπει σε αλλαγές ή βλάβες. Σε αυτό το concept το PyATS μπορεί να χρησιμοποιηθεί και σε CI/CD pipelines για εφαρμογή Network Configuration As Code.</li>
+</ul>
+<h1 id="learn-about-pyats">Learn about PyATS</h1>
+<p><a href="https://youtu.be/bWLNBXdFZYI"><img src="https://img.youtube.com/vi/bWLNBXdFZYI/maxresdefault.jpg" alt="pyATS for your Test Automation"></a></p>
+<ul>
+<li>Devnet Getting started - <a href="https://developer.cisco.com/pyats/">https://developer.cisco.com/pyats/</a></li>
+<li>Learning Labs
+<ul>
+<li><a href="https://developer.cisco.com/learning/lab/intro-to-pyats/step/1">https://developer.cisco.com/learning/lab/intro-to-pyats/step/1</a></li>
+<li><a href="https://developer.cisco.com/learning/lab/pts-with-genie/step/1">https://developer.cisco.com/learning/lab/pts-with-genie/step/1</a></li>
+<li>All Learning Labs - <a href="https://developer.cisco.com/learning/modules/pyats-genie">https://developer.cisco.com/learning/modules/pyats-genie</a></li>
+</ul>
+</li>
+<li>Cisco Live Workshops
+<ul>
+<li>Cisco Live! DEVWKS-2595: Stateful Network Validation using pyATS/Genie - <a href="https://github.com/CiscoTestAutomation/CL-DevNet-2595">https://github.com/CiscoTestAutomation/CL-DevNet-2595</a></li>
+<li>CL-DevNet-2595 Workshop - <a href="https://github.com/CiscoTestAutomation/CL-DevNet-2595/blob/master/workshop.md">https://github.com/CiscoTestAutomation/CL-DevNet-2595/blob/master/workshop.md</a></li>
+<li>Cisco Live! DEVWKS-2808 - <a href="https://github.com/CiscoTestAutomation/CL-DEVWKS-2808/blob/master/workshop.md">https://github.com/CiscoTestAutomation/CL-DEVWKS-2808/blob/master/workshop.md</a></li>
+</ul>
+</li>
+<li>Training
+<ul>
+<li>CBT Nuggets, John McGovern - <a href="https://www.cbtnuggets.com/learn/it-training/automate-network-testing-with-pyats">https://www.cbtnuggets.com/learn/it-training/automate-network-testing-with-pyats</a></li>
+<li>Packet Coders, Rick Donato - <a href="https://www.packetcoders.io/network-testing-with-cisco-pyats/">https://www.packetcoders.io/network-testing-with-cisco-pyats/</a></li>
+</ul>
+</li>
+<li>Devnet Expert
+<ul>
+<li>Devnet Expert Presentation - <a href="https://blogs.cisco.com/learning/cisco-devnet-expert-your-career-changing-certification">https://blogs.cisco.com/learning/cisco-devnet-expert-your-career-changing-certification</a></li>
+<li>Denvet Expert Summary - <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert/devnet-expert.html?ccid=devnetexpert&amp;dtid=blog&amp;oid=blog-cisco-par">https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert/devnet-expert.html?ccid=devnetexpert&amp;dtid=blog&amp;oid=blog-cisco-par</a></li>
+<li>Lab Topics - <a href="https://learningnetwork.cisco.com/s/devnet-expert-exam-topics-lab">https://learningnetwork.cisco.com/s/devnet-expert-exam-topics-lab</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="projects--posts">Projects &amp; Posts</h1>
+<p>Πολλά projects θα βρείτε σχετικά με το PyATS. Εδώ θα αναφέρουμε μόνο ένα, το Merlin, από τον John Cappobianco, ο οποίος έβαλε σκοπό να συνδυάσει το PyATS με ένα σωρό διαφορετικές τεχνολογίες (Jinja Templates, Django, Celery, Docker, Kubernetes, κλπ) και δυνατότητες:</p>
+<ul>
+<li>Search as Code</li>
+<li>3D representation of network state</li>
+<li>ChatOps</li>
+<li>TextToSpeech</li>
+<li>Automated Calling</li>
+<li>Mind Maps</li>
+<li>Scheduled Tasks</li>
+<li>κλπ</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/automateyournetwork/merlin/main//images/Merlin_logo.png" alt="Merlin Logo"></p>
+<p>Σχετικά links:</p>
+<ul>
+<li>To site του John - <a href="https://www.automateyournetwork.ca/">https://www.automateyournetwork.ca/</a></li>
+<li>To κανάλι του στο Youtube - <a href="https://www.youtube.com/channel/UCYE2gcN4wWewmriAP2QlT2A">https://www.youtube.com/channel/UCYE2gcN4wWewmriAP2QlT2A</a></li>
+<li>To profil του στο Github όπου θα βρείτε τα διάφορα flavors του Merlin - <a href="https://github.com/automateyournetwork">https://github.com/automateyournetwork</a></li>
+<li>O John στους packet pushers - <a href="https://www.youtube.com/watch?v=NA4B_MqzVIM">https://www.youtube.com/watch?v=NA4B_MqzVIM</a></li>
+<li>O John στο Art of Network Engineering - <a href="https://artofnetworkengineering.com/2021/12/01/ep-71-merlin-the-auto-magician/">https://artofnetworkengineering.com/2021/12/01/ep-71-merlin-the-auto-magician/</a></li>
+<li>Κάντε εγγραφή στo webex channel του Merlin - <a href="https://eurl.io/#Yc-8-BgSD">https://eurl.io/#Yc-8-BgSD</a></li>
+</ul>
+<p>Περισσότερα για άλλα projects &amp; integrations στα Links &amp; Sources</p>
+<h1 id="links---sources">Links - Sources</h1>
+<ul>
+<li>Cisco Developer Blog posts - <a href="https://blogs.cisco.com/tag/pyats">https://blogs.cisco.com/tag/pyats</a></li>
+<li>Use PyATS on your Laptop - <a href="https://developer.cisco.com/docs/pyats/#!hands-on-learning/diy-on-your-laptop">https://developer.cisco.com/docs/pyats/#!hands-on-learning/diy-on-your-laptop</a></li>
+<li>Podcasts &amp; Videos - <a href="https://developer.cisco.com/docs/pyats/#!hands-on-learning/podcasts--videos">https://developer.cisco.com/docs/pyats/#!hands-on-learning/podcasts--videos</a></li>
+<li>Integrations
+<ul>
+<li>DNAC - <a href="https://developer.cisco.com/codeexchange/github/repo/CiscoTestAutomation/DNAC-pyATS-Genie/">https://developer.cisco.com/codeexchange/github/repo/CiscoTestAutomation/DNAC-pyATS-Genie/</a></li>
+<li>Netconf &amp; Yang:
+<ul>
+<li><a href="https://developer.cisco.com/codeexchange/github/repo/CiscoTestAutomation/yang">https://developer.cisco.com/codeexchange/github/repo/CiscoTestAutomation/yang</a></li>
+<li><a href="https://github.com/CiscoTestAutomation/yang/blob/master//connector/docs/README.rst">https://github.com/CiscoTestAutomation/yang/blob/master//connector/docs/README.rst</a></li>
+</ul>
+</li>
+<li>Ansible - <a href="https://developer.cisco.com/codeexchange/github/repo/clay584/parse_genie">https://developer.cisco.com/codeexchange/github/repo/clay584/parse_genie</a></li>
+</ul>
+</li>
+<li>Documentation - <a href="https://developer.cisco.com/docs/genie-docs/">https://developer.cisco.com/docs/genie-docs/</a></li>
+<li>Configuration -  <a href="https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/Conf/index.html">https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/Conf/index.html</a></li>
+<li>NetDevOps validation using Cisco pyATS | Genie for network engineers: no coding necessary - <a href="https://developer.cisco.com/network-automation/detail/1355627332691844/">https://developer.cisco.com/network-automation/detail/1355627332691844/</a></li>
+<li>Automating OS migration pre-checks and post-checks with pyATS - <a href="https://developer.cisco.com/network-automation/detail/5a7288c9-411b-11eb-b9d4-ae71b9e1fe30/">https://developer.cisco.com/network-automation/detail/5a7288c9-411b-11eb-b9d4-ae71b9e1fe30/</a></li>
+<li>Development Guide - <a href="https://developer.cisco.com/docs/pyats-development-guide/">https://developer.cisco.com/docs/pyats-development-guide/</a></li>
+<li>LAB by Stuart Traynor - <a href="https://github.com/sttrayno/pyATS-Lab-Guide">https://github.com/sttrayno/pyATS-Lab-Guide</a></li>
+<li><a href="https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/bestpractices/intro.html">https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/bestpractices/intro.html</a></li>
+<li>Creating pyATS | Genie Parsers and Unicon Connection Plugins - <a href="https://youtu.be/0WvizVReKLs">https://youtu.be/0WvizVReKLs</a></li>
+<li>Genie Feature Browser - <a href="https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/">https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/</a></li>
+<li>Use TextFSM with PyATS - <a href="https://twitter.com/tahigash3/status/1281247080913072129?s=09">https://twitter.com/tahigash3/status/1281247080913072129?s=09</a></li>
+<li>Network Automation with pyATS, Genie and Cisco DNA Center - <a href="https://www.brighttalk.com/webcast/17628/367044">https://www.brighttalk.com/webcast/17628/367044</a></li>
+<li>The Unicon Connection Library - <a href="https://developer.cisco.com/docs/unicon/">https://developer.cisco.com/docs/unicon/</a></li>
+<li>Connection User Guide - <a href="https://pubhub.devnetcloud.com/media/unicon/docs/user_guide/connection.html">https://pubhub.devnetcloud.com/media/unicon/docs/user_guide/connection.html</a></li>
+<li>Exploring Genie Conf for Pythonic Device Configuration - <a href="https://youtu.be/2C-Y-DJhIdk">https://youtu.be/2C-Y-DJhIdk</a></li>
+<li>Cisco Live! DEVWKS-2595: Stateful Network Validation using pyATS/Genie - <a href="https://github.com/CiscoTestAutomation/CL-DevNet-2595">https://github.com/CiscoTestAutomation/CL-DevNet-2595</a></li>
+<li>CL-DevNet-2595 Workshop - <a href="https://github.com/CiscoTestAutomation/CL-DevNet-2595/blob/master/workshop.md">https://github.com/CiscoTestAutomation/CL-DevNet-2595/blob/master/workshop.md</a></li>
+<li>Εισαγωγικό video από τον μακαρίτη Kevin Corbin - <a href="https://www.youtube.com/watch?v=LxiBHPMves8&amp;t=611s">https://www.youtube.com/watch?v=LxiBHPMves8&amp;t=611s</a></li>
+<li>pyATS CLI Demonstration by Hank Preston - <a href="https://github.com/hpreston/netdevops_demos/blob/master/genie-cli-1/README.md">https://github.com/hpreston/netdevops_demos/blob/master/genie-cli-1/README.md</a></li>
+<li>pyATS series by Antoine Orsoni - Install and use pyATS - <a href="https://xrdocs.io/programmability/tutorials/pyats-series-install-and-use-pyats/">https://xrdocs.io/programmability/tutorials/pyats-series-install-and-use-pyats/</a></li>
+<li>Unit Testing Network Infrastructure w/ pyATS - <a href="https://routedefault.wordpress.com/2021/12/20/unit-testing-network-infrastructure-w-pyats/">https://routedefault.wordpress.com/2021/12/20/unit-testing-network-infrastructure-w-pyats/</a></li>
+<li>PyATS Dockerfile and Scripts - <a href="https://github.com/CiscoTestAutomation/pyats-docker">https://github.com/CiscoTestAutomation/pyats-docker</a></li>
+<li>PyATS Devnet SE hour (Antoine Orsoni Github) - <a href="https://github.com/AntoineOrsoni/pyats-devnet-se-hour">https://github.com/AntoineOrsoni/pyats-devnet-se-hour</a></li>
+<li>Genie Development in a container with VS Code - <a href="https://twitter.com/simingy/status/1146844441816305665">https://twitter.com/simingy/status/1146844441816305665</a></li>
+<li>AETest Infrastructure - <a href="https://pubhub.devnetcloud.com/media/pyats/docs/aetest/index.html">https://pubhub.devnetcloud.com/media/pyats/docs/aetest/index.html</a></li>
+<li>Use the q function - <a href="https://twitter.com/host_bits/status/1316052483089854464?s=09">https://twitter.com/host_bits/status/1316052483089854464?s=09</a></li>
+<li>PyATS Pcall - <a href="https://pubhub.devnetcloud.com/media/pyats/docs/async/pcall.html">https://pubhub.devnetcloud.com/media/pyats/docs/async/pcall.html</a></li>
+<li>Use PyATS with Jinja templates - <a href="https://twitter.com/jeaubin5/status/1313183366087311366">https://twitter.com/jeaubin5/status/1313183366087311366</a></li>
+<li>PyATS example with Rich - <a href="https://github.com/sclayton1006/pyATS/blob/main/IP_Int_Brief_Emoji.py">https://github.com/sclayton1006/pyATS/blob/main/IP_Int_Brief_Emoji.py</a></li>
+<li>Intro to PyATS with Claudia De Luna - <a href="https://github.com/cldeluna/interop2020_pyats_intro">https://github.com/cldeluna/interop2020_pyats_intro</a></li>
+<li>PyATS Secret Strings - <a href="https://pubhub.devnetcloud.com/media/pyats/docs/utilities/secret_strings.html">https://pubhub.devnetcloud.com/media/pyats/docs/utilities/secret_strings.html</a></li>
+<li>PyATS and Genie Intro by Mike Guy - <a href="https://thetwistedpair.co.uk/2020/03/pyats_and_genie_intro/">https://thetwistedpair.co.uk/2020/03/pyats_and_genie_intro/</a></li>
+<li>PyATS as Nornir Task example - <a href="https://twitter.com/gp_ifconfig/status/1233782963478855680?s=09">https://twitter.com/gp_ifconfig/status/1233782963478855680?s=09</a></li>
+<li>Offline Parser - <a href="https://twitter.com/jeaubin5/status/1233133522451410947?s=09">https://twitter.com/jeaubin5/status/1233133522451410947?s=09</a></li>
+<li>PyATS Examples - <a href="https://pypi.org/project/pyats.examples/">https://pypi.org/project/pyats.examples/</a></li>
+<li>PyATS Coding 101 by Siming Yuan - <a href="https://github.com/CiscoDevNet/pyats-coding-101/tree/master/coding-101-python">https://github.com/CiscoDevNet/pyats-coding-101/tree/master/coding-101-python</a></li>
+<li>Send emails at the end of PyATS test report - <a href="https://twitter.com/simingy/status/1184203882060304384?s=09">https://twitter.com/simingy/status/1184203882060304384?s=09</a></li>
+<li>PyATS to Netbox by Hank Preston (beware it&rsquo;s not new, not sure it works with newer versions) - <a href="https://github.com/hpreston/netdevops_demos/tree/master/pyats-to-netbox">https://github.com/hpreston/netdevops_demos/tree/master/pyats-to-netbox</a></li>
+<li>Learn why pyATS is used by thousands of network engineers and developers world-wide. DevNet Snack Minute Episode 36 - <a href="https://video.cisco.com/video/6271298878001?ccid=pyats-page&amp;dtid=twitter&amp;oid=videosnackminute-fy22-q1-0000-grazianosnackminuteep36-ww">https://video.cisco.com/video/6271298878001?ccid=pyats-page&amp;dtid=twitter&amp;oid=videosnackminute-fy22-q1-0000-grazianosnackminuteep36-ww</a></li>
+</ul>
+<p><a href="https://youtu.be/2C-Y-DJhIdk"><img src="https://img.youtube.com/vi/2C-Y-DJhIdk/maxresdefault.jpg" alt="Exploring Genie Conf for Pythonic Device Configuration"></a></p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://netautogr.github.io/tags/untagged/">untagged</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        2764 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2021-12-18 00:55
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Introduction%20to%20PyATS&amp;caption=Introduction%20to%20PyATS&amp;canonicalUrl=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Introduction%20to%20PyATS&amp;body=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f&amp;media=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f;description=Introduction%20to%20PyATS" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f&amp;title=Introduction%20to%20PyATS&amp;summary=Introduction%20to%20PyATS&amp;source=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f&amp;resubmit=true&amp;title=Introduction%20to%20PyATS" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f;title=Introduction%20to%20PyATS" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Introduction%20to%20PyATS%20https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f&amp;t=Introduction%20to%20PyATS" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Introduction%20to%20PyATS&amp;url=https%3a%2f%2fnetautogr.github.io%2fposts%2f2021%2f12%2fintroduction-to-pyats%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+          <hr />
+        </div>
+
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="https://netautogr.github.io/posts/2025/10/introduction-to-network-simulation-tools-for-labs/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Introduction to Network Simulation Tools for Labs</span>
+              </a>
+            </span>
+          
+
+          
+            <span class="button next">
+              <a href="https://netautogr.github.io/posts/2021/12/jumpstart-your-python-learning/">
+                <span class="button__text">Jumpstart your Python Learning</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2025</span>
+            
+            <span><a href="https://netautogr.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>___</span>
+            <span>___</span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://netautogr.github.io/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

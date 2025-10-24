@@ -12,31 +12,31 @@
     
     
     <item>
-      <title>Network_Simulation_Tools_for_Labs</title>
-      <link>https://netautogr.github.io/posts/2025/10/network_simulation_tools_for_labs/</link>
+      <title>Introduction to Network Simulation Tools for Labs</title>
+      <link>https://netautogr.github.io/posts/2025/10/introduction-to-network-simulation-tools-for-labs/</link>
       <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
       
-      <guid>https://netautogr.github.io/posts/2025/10/network_simulation_tools_for_labs/</guid>
-      <description>Ειοαγωγή Το post αυτό κάνει μια διπλή προσπάθεια:
- Να περιγράψει το τοπίο γύρω από το Network Sumulation και τις ανάγκες που μπορεί να καλύψει για network labs και όχι μόνο Να επαναφέρει το ρυθμό της παραγωγής περιοχομένου της ομάδας για το Network Automation σε ένα κύκλο λίγο πιο συχνό από τέσσερα χρόνια (τελευταίο post ήταν το 2021)  Network Simulation Τί είναι; </description>
+      <guid>https://netautogr.github.io/posts/2025/10/introduction-to-network-simulation-tools-for-labs/</guid>
+      <description>Εισαγωγή Το post αυτό κάνει μια διπλή προσπάθεια:
+ Να περιγράψει το τοπίο γύρω από το Network Sumulation και τις ανάγκες που μπορεί να καλύψει για network labs και όχι μόνο Να επαναφέρει το ρυθμό της παραγωγής περιοχομένου της ομάδας για το Network Automation σε ένα κύκλο λίγο πιο συχνό από τέσσερα χρόνια (τελευταίο post ήταν το 2021)  Network Simulation Τί είναι; Είναι η προσπάθεια να παράγουμε με ψηφιακό τρόπο μια δικτυακή τοπολογία όπου ψηφιακοί κόμβοι αναπαράγουν τη συμπεριφορά πραγματικών δικτυακών κόμβων όπως routers και switches αλλά και system hosts αν χρειάζεται.</description>
     </item>
     
     <item>
-      <title>Introduction_to_PyATS</title>
-      <link>https://netautogr.github.io/posts/2021/12/introduction_to_pyats/</link>
+      <title>Introduction to PyATS</title>
+      <link>https://netautogr.github.io/posts/2021/12/introduction-to-pyats/</link>
       <pubDate>Sat, 18 Dec 2021 00:55:02 +0200</pubDate>
       
-      <guid>https://netautogr.github.io/posts/2021/12/introduction_to_pyats/</guid>
+      <guid>https://netautogr.github.io/posts/2021/12/introduction-to-pyats/</guid>
       <description>Εισαγωγή Το PyATS είναι ένα software framework για την κατασκευή αυτόματων διαδικασιών ελέγχου για δικτυακές συσκευές, ή όπως λέει η Cisco, ένα ολοκληρωμένο οικοσύστημα αυτοματισμού και δοκιμών, προσφέροντας όλα τα εργαλεία για τις καθημερινές DevOps εργασίες των μηχανικών δικτύων, δίνοντας εργαλεία είτε για τη γραμμή εντολών, είτε με τη χρήση libraries, είτε μέσω ενός σύγχρονου GUI Dashboard.
 Είναι εσωτερικό εργαλείο της Cisco εδώ και 10 χρόνια (2012) για την δοκιμή των προϊόντων και συστημάτων τους, το οποίο αποφάσισαν να διαθέσουν στο ευρύ κοινό από το 2017.</description>
     </item>
     
     <item>
-      <title>Jumpstart_your_Python_Learning</title>
-      <link>https://netautogr.github.io/posts/2021/12/jumpstart_your_python_learning/</link>
+      <title>Jumpstart your Python Learning</title>
+      <link>https://netautogr.github.io/posts/2021/12/jumpstart-your-python-learning/</link>
       <pubDate>Fri, 10 Dec 2021 08:20:22 +0200</pubDate>
       
-      <guid>https://netautogr.github.io/posts/2021/12/jumpstart_your_python_learning/</guid>
+      <guid>https://netautogr.github.io/posts/2021/12/jumpstart-your-python-learning/</guid>
       <description>Γενικά Το βασικό θέμα του παρόντος post είναι πως να ξεκινήσει κανείς να μαθαίνει Python (με οποιοδήποτε τρόπο). Τα παρακάτω προέκυψαν από συζητήσεις μελών μας στο LinkedIn, εσωτερικές συζητήσεις μέσα στην κοινότητα και συλλογή από online resources. Αφορμή υπήρξαν μια ερώτηση προερχόμενη εκτός της κοινότητας για εκμάθηση Python για συγκεκριμένο πακέτο Business Intelligence και ερώτηση μέλους ποιο είναι το καταλληλότερο σημείο εκκίνησης για εκμάθηση Python, πιθανώς ξεκινώντας από το μηδέν.</description>
     </item>
     
@@ -53,11 +53,11 @@
     </item>
     
     <item>
-      <title>Introduction_to_jinja2</title>
-      <link>https://netautogr.github.io/posts/2021/12/introduction_to_jinja2/</link>
+      <title>Introduction to jinja2</title>
+      <link>https://netautogr.github.io/posts/2021/12/introduction-to-jinja2/</link>
       <pubDate>Wed, 08 Dec 2021 17:28:27 +0200</pubDate>
       
-      <guid>https://netautogr.github.io/posts/2021/12/introduction_to_jinja2/</guid>
+      <guid>https://netautogr.github.io/posts/2021/12/introduction-to-jinja2/</guid>
       <description>Γενικά Ο σκοπός του παρόντος άρθρου είναι να φέρει τον αναγνώστη σε μια πρώτη επαφή με τη Jinja2 και τις εφαρμογές της.
 Τι είναι η Jinja2 Η Jinja2 είναι γλώσσα για μια γρήγορη, εκφραστική και επεκτάσιμη μηχανή προτύπων (templating engine) γραμμένη σε καθαρό python. Τα ειδικά σύμβολα θέσης στο πρότυπο επιτρέπουν την σύνταξη κώδικα παρόμοιου με την σύνταξη της Python και χρησιμοποιείται για την δημιουργία HTML,XML και άλλων γλωσσών σήμανσης (markup language).</description>
     </item>
