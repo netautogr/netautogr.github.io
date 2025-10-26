@@ -57,26 +57,108 @@
 <ul>
 <li><a href="https://www.youtube.com/watch?v=vqV5OgRixs0&amp;list=PLIlpqyrKHrRPcRWKNSFo9qr2Oz307klT1">Data Knoxx youtube playlist on EVE-NG</a></li>
 <li><a href="https://youtu.be/mmU5pTdbPRo?si=Rjn5jZYEx_NaeBgw">Building a Juniper EVE-NG Lab-Environment for daily usage - Part 1/3</a></li>
+<li><a href="https://www.eve-ng.net/index.php/how-to-eve-ng-api/">EVE-NG REST API</a></li>
 </ul>
 <h3 id="pnetlab">PNETLab</h3>
 <p>Το PNETLab είναι ένα EVE-NG clone που είναι δωρεάν. Έχει κάποια από τα features της EVE-NG PRO έκδοσης αλλά όχι όλα (δεν έχει ακόμα docker support νομίζω), είναι λίγο πίσω στις εκδόσεις, αλλά διαθέτει και το δικό του marketplace και license/user model. Είναι πολύ δημοφιλές σε network engineers που θέλουν να μελετήσουν μεγάλης κλίμακας τοπολογίας και μπορεί κανείς να κατεβάσει labs απευθείας από το marketplace (περίπου, υπάρχουν κάποιες προϋποθέσεις). Πιθανότατα θα το βρεις να χρησιμοποιείται από αρκετούς network trainers. Όπως υποννοεί πάντα το marketplace, δεν είναι πάντα όλα δωρεάν.. To software όμως είναι..</p>
 <p><a href="https://user.pnetlab.com/store/labs/view">PNETLab Marketplace:</a>
 <img src="https://uploader.pnetlab.com/api/uploader/public/read?file=https://uploader.pnetlab.com/Local/labs/lab_article/802/SDWANlab.png" alt="PNET Lab SD-WAN"></p>
-<h3 id="containerlab">Containerlab</h3>
-<h3 id="netlab">Netlab</h3>
 <h3 id="cisco-modeling-labs-cml">Cisco Modeling Labs (CML)</h3>
+<p>Παλιότερα γνωστό ως Virl, το <a href="https://www.cisco.com/site/us/en/learn/training-certifications/training/modeling-labs/index.html">CML</a> είναι στην έκδοση 2.9 πλέον και συνήθως αναφέρονται σε αυτό ως CML-2 ακριβώς για να δείξουν αυτή τη διαφορά. Είναι η πλατφόρμα φτιαγμένη από ομάδα μηχανικών της Cisco, μεταξύ των οποίων ο γνωστότερος και αυτός που παίρνει το περισσότερο credit για την ανάπτυξη του είναι ο Ralph Schmieder.
+Το CML έρχεται τελευταίο στη γιορτή.. Είναι μια πλατφόρμα που υποστηρίζει κυρίως QEMU based virtual machines και μπορεί να τρέξει IOSv (τα παλιά cisco platforms για simulation), τα IoL (IOS on Linux) images, δίνοντας πρόσβαση σε εξομοιώσεις γνωστών network platforms της Cisco (NXOS, Catalyst, ISR/CSR, IOS-XRd, κλπ) αλλά και αρκετά άλλα nodes της Cisco που ξεφεύγουν από τον ορισμό του network node όπως Cisco Firepower FTD και FMC, Cisco ISE, Cisco SD-WAN manager, κλπ. Λόγω του ότι προέρχεται από τον κατασκευαστή Cisco έχει μοναδική πρόσβαση στα resources αυτά ως images, τα οποία ωστόσο &hellip; με μαγικούς τρόπους μεταφέρονται προς άλλες πλατφόρμες εξομοίωσης. Είναι αυτό νομότυπο κατά τη Cisco; Όχι προφανώς. Για να χρησιμοποιήσει κάποιος Cisco images πρέπει να έχει είτε το CML είτε κάποιο σχετικό συμβόλαιο με τη Cisco που να αφορά αυτές τις πλατφόρμες ώστε να μπορεί να κατεβάσει το software. Και πάλι υπάρχει μηχανισμός licensing για όλα αυτά. Ωστόσο οι μηχανικοί που θέλουν να τα χρησιμοποιήσουν σε άλλες πλατφόρμες, βρίσκουν συνήθως διάφορους τρόπους. Δεν θα περιγράψουμε τίποτε τέτοιο σε αυτό το post, δεν υποστηρίζουμε καμία τέτοια χρήση, το ίδιο αναφέρουν κι όλοι οι υπόλοιποι κατασκευαστές για network simulation platforms.</p>
+<p><img src="https://pubhub.devnetcloud.com/media/cisco-modeling-labs-2-9/docs/img/iol-xe_feature_test_topology.png#developer.cisco.com" alt="CML Topology">
+CML Topology</p>
+<p>Το CML είναι γενικά χειρότερο στην διαχείριση resources, αργεί να υιοθετήσει features (μόλις ενσωμάτωσε υποστήριξη για docker) και είναι εξωφρενικά ακριβό αν αναλογιστεί κανείς ποιοι είναι αυτοί που το χρειάζονται για να μάθουν την τεχνολογία. Ένα ακόμα μειονέκτημα είναι πως για να ενσωματώσετε network device images από άλλους vendors στο ίδιο lab ενδεχομένως χρειάζεται να βρείτε και να εισάγετε τα images μόνοι σας, καθώς το CML έρχεται μόνο με Cisco created images. Από την άλλη αν θέλετε να το κάνετε αυτό, γιατί να χρησιμοποιήσετε CML;</p>
+<p>Όπως προανέφερα, είναι ακριβό. Υπάρχουν 2 εκδόσεις Personal (για 20 και 40 nodes) ενώ η Enterprise έκδοση για χρήση σε εταιρικό περιβάλλον είναι απόλυτα απαγορευτική ως κόστος. Ωστόσο υπάρχουν πλέον και free tier για μέχρι 5 nodes (δεν μετράνε τα unmanaged switches, οπότε μπορείτε να φτιάξετε κάτι λίγο πιο μεγάλο με δρομολογητές, αλλά και πάλι..)</p>
+<p>Και το CML υποστηρίζει REST API και μάλιστα υπάρχει και Terraform provider γι αυτό. Χρήσιμα links:</p>
+<ul>
+<li><a href="https://blogs.cisco.com/learning/get-started-with-terraform-and-cisco-modeling-labs">Παλιό post του Ralph στο Cisco Blog για Get Started With Terraform and Cisco Modeling Labs</a></li>
+<li><a href="https://www.ciscolive.com/on-demand/on-demand-library.html?search=2722#/session/1750271907143001zYw6">Παρουσίαση από τον Ralph στο San Diego Cisco Live 2025</a></li>
+<li><a href="https://registry.terraform.io/providers/CiscoDevNet/cml2/latest">CML Terraform Provider</a></li>
+<li><a href="https://www.kwtrain.com/labs">Δωρεάν Lab Guides για CML από τον Kevin Wallace</a></li>
+</ul>
+<h3 id="containerlab">Containerlab</h3>
+<p>Το <a href="https://containerlab.dev/">Containerlab</a> έχει φέρει επανάσταση στους Network Simulators, δίνοντας τη δυνατότητα για την κατασκευή network labs με χρήση containers. Η ιδέα ξεκίνησε από τον Wim Hendrickx (Nokia - Head of IP Architecture), αλλά ήταν ο Roman Dodin (Nokia - Product Line Manager) και μια ομάδα μηχανικών που το «πήγε στο επόμενο επίπεδο». Ξεκίνησε ως ένα open-source project και προέκυψε από την ανάγκη για έναν πιο απλό και γρήγορο τρόπο δημιουργίας lab topologies με network operating systems όπως το Nokia SR Linux. Η βασική φιλοσοφία ήταν η δημιουργία ενός εργαλείου όσο το δυνατόν πιο ελαφρύ, ικανού να τρέξει σε ένα απλό laptop αν χρειαστεί. Με τον καιρό εξελίχθηκε ώστε να περιλαμβάνει περισσότερα χαρακτηριστικά, ενσωματώνοντας κι άλλα δικτυακά λειτουργικα συστήματα που έχουν μετατρέψει οι αντίστοιχοι κατασκευαστές σε μορφή container.</p>
+<p><a href="https://youtu.be/srnhoLpxgZ4?si=x3xbi1gyEc27wq9R"><img src="https://img.youtube.com/vi/srnhoLpxgZ4/maxresdefault.jpg" alt="The story of Containerlab at at Network Automation Nerds with Roman Dodin"></a>
+The story of Containerlab at Network Automation Nerds with Roman Dodin</p>
+<p>Ωστόσο, υπάρχει η δυνατότητα για ενσωμάτωση και δικτυακών λειτουργικών συστημάτων που βρίσκονται σε μορφή Virtual Machine βασισμένα σε quemu, &ldquo;πακετάροντας&rdquo; τα μέσα σε containers, όπως π.χ. Cisco IoL, CSR, Catalayst 9kv, Nexus9kv, κλπ, χρησιμοποιώντας το vrnetlab project και συγκεκριμένα ένα fork του (γνωατό ως hellt από το github username του Roman Dodin).</p>
+<p><a href="https://github.com/srl-labs/vrnetlab/releases/tag/v0.21.0">https://github.com/srl-labs/vrnetlab/releases/tag/v0.21.0</a></p>
+<p>Η δυνατότητα χρήσης container images δίνει ένα πολύ σημαντικό πλεονέκτημα στο Containerlab καθώς μπορεί να λειτουργήσει απόλυτα σε συνθήκες IaC (Infrastructure as Code), δημιουργώντας ένα network lab σε πλήρη μορφή και configuration state σε λίγα λεπτά, από το τίποτε, ενώ σε πλατφόρμες με χρήση VMs templates δεν υπάρχει η ίδια ευελιξία, καθώς τα VMs βασίζονται πολύ σε σταθερό storage και τα βήματα για να βρεθούν σε ένα τελικό state από τη δημιουργία ενός lab είναι πολύ περισσότερα, ενώ πρέπει η κάθε πλατφόρμα να υποστηρίζει κατάλληλα APIs και οι χρήστες της πλατφόρμας να δημιουργήσουν συγκεκριμένα automated flows για να φτάσουν το lab στην επιθυμητή κατάσταση.</p>
+<p>Το Containerlab δημιουργήθηκε με αυτή τη φιλοσοφία κι γι αυτό αποδίδει σε αυτές τις συνθήκες εξαιρετικά, ελαχιστοποιώντας το footprint των εργαστηρίων και δίνοντας τη δυνατότητα να δημιουργείται και να καταστρέφεται το εργαστήριο όσες φορές θέλουμε, διατηρώντας τα αρχεία ρυθμίσεων αν θέλουμε σε εξωτερικά αρχεία κειμένου στο folder structure του lab.
+Το άλλο πλεονέκτημα του είναι πως είναι εξαιρετικά εύκολος ο διαμοιρασμός εργαστηρίων και η δημιουργία και συντήρηση από κοινού χρησιμοποιώντας το git για version control, ενώ το ίδιο το Containerlab μπορεί να &ldquo;κατεβάσει&rdquo; και να τρέξει ένα lab από ένα remote git repository, όπως περιγράφει η Claudia De Luna στο παρακάτω post:</p>
+<p><a href="https://gratuitous-arp.net/containerlab-the-anti-pattern/">https://gratuitous-arp.net/containerlab-the-anti-pattern/</a> - Claudia De Luna, Containerlab the anti-pattern.</p>
+<p>Τέλος, η ομάδα της Nokia που υποστηρίζει το Containerlab έχει δημιουργήσει και μια <a href="https://containerlab.dev/manual/vsc-extension/">επέκταση για το vs-code</a>, δίνοντας τη δυνατότητα για γραφικο τρόπο σχεδιασμού και λειτουργίας της πλατφόρμας με εξαιρετικά απλό τρόπο.</p>
+<p><img src="https://containerlab.dev/images/vscode-extension/02-topo_viewer_editor.png" alt="VS-Code Containerlab Extension"></p>
+<p>Σήμερα το Containerlab αποτελεί ένα δημοφιλές, δωρεάν και open-source εργαλείο που απλοποιεί τη δημιουργία και διαχείριση network labs, καθιστώντας το κατάλληλο για testing, demos, αλλά και για CI/CD pipelines.</p>
+<h3 id="netlab">Netlab</h3>
+<p>Όπως λέει κι ο φίλος Μανώλης, &ldquo;αν το Containerlab το ερωτεύεσαι, το <a href="https://netlab.tools/">Netlab</a> το παντρεύεσαι&rdquo;. To Netlab έχει δημιουργηθεί από τον Ivan Pepelnjak και έχει τη δυνατότητα βασισμένο σε yaml configuration files να δημιουργεί και να τρέχει δικτυακές τοπολογίες σε vagrant ή containerlab και να δημιουργεί Ansible invetories για αυτές. Μπορεί να χρησιμοποιεί διάφορους virtualization providers (KVM/libvirt, Docker containers) ή και φυσικά συστήματα.
+Το netlab, με βάση το configuration file σε Yaml που θα φτιάξετε, θα ρυθμίσει IP addressing, routing protocols, VLANs, VRFs, και άλλες δικτυακές τεχνολογίες, δημιουργώντας όλα τα απαραίτητα configs για κάθε μέρος τους, και θα σηκώσει απλά το lab λειτουργικό και έτοιμο προς χρήση.</p>
+<p>Μπορείτε να δείτε ακριβώς τις προϋποθέσεις χρήσης του containerlab (είναι λίγο πιο πίσω σε συμβατότητα όσο αφορά τις εκδόσεις) με το netlab στο παραλάτω link, όπως και ποια vendor images υποστηρίζονται για αυτό το integration:</p>
+<p><a href="https://netlab.tools/labs/clab/">https://netlab.tools/labs/clab/</a></p>
+<p>Ακολουθεί ένα εξαιρετικό post που περιγράφει ένα τέτοιο lab setup, by <a href="https://mycv.bytewise.me/">Manolis Kalliotis</a>.</p>
+<p><a href="https://net4fungr.github.io/posts/iou-love/">https://net4fungr.github.io/posts/iou-love/</a></p>
 <h2 id="vendor-images">Vendor Images</h2>
+<p>Πολλά από τα vendor images είναι πρακτικά QEMU images κατάλληληλα είτε για το CML είτε για το EVE-NG (άρα και το PNETLab) ή το GNS-3 (θα πρέπει να ψάξετε τη διαδικασία ενσωμάτωσης στο αντίστοιχο documentation κάθε πλατφόρμας). Για το Containerlab χρειάζεται να χρησιμοποιήσετε το vrnetlab για να πακετάρετε τέτοια images ως containers.
+Και αναφέρουμε ωστόσο τα containers, κάποιοι vendors διαθέτουν τέτοια images έτοιμα.</p>
 <h3 id="cisco">Cisco</h3>
+<p>Προσοχή σε ότι αφορά εξομείωση SD-WAN, η Cisco έχει δημιουργήσει ξεχωριστά images γι αυτό.</p>
 <h4 id="iol">IoL</h4>
+<p><a href="https://developer.cisco.com/docs/modeling-labs/iol/#iol">IOS on Linux</a>, QEMU based, δουλεύουν πολύ καλά για μεγάλες τοπολογίες γιατί δεν θέλουν πολλά resources σε αντίθετα με γνωστά άλλα virtual platforms της Cisco.
+Αναφορά σε χρήση IoL στο documentation του Containerlab: <a href="https://containerlab.dev/manual/kinds/cisco_iol/">https://containerlab.dev/manual/kinds/cisco_iol/</a></p>
 <h4 id="nxos">NXOS</h4>
+<p>Η γνωστή πλατφόρμα datacenter networking της Cisco είχε μια πιο άδοξη έκδοση για Cisco Nexus 7000 αλλά οι πιο αξιόπιστες είναι οι πιο πρόσφατες εκδόσεις Nexus 9kv. Χρειάζονται πάρα πολλά resources για να λειτουργήσουν σωστά σε οποιαδήποτε πλατφόρμα εξομείωσης.</p>
 <h4 id="cat8k">Cat8k</h4>
+<p>Τα γνωστά nodes που αντικατέστησαν τις ISR και CSR πλατφόρμες. Τα Catalyst 8kv είναι τα αντίστοιχα νέα virtual nodes που είναι διαθέσιμα τόσο στο CML όσο και στο γνωστό Denvet Sanbdox για δοκιμαστική χρήση. Και αυτά θέλουν αρκετά resources.</p>
 <h4 id="cat9k">Cat9k</h4>
+<p>Αντίστοιχα έκδοση της γνωστής πλατφόρμας Catalyst 9k σε virtual edition με λίγες θύρες. Έχει βγει σε 2 εκδόσεις, με λίγο καλύτερη υποστήριξη features σε μία από τις δύο και ακόμα μεγαλύτερη ανάγκη από resources. Μην περιμένετε όλα τα features και μάλιστα σε ότι αφορά το switching (ούτε λόγος για SD-Access). Για περιπτώσεις χρήσης iox (ενσωματωμένους containers) διάβασα πρόσφατο σχόλιο του Joe Clark ότι υποστηρίζεται προς το παρόν μόνο στο Cat8k, εντός CML. Και πάλι, καλή τύχη&hellip;</p>
 <h4 id="ios-xr">ios-xr</h4>
+<p>Η γνωστή πλατφόρμα για Service Providers σε έκδοση virtual. Δεν έχω ιδέα πόσο καλά λειτουργεί.. Γνωρίζω φήμες για προβλήματα αλλά αν πιστέψουμε τη Cisco το έχουν χρησιμοποιήσει ως Route Reflector.. Μερικά links:</p>
+<ul>
+<li><a href="https://developer.cisco.com/docs/modeling-labs/ios-xrv/">https://developer.cisco.com/docs/modeling-labs/ios-xrv/</a></li>
+<li><a href="https://www.cisco.com/en/US/docs/ios_xr_sw/ios_xrv/install_config/b_xrvr_432_chapter_01.html">https://www.cisco.com/en/US/docs/ios_xr_sw/ios_xrv/install_config/b_xrvr_432_chapter_01.html</a></li>
+<li><a href="https://xrdocs.io/virtual-routing/">https://xrdocs.io/virtual-routing/</a></li>
+</ul>
 <h3 id="arista">Arista</h3>
+<p>Η Arista έχει βγάλει εκδόσεις του δικτυακού λειτουργικού της τόσο ως Virtual Machine όσο και ως Container και είναι η μοναδική εταιρεία που δεν κρύβει εντελώς τα images πίσω από Regwall ή Paywall. Για αυτό και τα Arista images είναι πολύ δημοφιλή για δημιουργία labs. Δημιουργείτε απλά χρήστη στο site της Arista και στη συνέχεια κατεβάζετε το αντίστοιχο image.</p>
+<ul>
+<li><a href="https://www.arista.com/en/support/software-download">https://www.arista.com/en/support/software-download</a></li>
+<li><a href="https://www.arista.com/en/products/eos">https://www.arista.com/en/products/eos</a></li>
+<li><a href="https://arista.my.site.com/AristaCommunity/s/article/Getting-Started-with-cEOS-lab-in-Containerlab#Comm_Kna_ka0Uw00000082z7IAA_81">https://arista.my.site.com/AristaCommunity/s/article/Getting-Started-with-cEOS-lab-in-Containerlab#Comm_Kna_ka0Uw00000082z7IAA_81</a></li>
+</ul>
 <h3 id="juniper">Juniper</h3>
+<p>Η Juniper διαθέτει αρκετά virtual images για labs, vJunos-switch, vJunosEvolved, vJunos-router, cJunosEvolved. Η διαδικασία για να πάρετε πρόσβαση στα images περιγράφεται στο παρακάτω link:</p>
+<p><a href="https://www.juniper.net/us/en/dm/vjunos-labs.html">https://www.juniper.net/us/en/dm/vjunos-labs.html</a></p>
+<p>Μην ξεχνάμε εδώ την πολύ καλή δουλειά που έχει κάνει ο Christian Scholtz με labs για Juniper όπως ανέφερα παραπάνω:
+<a href="https://youtu.be/mmU5pTdbPRo?si=Rjn5jZYEx_NaeBgw"><img src="https://img.youtube.com/vi/mmU5pTdbPRo/maxresdefault.jpg" alt="Building a Juniper EVE-NG Lab-Environment for daily usage - Part 1/3"></a></p>
+<p>Υπάρχει όμως και ο Suresh Vinasiththamby, ο οποίος δημοσιεύει αρκετές φορές υλικό για labs με Juniper nodes. Μόλις σήμερα (τρομερός συγχρονισμός!!) δημοσίευσε και ένα άρθρο για virtual labs που μπορείτε να βρείτε εδώ:</p>
+<p><a href="https://www.packetswitch.co.uk/network-labs-on-a-budget/">https://www.packetswitch.co.uk/network-labs-on-a-budget/</a></p>
+<p>Άλλα links από το blog του Suresh που ίσως βρείτε ενδιαφέροντα:</p>
+<ul>
+<li><a href="https://www.packetswitch.co.uk/netlab-the-fastest-way-to-build-network-labs/">https://www.packetswitch.co.uk/netlab-the-fastest-way-to-build-network-labs/</a></li>
+<li><a href="https://www.packetswitch.co.uk/tag/juniper/">https://www.packetswitch.co.uk/tag/juniper/</a></li>
+<li><a href="https://www.packetswitch.co.uk/running-eve-ng-in-proxmox/">https://www.packetswitch.co.uk/running-eve-ng-in-proxmox/</a></li>
+</ul>
 <h3 id="nokia-sr-linux">Nokia SR-Linux</h3>
+<p>H Nokia διαθέτει τα SR-Linux images ως containers εντελώς δημόσια (ούτε restistration δεν χρειάζεται). Είναι πολύ εύκολο να αφήσετε το containeral να κατεβάσει τοπικά τα αντίστοιχα images από τα συνήθη container registries ή να τρέξετε απλά την εντολή:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull ghcr.io/nokia/srlinux
+</code></pre></div><p>Ορισμένα links για το SR-Linux:</p>
+<ul>
+<li><a href="https://www.nokia.com/ip-networks/service-router-linux-NOS/">https://www.nokia.com/ip-networks/service-router-linux-NOS/</a></li>
+<li><a href="https://containerlab.dev/manual/kinds/srl/">https://containerlab.dev/manual/kinds/srl/</a></li>
+<li><a href="https://documentation.nokia.com/srlinux/24-7/books/product-overview/about-sr-linux.html#what-sr-linux-product-overview">https://documentation.nokia.com/srlinux/24-7/books/product-overview/about-sr-linux.html#what-sr-linux-product-overview</a></li>
+<li><a href="https://learn.srlinux.dev/">https://learn.srlinux.dev/</a></li>
+</ul>
 <h3 id="linux-hosts">Linux Hosts</h3>
+<p>Τα linux hosts μπορούν να χρησιμοποιηθούν σε τέτοιες πλατφόρμες κυρίως ως virtual machines αλλά και ως containers. Μέχρι τώρα δεν έχω βρει άλλο τρόπο να τρέξω μια ομάδα services με docker-compose εκτός κι αν στήσω ένα virtual machine με linux (π.χ. Ubuntu Server) και μετά μέσα εκεί τρέξω docker και docker-compose. Ωστόσο μπορεί κανείς να δημιουργήσει το σύνολο από τα services εντός μια τέτοιας πλατφόρμας ως containers, αρκεί να ρυθμίσει σωστά ότι είναι απαραίτητο π.χ. τα volume mounts κλπ.
+Θα βρείτε αναφορές και σε ειδικά διαμορφωμένα images για network labs και testing στο documentation του Containerlab, δείτε π.χ. εδώ:</p>
+<p><a href="https://github.com/srl-labs/srl-telemetry-lab/blob/main/st.clab.yml#L55">https://github.com/srl-labs/srl-telemetry-lab/blob/main/st.clab.yml#L55</a></p>
+<p>Εκτός από ένα πλήρες topology με prometheus &amp; grafana περιέχει και αναφορές σε ορισμό client nodes με το image για το network-multitool, ένα image βασισμένο σε Alpine Linux με ειδική διαμόρφωση για network testing. Στην τοπολογία που υπάρχει στο link, τα nodes ρυθμίζονται με συγκεκριμένες ip addresses και τρέχουν iperf εντολές για τη δημιουργία network traffic εντός του lab.</p>
+<p>Στην περίπτωση που θέλει κανείς να στήσει κάτι πιο γενικό και με την έκδοση linux που θέλει εντός EVE-NG, υπάρχει οδηγός στο documentation του EVE-NG που εξηγεί πως να φτιάξετε template με όποιο λειτουργικό θέλετε αρκεί να διαθέτετε το ISO της εγκατάστασης:</p>
+<p><a href="https://www.eve-ng.net/index.php/documentation/howtos/howto-create-own-linux-host-image/">https://www.eve-ng.net/index.php/documentation/howtos/howto-create-own-linux-host-image/</a></p>
 <h3 id="docker-images">Docker images</h3>
+<p>Θεωρητικά οποιοδήποτε docker image μπορεί να τρέξει εντός των διαφόρων πλατφορμών (εκτός φυσικά του PNETLab όπως είπαμε, τουλάχιστον προς το παρόν) αρκεί να είναι linux based image. Οι απαραίτητες ρυθμίσεις είναι σαν να ορίζετε τις παραμέτρους για docker run. Θα βρείτε ωστόσο πως εκτός κι αν το κάνετε στο containerlab, κάποια πράγματα όπως τα εξωτερικά volume mounts είναι λίγο πιο δύσκολα..</p>
+<p>Για να εντάξετε docker images σε EVE-NG labs, δεν θα βρείτε αναφορές στο documentation εκτός από το παρακάτω video:</p>
+<p><a href="https://youtu.be/49f3JX6vFrk?si=FwWX2qZMpRYj04zL"><img src="https://img.youtube.com/vi/49f3JX6vFrk/maxresdefault.jpg" alt="Embeded docker eve-ng"></a></p>
 <h2 id="hosting-platforms">Hosting Platforms</h2>
 <h3 id="vmware-workstation--esxi--vcenter">Vmware Workstation / ESXi / VCenter</h3>
 <h3 id="proxmox">Proxmox</h3>
