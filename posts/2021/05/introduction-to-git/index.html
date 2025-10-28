@@ -233,7 +233,7 @@ git init .
 </code></pre></div><p>Έτσι δημιουργείται ένας φάκελος .git μέσα στον φάκελο του project όπου περιέχει όλα τα απαραίτητα αρχεία του repository (και όχι μόνο όπως θα δούθμε παρακάτω..)</p>
 <h2 id="αντιγραφή-ενός-git-repository---git-clone">Αντιγραφή ενός Git Repository - git clone</h2>
 <ul>
-<li>Μπορεί να αντιγραφεί ή &ldquo;κλωνοποιηθεί&rdquo; (clone) όπως λέμε, ένα υπάρχον Git Repository από ένα απομακρυσμένο υπολογιστή/server. Αυτό μπορεί να γίνει με την εντολή git clone <!-- raw HTML omitted -->. Για παράδειγμα αν θες να κάνει clone το netprog_basics repository από το CiscoDevNet στο github τότε η εντολή είναι :</li>
+<li>Μπορεί να αντιγραφεί ή &ldquo;κλωνοποιηθεί&rdquo; (clone) όπως λέμε, ένα υπάρχον Git Repository από ένα απομακρυσμένο υπολογιστή/server. Αυτό μπορεί να γίνει με την εντολή git clone <url>. Για παράδειγμα αν θες να κάνει clone το netprog_basics repository από το CiscoDevNet στο github τότε η εντολή είναι :</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ git clone https://github.com/CiscoDevNet/netprog_basics.git
 </code></pre></div><p>Αυτή η εντολή θα δημιουργήσει ένα φάκελο netprog_basics που θα περιέχει ένα φάκελο .git ο οποίος περιλαμβάνει το πλήρες repository του project με το ιστορικό του. Επίσης θα γίνει check out η τελευταία έκδοση των αρχείων έτσι ώστε να είναι έτοιμα να επεξεργαστούν. Στην περίπτωση αυτή το cloned repository κρατάει τη σύνδεση του με το απομακρυσμένο directory, με το οποίο μπορεί να συγχρονιστεί εκ νέου, εφόσον χρειαστεί να ενημερωθούν τα αρχεία στις τρέχουσες εκδόσεις τους.</p>
@@ -495,12 +495,12 @@ b123574 changing..
 <p>Ο HEAD πάει πίσω στο αμέσως προηγούμενο commit και τα τωρινά περιεχόμενα του φακέλου (ότι διαφέρει) εμφανίζονται ως staged. Είναι και η προεπιλογή οπότε η εντολή git reset HEAD~ έχει ακριβώς το ίδιο αποτέλεσμα (χωρίς option)</p>
 <h3 id="git-reset-head---hard">git reset HEAD~ &ndash;hard</h3>
 <p>Ο HEAD πάει πίσω στο αμέσως προηγούμενο commit και τα τωρινά περιεχόμενα του φακέλου (ότι διαφέρει) διαγράφονται.</p>
-<h3 id="git-reset-headnumber">git reset HEAD~<!-- raw HTML omitted --></h3>
+<h3 id="git-reset-headnumber">git reset HEAD~<number></h3>
 <p>Ο HEAD πάει πίσω όσα commit ορίσουμε με το νουμερο. Προφανώς μπορεί να συνδυαστεί με τα options που αναφέραμε νωρίτερα.</p>
 <h3 id="git-reset-head">git reset HEAD</h3>
 <p>Γυρνάμε στο HEAD το ίδιο</p>
-<h3 id="git-reset-hash-file">git reset <!-- raw HTML omitted --> <!-- raw HTML omitted --></h3>
-<p>Σημαίνει &ldquo;τράβα το αρχείο <!-- raw HTML omitted --> από το commit με hash <!-- raw HTML omitted -->&rdquo; (αντί να το τραβήξουμε από το commit που δείχνει ο ΗEAD).</p>
+<h3 id="git-reset-hash-file">git reset <hash> <file></h3>
+<p>Σημαίνει &ldquo;τράβα το αρχείο <file> από το commit με hash <hash>&rdquo; (αντί να το τραβήξουμε από το commit που δείχνει ο ΗEAD).</p>
 <h2 id="git-revert">Git Revert</h2>
 <p>Όπως αναφέραμε όταν κάνουμε <code>git reset --hard</code>, τα περιεχόμενα που είχαμε διαγράφονται οριστικά. Το git reset έχει γενικά και τη συνέπεια ότι το ενδιάμεσο git history που είχε καταγραφεί με τις αλλαγές που θέλουμε να αναιρέσουμε, διαγράφεται επίσης!</p>
 <p><strong>Τί γίνεται αν θέλουμε να &ldquo;επιστρέψουμε στο παρελθόν&rdquo; στο στυλ που το έκαναν οι εκδικητές στο &ldquo;Endgame&rdquo;?</strong> Δηλαδή όπως λέει κι ο HULK, όταν επιστρέφεις στο παρελθόν <em><strong>&ldquo;your past is now your future&rdquo;</strong></em>!
@@ -588,8 +588,8 @@ git merge test-feature1
 </ul>
 <p>Οι απαραίτητες εντολές είναι οι:</p>
 <ul>
-<li><em>git remote add origin <!-- raw HTML omitted -->.git</em> - ορίζει ως origin (remote) το remote repo url</li>
-<li><em>git branch &ndash;set-upstream-to origin/<!-- raw HTML omitted --></em> - ορίζει το remote branch ως upstream του τρέχοντος τοπικού branch. Αν το τρέχον είναι το master, τότε η εντολή:</li>
+<li><em>git remote add origin <remote repo url>.git</em> - ορίζει ως origin (remote) το remote repo url</li>
+<li><em>git branch &ndash;set-upstream-to origin/<remote branch></em> - ορίζει το remote branch ως upstream του τρέχοντος τοπικού branch. Αν το τρέχον είναι το master, τότε η εντολή:</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch --set-upstream-to origin/master 
 </code></pre></div><p>καθορίζει το remote master ως αντίστοιχο upstream του local master branch.</p>

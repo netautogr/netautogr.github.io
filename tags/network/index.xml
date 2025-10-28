@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network on Network Automation GR</title>
+    <link>https://netautogr.github.io/tags/network/</link>
+    <description>Recent content in network on Network Automation GR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Oct 2025 19:21:01 +0300</lastBuildDate>
+    
+	<atom:link href="https://netautogr.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction to Network Simulation Tools for Labs</title>
+      <link>https://netautogr.github.io/posts/2025/10/introduction-to-network-simulation-tools-for-labs/</link>
+      <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
+      
+      <guid>https://netautogr.github.io/posts/2025/10/introduction-to-network-simulation-tools-for-labs/</guid>
+      <description>Εισαγωγή Το post αυτό κάνει μια διπλή προσπάθεια:
+ Να περιγράψει το τοπίο γύρω από το Network Sumulation και τις ανάγκες που μπορεί να καλύψει για network labs και όχι μόνο Να επαναφέρει το ρυθμό της παραγωγής περιοχομένου της ομάδας για το Network Automation σε ένα κύκλο λίγο πιο συχνό από τέσσερα χρόνια (τελευταίο post ήταν το 2021)  Network Simulation Τί είναι; Είναι η προσπάθεια να παράγουμε με ψηφιακό τρόπο μια δικτυακή τοπολογία όπου ψηφιακοί κόμβοι αναπαράγουν τη συμπεριφορά πραγματικών δικτυακών κόμβων όπως routers και switches αλλά και system hosts αν χρειάζεται.</description>
+    </item>
+    
+  </channel>
+</rss>

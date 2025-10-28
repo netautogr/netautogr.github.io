@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content="Εισαγωγή Το post αυτό κάνει μια διπλή προσπάθεια:
  Να περιγράψει το τοπίο γύρω από το Network Sumulation και τις ανάγκες που μπορεί να καλύψει για network labs και όχι μόνο Να επαναφέρει το ρυθμό της παραγωγής περιοχομένου της ομάδας για το Network Automation σε ένα κύκλο λίγο πιο συχνό από τέσσερα χρόνια (τελευταίο post ήταν το 2021)  Network Simulation Τί είναι; Είναι η προσπάθεια να παράγουμε με ψηφιακό τρόπο μια δικτυακή τοπολογία όπου ψηφιακοί κόμβοι αναπαράγουν τη συμπεριφορά πραγματικών δικτυακών κόμβων όπως routers και switches αλλά και system hosts αν χρειάζεται." />
-<meta name="keywords" content=", untagged" />
+<meta name="keywords" content=", network, simulation, automation, platforms" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
 <link rel="canonical" href="https://netautogr.github.io/posts/2025/10/introduction-to-network-simulation-tools-for-labs/" />
@@ -47,12 +47,12 @@
  Να περιγράψει το τοπίο γύρω από το Network Sumulation και τις ανάγκες που μπορεί να καλύψει για network labs και όχι μόνο Να επαναφέρει το ρυθμό της παραγωγής περιοχομένου της ομάδας για το Network Automation σε ένα κύκλο λίγο πιο συχνό από τέσσερα χρόνια (τελευταίο post ήταν το 2021)  Network Simulation Τί είναι; Είναι η προσπάθεια να παράγουμε με ψηφιακό τρόπο μια δικτυακή τοπολογία όπου ψηφιακοί κόμβοι αναπαράγουν τη συμπεριφορά πραγματικών δικτυακών κόμβων όπως routers και switches αλλά και system hosts αν χρειάζεται.">
 <meta itemprop="datePublished" content="2025-10-24T19:21:01&#43;03:00" />
 <meta itemprop="dateModified" content="2025-10-24T19:21:01&#43;03:00" />
-<meta itemprop="wordCount" content="4225">
+<meta itemprop="wordCount" content="4927">
 <meta itemprop="image" content="https://netautogr.github.io"/>
 
 
 
-<meta itemprop="keywords" content="untagged," />
+<meta itemprop="keywords" content="network,simulation,automation,platforms," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://netautogr.github.io"/>
 
@@ -142,7 +142,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        20 minutes
+        24 minutes
 
         
       </p>
@@ -173,8 +173,8 @@
 <li><a href="https://www.isi.edu/websites/nsnam/ns/">The Network Simulator - ns-2 @ www.isi.edu</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Ns_(simulator)">ns (simulator) @ wikipedia</a></li>
 </ul>
-<p>NS-2 @ Research Gate:
-<img src="https://www.researchgate.net/publication/329757869/figure/fig1/AS:11431281318938170@1742574296593/Simulation-environment-of-Network-Simulator-2-NS2.tif" alt="NS-2 image @ Research Gate"></p>
+<p style="text-align: center;">NS-2 @ Research Gate:</p>
+<p><img src="https://www.researchgate.net/publication/329757869/figure/fig1/AS:11431281318938170@1742574296593/Simulation-environment-of-Network-Simulator-2-NS2.tif" alt="NS-2 image @ Research Gate"></p>
 <p>Φυσικά σε σχέση με τις σημερινές πλατφόρμες Network Simulations το NS φαντάζει προϊστορικό. Υλοποιούσε ωστόσο protocol stacks ώστε να μπορεί κάποιος να μελετήσει βασικές συμπεριφορές δικτύων σε λογικό επίπεδο.</p>
 <h2 id="εξέλιξη-των-network-simulators---γνωστές-πλατφόρμες">Εξέλιξη των network simulators - Γνωστές Πλατφόρμες</h2>
 <p>Με την εξέλιξη του virtual compute (virtual machines &amp; virtual networking), δόθηκε η ευκαιρία για να αποκτήσουν οι κόμβοι και οι τοπολογίες μεγαλύτερες δυνατότητες και να εξομοιώνουν περισσότερα χαρακτηριστικά από αυτά που έχουν οι πραγματικοί δικτυακοί κόμβοι.</p>
@@ -190,7 +190,7 @@
 <p><a href="https://docs.gns3.com/docs/">GNS-3 Documentation</a></p>
 <h3 id="eve-ng">EVE-NG</h3>
 <p>Ένα πολύ πιο δουλεμένο περιβάλλον από το GNS-3, καλύτερα γραφικά, καλύτερο support, πρώτο σε integrations και νέα features, πρώτο σε δυνατότητες αυτοματισμού (με κάποιους περιορισμούς), αλλά για πρώτη φορά και δύο διαφορετικές εκδόσεις. Μία δωρεάν (community edition) και δυστυχώς μία επί πληρωμή (PRO) με διάφορα flavors ανάλογα το scale και το licensing. To EVE-NG υποστήριξε πρώτο αρκετά σημαντικά features (docker, bridge προς το πραγματικό δίκτυο, APIs, προχωρημάνα γραφικά περιβάλλοντα, user roles, κλπ) αλλά και διαφορετικές πλατφόρμες (dynamips, Virtual Machiones με qemu, containers κλπ) και γενικά καλύτερο performance.</p>
-<p>EVE-NG Labs Library:</p>
+<p style="text-align: center;">EVE-NG Labs Library:</p>
 <p><a href="https://www.eve-ng.net/index.php/lab-library/"><img src="https://www.eve-ng.net/wp-content/uploads/2019/11/34_sd-wan_viptela.png" alt="EVE-NG Labs - Cisco OSPFv2/v3"></a></p>
 <p>Με τα χρόνια, αν και συνεχίζει να είνα αρκετά δημοφικές ειδικά και για την ενσωμάτωση κι άλλων vendor nodes όπως juniper, arista κλπ αλλά και για την παροχή οδηγών με λεπτομέρεια για την παρακσκευή node templates (πρωτότυπα για τη δημιουργία nodes) και αρκετά καλό documentation, πλέον και το GNS-3 έχει έρθει κοντά στην υποστήριξη features ενώ παραμένει δωρεάν, διαθέτει δε marketplace για nodes και topologies και academy για την εκμάθηση, ενώ το EVE-NG όχι. Παρόλα αυτά συνεχίζει να έχει φανατικούς χρήστες και υπάρχουν αρκετά κατατοπιστικά videos με δύο δημιουργούς να είναι κορυφαίοι μεταξύ των υπολοίπων, ο &ldquo;Data&rdquo; Knoxx, γνωστός trainer από την πλατφόρμα CBT-Nuggets και ο Christian Scholz, μηχανικός της AXIANS σε ανώτατο επίπεδο (Lead Architect).</p>
 <p><a href="https://youtu.be/vqV5OgRixs0?si=C3-ZXaedDNR_n3CZ"><img src="https://img.youtube.com/vi/vqV5OgRixs0/maxresdefault.jpg" alt="Introduction to EVE-NG"></a></p>
@@ -206,8 +206,8 @@
 <h3 id="cisco-modeling-labs-cml">Cisco Modeling Labs (CML)</h3>
 <p>Παλιότερα γνωστό ως Virl, το <a href="https://www.cisco.com/site/us/en/learn/training-certifications/training/modeling-labs/index.html">CML</a> είναι στην έκδοση 2.9 πλέον και συνήθως αναφέρονται σε αυτό ως CML-2 ακριβώς για να δείξουν αυτή τη διαφορά. Είναι η πλατφόρμα φτιαγμένη από ομάδα μηχανικών της Cisco, μεταξύ των οποίων ο γνωστότερος και αυτός που παίρνει το περισσότερο credit για την ανάπτυξη του είναι ο Ralph Schmieder.
 Το CML έρχεται τελευταίο στη γιορτή.. Είναι μια πλατφόρμα που υποστηρίζει κυρίως QEMU based virtual machines και μπορεί να τρέξει IOSv (τα παλιά cisco platforms για simulation), τα IoL (IOS on Linux) images, δίνοντας πρόσβαση σε εξομοιώσεις γνωστών network platforms της Cisco (NXOS, Catalyst, ISR/CSR, IOS-XRd, κλπ) αλλά και αρκετά άλλα nodes της Cisco που ξεφεύγουν από τον ορισμό του network node όπως Cisco Firepower FTD και FMC, Cisco ISE, Cisco SD-WAN manager, κλπ. Λόγω του ότι προέρχεται από τον κατασκευαστή Cisco έχει μοναδική πρόσβαση στα resources αυτά ως images, τα οποία ωστόσο &hellip; με μαγικούς τρόπους μεταφέρονται προς άλλες πλατφόρμες εξομοίωσης. Είναι αυτό νομότυπο κατά τη Cisco; Όχι προφανώς. Για να χρησιμοποιήσει κάποιος Cisco images πρέπει να έχει είτε το CML είτε κάποιο σχετικό συμβόλαιο με τη Cisco που να αφορά αυτές τις πλατφόρμες ώστε να μπορεί να κατεβάσει το software. Και πάλι υπάρχει μηχανισμός licensing για όλα αυτά. Ωστόσο οι μηχανικοί που θέλουν να τα χρησιμοποιήσουν σε άλλες πλατφόρμες, βρίσκουν συνήθως διάφορους τρόπους. Δεν θα περιγράψουμε τίποτε τέτοιο σε αυτό το post, δεν υποστηρίζουμε καμία τέτοια χρήση, το ίδιο αναφέρουν κι όλοι οι υπόλοιποι κατασκευαστές για network simulation platforms.</p>
-<p><img src="https://pubhub.devnetcloud.com/media/cisco-modeling-labs-2-9/docs/img/iol-xe_feature_test_topology.png#developer.cisco.com" alt="CML Topology">
-CML Topology</p>
+<p><img src="https://pubhub.devnetcloud.com/media/cisco-modeling-labs-2-9/docs/img/iol-xe_feature_test_topology.png#developer.cisco.com" alt="CML Topology"></p>
+<p style="text-align: center;">CML Topology</p>
 <p>Το CML είναι γενικά χειρότερο στην διαχείριση resources, αργεί να υιοθετήσει features (μόλις ενσωμάτωσε υποστήριξη για docker) και είναι εξωφρενικά ακριβό αν αναλογιστεί κανείς ποιοι είναι αυτοί που το χρειάζονται για να μάθουν την τεχνολογία. Ένα ακόμα μειονέκτημα είναι πως για να ενσωματώσετε network device images από άλλους vendors στο ίδιο lab ενδεχομένως χρειάζεται να βρείτε και να εισάγετε τα images μόνοι σας, καθώς το CML έρχεται μόνο με Cisco created images. Από την άλλη αν θέλετε να το κάνετε αυτό, γιατί να χρησιμοποιήσετε CML;</p>
 <p>Όπως προανέφερα, είναι ακριβό. Υπάρχουν 2 εκδόσεις Personal (για 20 και 40 nodes) ενώ η Enterprise έκδοση για χρήση σε εταιρικό περιβάλλον είναι απόλυτα απαγορευτική ως κόστος. Ωστόσο υπάρχουν πλέον και free tier για μέχρι 5 nodes (δεν μετράνε τα unmanaged switches, οπότε μπορείτε να φτιάξετε κάτι λίγο πιο μεγάλο με δρομολογητές, αλλά και πάλι..)</p>
 <p>Και το CML υποστηρίζει REST API και μάλιστα υπάρχει και Terraform provider γι αυτό. Χρήσιμα links:</p>
@@ -369,12 +369,26 @@ H vmware ζητά να εκδώσετε μια δωρεάν άδεια για π
 <h2 id="hybrid---management-on-bridged">Hybrid - Management on bridged</h2>
 <p>Μπορείτε να έχετε μόνο το management δίκτυο στο bridged network και τα υπόλοιπα να είναι απομονωμένα. Πρακτικά αυτό είναι θέμα design σε όλες τις περιπτώσεις. Είναι σαν ένα Out of Band Management Network για physical devices αλλά αντί για physical devices έχετε ένα simulator host και simulated network nodes. Είναι ίσως best of both worlds σε σχέση με τα παραπάνω αλλά και πάλι εξαρτάται από την εφαρμογή/use case.</p>
 <h1 id="χρήσεις">Χρήσεις</h1>
+<p>Υπάρχουν πολλοί λόγοι για να στήσει και να λειτουργήσει κανείς ένα virtual lab. Σίγουρα οι παρακάτω δεν είναι οι μόνοι αλλά είναι ίσως οι πιο δημοφηλείς.</p>
 <h2 id="εκμάθηση-περιβάλλοντος-cli">Εκμάθηση περιβάλλοντος (CLI)</h2>
+<p>Μπορεί να θέλετε να δοκιμάσετε εντολές για να μάθετε το περιβάλλον, να δοκιμάσετε ρυθμίσεις που μαθαίνετε σε κάποιο training course, με απόλυτη ασφάλεια (χωρίς επιπτώσεις σε πραγματικό περιβάλλον) ή απλά να μη διαθέτετε ένα πραγματικό περιβάλλον και να θέλετε να μάθετε network configuration για κάποιο από τους δημοφιλείς vendors. Η χρήση ενός virtual lab είναι εξαιρετική λύση για όλα τα παραπάνω.</p>
 <h2 id="network-design-and-configuration">Network design and configuration</h2>
+<p>Όπως παραπάνω αλλά για συνδυασμούς συσκευών, τοπολογιών και features. Και πάλι εξαιρετική λύση ένα virtual lab αλλά θυμηθείτε πως όσο αυξάνεται το μέγεθος μιας τοπολογίας και ανάλογα με το είδος των nodes, αυξάνονται και οι ανάγκες σε πόρους.. Ένα laptop με Ι7/Ryzen7 και 64GB και δίσκο 2ΤΒ μπορεί να είναι εξαιρετική περίπτωση για labs με μέτριες τοπολογίες αρκεί βέβαια να προσέχετε το είδος των nodes (π.χ. Cisco IoL &amp; Arista CEOS/VEOS). Αν θέλετε όμως να τρέξετε Cisco SD-WAN &amp; ISE, τότε θέλετε αρκετές εκατοντάδες GB RAM μερικά ΤΒ δίσκο και κάποια γερά CPUs.. δηλαδή μάλλον θα ψάχνετε στο Ebay για κάποιο &ldquo;παλιό&rdquo; server και θα βάλετε το γάμο σας σε δοκιμασία προσπαθώντας να το τρέξετε στο υπόγειο (δεν είμαστε στις Ηνωμένες Πολιτείες όπου το μόνο πρόβλημα ενάντια στο real estate είναι τα tornados).. Ή θα τρέξετε κάτι στο cloud (και θα κινδυνεύσετε από λογαριασμούς.. δεν τη γλυτώνετε όπως και να'χει..)</p>
 <h2 id="simple-network-test-scenarios">Simple Network Test Scenarios</h2>
+<p>Η γνωστή ερώτηση &ldquo;What if&rdquo; αλλά όχι στο Marvel Metaverse.. Είτε για υπάρχον δίκτυο και τοπολογία είτε για κάτι που θέλετε να μελετήσετε, υπάρχει ένα σενάριο που θέλετε να δοκιμάσετε π.χ. ανταπόκριση μιας τοπολογίας και πρωτοκόλλων/features σε μια αλλαγή ή βλάβη. Η χρήση ενόςς virtual lab ίσως είναι η απάντηση που ψάχνετε. Ωστόσο καλό είναι να θυμόμαστε πως κάποια features δεν υπάρχουν στα virtual images ή απλά δεν συμπεριφέρονται εντελώς το ίδιο με ένα virtual device. Μερικές φορές, η μοναδική απάντηση είναι να δοκιμάσετε σε φυσικό δίκτυο.. Αλλά στις περισσότερες περιπτώσεις, η μελέτη στο virtual lab θα δώσει ικανοποιητικά αποτελέσματα.</p>
 <h2 id="network-automation-testing">Network Automation Testing</h2>
+<p>Θέλετε να δοκιμάσετε τεχνολογίες automation, scripts, Network Source of Truth και Automation platforms (ή ακόμα και AI) αλλά διστάζετε να αφήσετε ελεύθερα τα δαιμόνια στο φυσικό δίκτυο.. Λογικό. Μπορείτε λοιπόν να δοκιμάσετε αρκετά πράγματα σε ένα virtual lab. Μερικές φορές θα στήσετε εξοκλήρου το περιβάλλον εντός του lab με ένα &ldquo;bastion host&rdquo; (σε ελεύθερη μεταφορά) εντός του lab στον οποίο έχετε πρόσβαση απέξω, ή το automation platform σας βρίσκεται εξ ολοκλήρου εκτός αλλά με πρόσβαση στο management network, ανάλογα με το τί βολεύει ή το τί περιλαμβάνει το test case σας. Μπορείτε να κάνετε πολλά στο κομμάτι του Network Automation με ένα virtual lab (ειδικά σε mixed topologies ή bridged management network). Μην ξεχνάτε όμως πως σε τελικό στάδιο, αν δεν εφαρμοστεί στην πραγματικότητα (με guardrails φυσικά), το network automation από μόνο του στο θεωρητικό επίπεδο, δεν έχει να προσφέρει τίποτε.</p>
 <h2 id="digital-twin-testing">Digital Twin Testing</h2>
-<h1 id="χρήσιμοι-σύνδεσμοι">Χρήσιμοι σύνδεσμοι</h1>
+<p>Η ειδική περίπτωση όπου εξομοιώνουμε ένα πραγματικό περιβάλλον σε ένα virtual lab και το οποίο ενημερώνεται συνεχώς με τις αλλαγές του πραγματικού περιβάλλοντος. Ένα τέτοιο περιβάλλον μπορεί να έχει πολύ σημαντικό ρόλο στις λειτουργίες ενός οργανισμού, πεδίο πειραματισμού ή απαραίτηο στάδιο πριν τις εγκρίσεις αλλαγών στο πραγματικό περιβάλλον.
+H Nokia έχει ανάγει την ιδέα αυτή σε τέχνη με τις πλατφόρμες της και το containerlab. Μπορείτε ωστόσο να δείτε μια ενδιαφέρουσα περίπτωση integration στην παρουσίαση που έκανε ο Νίκος Καλλέργης (Nick Kallergis - Network to Code) στο GRNOG 18: &ldquo;(container)labs gone nuts!&rdquo;
+Είμαι σίγουρος ότι θα το απολαύσετε, και έχει μερικές στιγμές που μάλλον θα σας εκπλήξουν (hint: πως ξεκινά το containerlab και από που παίρνει το topology;)</p>
+<iframe allowfullscreen width="640" height="390" class="flowplayer fp-slim fp-edgy" frameborder="0" scrolling="no" src="https://diavlos.grnet.gr/room/3152?eventid=17994&stream_lang=&embed=true&width=640&vod=14627_session"></iframe>
+<h1 id="επίλογος">Επίλογος</h1>
+<p>Είδαμε συνοπτικά τί είναι το network simulation, πως μπορείτε να το χρησιμοποιήσετε για να στήσετε ένα virtual lab, ποιες είναι οι επιλογές σας σε simulation software, hosting platforms, vendor images και πθανές χρήσεις.
+Καλό labbing, κι όπως πάντα, αν ενδιαφέρεστε για το network automation &amp; programmability και δεν ξέρετε από που να αρχίσετε, ελάτε σε επαφή μαζί μας να το συζητήσουμε.
+Είμαστε το NetAutoGr, μια ομάδα από μηχανικούς που ενδιαφέρονται για Network Automation &amp; Programmability και την εξάπλωση του στην κοινότητα του Networking στην Ελλάδα και το Εξωτερικό.
+Μπορείτε να έρθετε σε επαφή μαζί μας με μήνυμα σε ένα από τα μέλη μας στο Twitter:</p>
+<p>@mythryll - https://x.com/mythryll</p>
 
       </div>
     </article>
@@ -386,7 +400,10 @@ H vmware ζητά να εκδώσετε μια δωρεάν άδεια για π
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://netautogr.github.io/tags/untagged/">untagged</a></span>
+        <span class="tag"><a href="https://netautogr.github.io/tags/network/">network</a></span>
+        <span class="tag"><a href="https://netautogr.github.io/tags/simulation/">simulation</a></span>
+        <span class="tag"><a href="https://netautogr.github.io/tags/automation/">automation</a></span>
+        <span class="tag"><a href="https://netautogr.github.io/tags/platforms/">platforms</a></span>
         
     </p>
 
@@ -400,7 +417,7 @@ H vmware ζητά να εκδώσετε μια δωρεάν άδεια για π
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        4225 Words
+        4927 Words
       </p>
 
       <p>

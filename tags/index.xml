@@ -12,9 +12,45 @@
     
     
     <item>
+      <title>automation</title>
+      <link>https://netautogr.github.io/tags/automation/</link>
+      <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
+      
+      <guid>https://netautogr.github.io/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://netautogr.github.io/tags/network/</link>
+      <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
+      
+      <guid>https://netautogr.github.io/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>platforms</title>
+      <link>https://netautogr.github.io/tags/platforms/</link>
+      <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
+      
+      <guid>https://netautogr.github.io/tags/platforms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>simulation</title>
+      <link>https://netautogr.github.io/tags/simulation/</link>
+      <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
+      
+      <guid>https://netautogr.github.io/tags/simulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>untagged</title>
       <link>https://netautogr.github.io/tags/untagged/</link>
-      <pubDate>Fri, 24 Oct 2025 19:21:01 +0300</pubDate>
+      <pubDate>Sat, 18 Dec 2021 00:55:02 +0200</pubDate>
       
       <guid>https://netautogr.github.io/tags/untagged/</guid>
       <description></description>
@@ -62,42 +98,6 @@
       <pubDate>Thu, 26 Nov 2020 01:28:49 +0200</pubDate>
       
       <guid>https://netautogr.github.io/tags/cisco/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>eem</title>
-      <link>https://netautogr.github.io/tags/eem/</link>
-      <pubDate>Thu, 26 Nov 2020 01:28:49 +0200</pubDate>
-      
-      <guid>https://netautogr.github.io/tags/eem/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>snippet</title>
-      <link>https://netautogr.github.io/tags/snippet/</link>
-      <pubDate>Thu, 26 Nov 2020 01:28:49 +0200</pubDate>
-      
-      <guid>https://netautogr.github.io/tags/snippet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>about</title>
-      <link>https://netautogr.github.io/tags/about/</link>
-      <pubDate>Mon, 16 Nov 2020 14:58:02 +0200</pubDate>
-      
-      <guid>https://netautogr.github.io/tags/about/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansible</title>
-      <link>https://netautogr.github.io/tags/ansible/</link>
-      <pubDate>Mon, 16 Nov 2020 14:25:30 +0200</pubDate>
-      
-      <guid>https://netautogr.github.io/tags/ansible/</guid>
       <description></description>
     </item>
     
