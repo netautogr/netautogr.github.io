@@ -89,7 +89,8 @@ The story of Containerlab at Network Automation Nerds with Roman Dodin</p>
 <p><a href="https://gratuitous-arp.net/containerlab-the-anti-pattern/">https://gratuitous-arp.net/containerlab-the-anti-pattern/</a> - Claudia De Luna, Containerlab the anti-pattern.</p>
 <p>Τέλος, η ομάδα της Nokia που υποστηρίζει το Containerlab έχει δημιουργήσει και μια <a href="https://containerlab.dev/manual/vsc-extension/">επέκταση για το vs-code</a>, δίνοντας τη δυνατότητα για γραφικο τρόπο σχεδιασμού και λειτουργίας της πλατφόρμας με εξαιρετικά απλό τρόπο.</p>
 <p><img src="https://containerlab.dev/images/vscode-extension/02-topo_viewer_editor.png" alt="VS-Code Containerlab Extension"></p>
-<p>Σήμερα το Containerlab αποτελεί ένα δημοφιλές, δωρεάν και open-source εργαλείο που απλοποιεί τη δημιουργία και διαχείριση network labs, καθιστώντας το κατάλληλο για testing, demos, αλλά και για CI/CD pipelines.</p>
+<p>Σήμερα το Containerlab αποτελεί ένα δημοφιλές, δωρεάν και open-source εργαλείο που απλοποιεί τη δημιουργία και διαχείριση network labs, καθιστώντας το κατάλληλο για testing, demos, αλλά και για CI/CD pipelines. Ακολουθεί άλλο ένα post από το Nico Vilbert της Isovalent, αν και λίγο παλιό:</p>
+<p><a href="https://nicovibert.com/2022/06/09/first-look-into-containerlab/">https://nicovibert.com/2022/06/09/first-look-into-containerlab/</a></p>
 <h3 id="netlab">Netlab</h3>
 <p>Όπως λέει κι ο φίλος Μανώλης, &ldquo;αν το Containerlab το ερωτεύεσαι, το <a href="https://netlab.tools/">Netlab</a> το παντρεύεσαι&rdquo;. To Netlab έχει δημιουργηθεί από τον Ivan Pepelnjak και έχει τη δυνατότητα βασισμένο σε yaml configuration files να δημιουργεί και να τρέχει δικτυακές τοπολογίες σε vagrant ή containerlab και να δημιουργεί Ansible invetories για αυτές. Μπορεί να χρησιμοποιεί διάφορους virtualization providers (KVM/libvirt, Docker containers) ή και φυσικά συστήματα.
 Το netlab, με βάση το configuration file σε Yaml που θα φτιάξετε, θα ρυθμίσει IP addressing, routing protocols, VLANs, VRFs, και άλλες δικτυακές τεχνολογίες, δημιουργώντας όλα τα απαραίτητα configs για κάθε μέρος τους, και θα σηκώσει απλά το lab λειτουργικό και έτοιμο προς χρήση.</p>
@@ -160,15 +161,73 @@ The story of Containerlab at Network Automation Nerds with Roman Dodin</p>
 <p>Για να εντάξετε docker images σε EVE-NG labs, δεν θα βρείτε αναφορές στο documentation εκτός από το παρακάτω video:</p>
 <p><a href="https://youtu.be/49f3JX6vFrk?si=FwWX2qZMpRYj04zL"><img src="https://img.youtube.com/vi/49f3JX6vFrk/maxresdefault.jpg" alt="Embeded docker eve-ng"></a></p>
 <h2 id="hosting-platforms">Hosting Platforms</h2>
+<p>Για να χρησιμοποιήσετε ένα λογισμικό για Network Simulation χρειάζεστε μια πλατφόρμα που θα το φιλοξενήσει. Υπάρχουν διάφορες επιλογές ανάλογα με το τί έχετε διαθέσιμο ως φυσικούς πόρους αλλά και από οικονομικής πλευράς.. Το σίγουρο είναι πως όπου και να το τρέξετε θα χρειαστείτε μνήμη, πολύ μνήμη&hellip;</p>
 <h3 id="vmware-workstation--esxi--vcenter">Vmware Workstation / ESXi / VCenter</h3>
+<p>Τόσο το Vmware Workstation που τρέχει σε περιβάλλοντα desktop όσο το Vsphere ESXi που είναι η απλή έκδοση του Vmware Hypervisor και τρέχει σε φυσικά συστήματα, διατίθενται δωρεάν (παρά τις προσωρινές παρενέργειες από την εξαγορά της Vmware από τη Broadcom) και παραμένουν μια από τις καλύτερες επιλογές για να τρέξει το λογισμικό εξομείωσης σε ένα home lab.
+Σε εταιρικά περιβάλλοντα η χρήση των πλατφόρμων της Vmware απαιτεί εμπορικές άδειες και ειδικά για esxi hypervisors απαιτείται και η χρήση της πλατφόρμας διαχείρισης VCenter. Αν έχετε τέτοια δυνατότητα, φροντίστε σε κάθε περίτπωση τα φυσικά συστήματα να υποστηρίζουν nested virtualization και να το έχετε ενεργοποιήσει τόσο στο BIOS όσο και στους hypervisors, στα ίδια τα virtual machines τα οποία θα φιλοξενήσουν π.χ. το EVE-NG, το PNETLab ή το Containerlab.
+H vmware ζητά να εκδώσετε μια δωρεάν άδεια για προσωπική χρήση του Workstation ή του ESXi αλλά πρόκειται για εξαιρετικά απλή διαδικασία.
+<a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion">https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion</a> - Vmware Page on Workstation</p>
 <h3 id="proxmox">Proxmox</h3>
+<p>Δωρεάν εναλλακτική για hypervisor η οποία έγινε πολύ δημοφιλής την εποχή που η Broadcom αποφάσισε προσωρινά να σταματήσει τη δωρεάν διάθεση του Vmware ESXi. Υπάρχουν αρκετά blogs και Youtube videos που περιγράφουν την εγκατάσταση και τη χρήση του και μπορείτε να στήσετε και διαδικασίες backup αλλά και να χρησιμοποιήσετε διαδικασίες IaC μέσω Terraform για το provisioning συστημάτων. Χρήσιμα links:</p>
+<ul>
+<li><a href="https://pve.proxmox.com/wiki/Main_Page">https://pve.proxmox.com/wiki/Main_Page</a> - Proxmox main wiki</li>
+<li><a href="https://app.pluralsight.com/library/courses/proxmox-ve-fundamentals/table-of-contents">https://app.pluralsight.com/library/courses/proxmox-ve-fundamentals/table-of-contents</a> - Proxmox training (απαιτείται συνδρομή Pluralsight)</li>
+<li><a href="https://www.packetswitch.co.uk/running-eve-ng-in-proxmox/">https://www.packetswitch.co.uk/running-eve-ng-in-proxmox/</a> - post από Suresh Vina για eve-ng on proxmox</li>
+<li><a href="https://www.proxmox.com/en/products/proxmox-backup-server/overview">https://www.proxmox.com/en/products/proxmox-backup-server/overview</a> - proxmox backup server</li>
+<li><a href="https://www.xda-developers.com/i-set-up-disposable-proxmox-vms/">https://www.xda-developers.com/i-set-up-disposable-proxmox-vms/</a> - proxmox automation no1</li>
+<li><a href="https://spacelift.io/blog/terraform-proxmox-provider">https://spacelift.io/blog/terraform-proxmox-provider</a> - proxmox automation no2</li>
+<li><a href="https://registry.terraform.io/providers/Terraform-for-Proxmox/proxmox/latest/docs">https://registry.terraform.io/providers/Terraform-for-Proxmox/proxmox/latest/docs</a> - terraform provider</li>
+<li><a href="https://youtu.be/5j0Zb6x_hOk?si=i2iiym8Pj7vUt8JH">https://youtu.be/5j0Zb6x_hOk?si=i2iiym8Pj7vUt8JH</a> - Intro Guide</li>
+<li><a href="https://youtu.be/lFzWDJcRsqo?si=YCUafIZYBThZVPdD">https://youtu.be/lFzWDJcRsqo?si=YCUafIZYBThZVPdD</a> - Course</li>
+</ul>
 <h3 id="kubernetes">Kubernetes</h3>
+<p>Ακούγεται τραβηγμένο.. Ωστόσο υπάρχει to clabernetes ή απλά, c9s! Δηλαδή το λογισμικό που επιτρέπει να τρέξετε το Containerlab με τα resources μοιρασμένα σε kubernetes clusters!! Αν χρειάεζεστε παραπάνω resources και έχετε πρόσσβαση σε τέτοια υποδομή, καλή τύχη!!
+Το Clabernetes δημιουργήθηκε από τον Carl Montanari. Χρήσιμα links:</p>
+<ul>
+<li><a href="https://containerlab.dev/manual/clabernetes/">https://containerlab.dev/manual/clabernetes/</a> - Clabernetes manual page at Containerlab documentation</li>
+<li><a href="https://github.com/srl-labs/clabernetes">https://github.com/srl-labs/clabernetes</a> - Clabernetes Github repo</li>
+<li><a href="https://www.youtube.com/watch?v=K7ms3Hl928w">https://www.youtube.com/watch?v=K7ms3Hl928w</a> - Expand Your Network Labs With Containerlab and Clabernetes, Packet Pushers</li>
+<li><a href="https://ripe88.ripe.net/presentations/31-clabernetes-ripe88.pdf">https://ripe88.ripe.net/presentations/31-clabernetes-ripe88.pdf</a> - Simulating networks at scale with Clabernetes and OVHcloud</li>
+</ul>
 <h3 id="cloud-rentals">Cloud Rentals</h3>
+<p>Υπάρχουν πλατφόρμες σε γνωστούς cloud providers που δίνουν τη δυνατότητα να νοικιάσετε μια υποδομή εξομείωσης. Μία από αυτές αναφέρεται στο ίδιο το site του EVE-NG (CloudmyLab), αλλά υπάρχουν κι άλλες.
+<a href="https://cloudmylab.com/services/hosted-emulators/eve-ng">https://cloudmylab.com/services/hosted-emulators/eve-ng</a>
+<a href="https://www.cloudlabbox.com/">https://www.cloudlabbox.com/</a>.</p>
+<p>Το Cloudmylab κάνει host και άλλα λογισμικά εξομείωσης όπως GNS-3 και CML 2.0. Ο πλήρης κατάλογος των υπηρεσιών είναι στο παρακάτω link:</p>
+<p><a href="https://cloudmylab.com/services">https://cloudmylab.com/services</a></p>
 <h3 id="github-codespaces">Github Codespaces</h3>
+<p>Τα github codespaces είναι περιβάλλοντα ανάπτυξης και δοκιμών στο Github που στήνονται γύρω από github repositories. Πρόκειται πρακτικά για ένα linux container που σηκώνεται στο cloud με έτοιμο κώδικα (από το repository) για να μπορέσει κανείς να δοκιμάσει πράγματα χωρίς να έχει ανάγκη ένα περιβάλλον σε δική του υποδομή και όλο το editing και management γίνεται μέσω του browser, όπου η microsoft πρακτικά τρέχει το vs-code στο browser. Υπάρχει βέβαια δυνατότητα να κάνετε πράγματα μέσα από το τοπικό σας vs-code μέσω του αντίστοιχου extension. Μερικά links:</p>
+<ul>
+<li><a href="https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces">https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces</a> - documentation</li>
+<li><a href="https://github.com/features/codespaces">https://github.com/features/codespaces</a> - features &amp; getting started</li>
+<li><a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code">https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code</a> - Πως να τρέξετε codespaces στο vs-code (μέσω του extension)</li>
+</ul>
+<p>Τα περισσότερα περιβάλλοντα είναι αδύνατο να τρέξουν σε containers στο cloud. Όχι όμως το containerlab, και αυτή την εξαίρετη ιδέα χρησιμοποίησε ο Eric Chou όταν δημιούργησε το 100 Days of Nautobot Challenge. Μπορείτε εντός του challenge στις πρώτες 20 μέρες να δείτε το containerlab σε δράση, στο cloud, στο browser σας, χωρίς να χρειάζετε να αφιερώσετε resources σε δικό σας σύστημα:</p>
+<ul>
+<li><a href="https://networktocode.com/blog/2025-01-16-100-days-of-nautobot/">https://networktocode.com/blog/2025-01-16-100-days-of-nautobot/</a></li>
+<li><a href="https://github.com/nautobot/100-days-of-nautobot">https://github.com/nautobot/100-days-of-nautobot</a></li>
+<li><a href="https://medium.com/@florian.loehden/100-days-of-nautobot-175915146de5">https://medium.com/@florian.loehden/100-days-of-nautobot-175915146de5</a></li>
+</ul>
+<p>Λίγο προσοχή πρέπει να δώσει κανείς στο ότι όταν ξεκινά ένα codespace, αυτό καταρχήν καταναλώνει storage. Έχετε συγκεκριμένο quota στο github με το χρήστη σας μέχρι να φτάσετε στο σημείο που η δωρεάν συνδρομή δεν θα είναι πλέον αρκετή. Πρακτικά όσο αφήνετε το codespace να υπάρχει, τρώτε από το quota σας.
+Αν σβήσετε το codespace και το ξαναδημιουργήσετε (παίρνει λίγα λεπτά η δημιουργία ανάλογα την περίπτωση) τότε έχετε προφανώς κάνει &ldquo;reset&rdquo; αφού ότι αρχεία δημιουργήσατε/προσθέσατε στον container κι όλο σας το history έχουν διαγραφεί.
+Τέλος τα resources που μπορείτε να αφιερώσετε στο codespace που θα τρέξετε, είναι συγκεκριμένα. Υπάρχουν διάφορα tires. Από όσο μπορώ να καταλάβω, στα ευρωπαϊκά datacenters της Microsoft όπου τρέχει το Github (πιθανότατα azure sites), είναι πιο περιορισμένες οι επιλογές από ότι στα US based. Και μην ξεχνάτε, στο network emulation, χρειάζονται resources (πρακτικά μόνο με images με μικρό footprint μπορείτε να παίξετε στο δωρεάν tier). Και επίσης, μην ξεχνάτε το copyright..
+Κατά τα άλλα, θεωρώ πως είναι εξαιρετική ιδέα και δίνει σε όλους τη δυνατότητα να δουν κάποια πράγματα σε δράση χωρίς να αφιερώσουν ιδιαίτερα resources πέρα από το χρόνο τους φυσικά.
+ή.. Απλά νοικιάζετε ένα cloud server με περισσότερα resources και στήνετε ένα containerlab instance από την αρχή..</p>
 <h1 id="aπομόνωση-ή-σύνδεση">Aπομόνωση ή σύνδεση;</h1>
+<p>Ανάλογα τί θέλετε να δοκιμάσετε και πως βλέπετε το θέμα της ασφάλειας για τα δεδομένα του lab σας αλλά και την πιθανότητα να προκαλέσετε προβλήματα σε πραγματικό δίκτυο, έχετε διαφορετικές επιλογές στο πως να συνδέσετε το lab σας στο δίκτυο και πως να ορίσετε την πρόσβαση σε αυτό.
+Πρακτικά έχουμε να κάνουμε είτε με virtual switches (virtual machine based) είτε με linux bridges (container based). Αν έχετε να κάνετε με simulation πάνω σε vm προσέξτε σε ποιο virtual switch θα συνδέσετε το simlation host (τυπικα οι επιλογές είναι: jost-only/nat/bridged).</p>
 <h2 id="ασφάλεια---airtight">Ασφάλεια - Airtight</h2>
+<p>Μπορεί να θέλετε ένα πλήρως απομονωμένο περιβάλλον. Στο containerlab μπορείτε να πετύχετε εύκολα κάτι τέτοιο ορίζοντας απλά το management network ή αφήνοντας τα defaults. Είναι μετά όμως σε σας το αν θα αναθέσετε στις συσκευές σας το management interface να είναι σε απομονωμένο δίκτυο (π.χ. ξεχωριστό VRF) ή θα το βάλετε να συμμετέχει στην τοπολογία. Είναι δηλαδή θέμα configuration.
+Καλό θα είναι εδώ να θυμηθείτε ότι ενδεχομένως να χρειάζεστε κάποια επαφή με το δίκτυο ή το internet για compute nodes στο lab σας, π.χ. server / desktop nodes, για software updates ή installations.
+Στην περίπτωση άλλων simulation platforms όπως το EVE-NG, το isolation είναι το default. Η πλατφόρμα ορίζει με κάποιο τρόπο το port forwarding και έχετε την επιλογή να ορίσετε εξωτερικές εφαρμογές για το management (π.χ. virtual terminal sorftware όπως το putty, original ή solarwinds version) ή να έχετε html based περιβάλλον όπου τα terminals γίνονται launch εσωτερικά στο browser ως guacaomole (από το Apache foundation) instances.
+Αν ανησυχείτε είτε για την ασφάλεια είτε για το impact του να συνδεθεί το δίκτυο αλλού ή απλά θέλετε να δοκιμάσετε addressing που έχει conflicts με το πραγματικό δίκτυο (π.χ. μπορεί να είναι lab version ενός πραγματικού δικτύου) χωρίς να θέλετε να στήσετε NAT, αυτή η επιλογή ίσως σας ταιριάζει.</p>
 <h2 id="πρόσβαση---mixed-environments">Πρόσβαση - mixed environments</h2>
+<p>Μπορούμε σε πολλές περιπτώσεις simulators να έχουμε full bridged envioronments στο πραγματικό δίκτυο. Στο containerlab είναι θέμα configuration, σε άλλες πλατφόρμες όπως το EVE-NG είναι τόσο απλό όσο το να δώσετε links προς ένα cloud network type το οποίο είναι bridged στο πραγματικό δίκτυο μέσω της σύνδεσης του EVE-NG host. Προσοχή όταν συνδέετε network devices σε αυτό όπως Cisco routers όπου το CDP είναι ενεργοποιημένο εξαρχής. Θα αρχίσετε να βλέπετε τις συσκευές σας από τις υπόλοιπες με CDP επειδή θα &ldquo;βλέπουν&rdquo; η μία την άλλη μέσω του bridged network (και ίσως και καμιά πραγματική συσκευή, π.χ. το gateway στο εταιρικό σας δίκτυο).
+Καλό θα είναι σε τέτοιες περιπτωσεις να απενεργοποιείτε κάποια features σε τέτοια interfaces όπως και μάλλον θα χρειαστεί να κάνετε κι άλλα πράγματα σχετικά με τα boot processes κλπ (ας μην μπούμε σε λεπτομέρειες, θα το καταλάβετε αφού δημιουργήσετε ορισμένα nodes και τα ξεκινήσετε).
+Στο σχήμα αυτό μπορεί κανείς να κάνει μίξη simulated nodes με physical nodes ή ακόμα και simulated nodes που βρίσκονται σε διαφορετικά hosts (χωρίς να πάμε στην ακραία περίπτωση του clabernetes όπου μιλάμε για ένα overlay δίκτυο across hosts).
+Αν στην περίτπωση σας χρησιμοποιείτε Vmware Workstation και το &ldquo;physical node&rdquo; είναι το λειτουργικό σύστημα στο laptop σας (π.χ. θέλετε να μιλήσετε από τo vs-code στο laptop σας σε node μέσα στο lab ή και να αντιγράψετε αρχεία), και αντιμετωπίζετε προβλήματα στη σύνδεση, φροντίστε να συνδέσετε το laptop στο σταθερό δίκτυο με καλώδιο. Θα λύσει το πρόβλημα.</p>
 <h2 id="hybrid---management-on-bridged">Hybrid - Management on bridged</h2>
+<p>Μπορείτε να έχετε μόνο το management δίκτυο στο bridged network και τα υπόλοιπα να είναι απομονωμένα. Πρακτικά αυτό είναι θέμα design σε όλες τις περιπτώσεις. Είναι σαν ένα Out of Band Management Network για physical devices αλλά αντί για physical devices έχετε ένα simulator host και simulated network nodes. Είναι ίσως best of both worlds σε σχέση με τα παραπάνω αλλά και πάλι εξαρτάται από την εφαρμογή/use case.</p>
 <h1 id="χρήσεις">Χρήσεις</h1>
 <h2 id="εκμάθηση-περιβάλλοντος-cli">Εκμάθηση περιβάλλοντος (CLI)</h2>
 <h2 id="network-design-and-configuration">Network design and configuration</h2>
